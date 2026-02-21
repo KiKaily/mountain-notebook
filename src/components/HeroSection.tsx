@@ -54,18 +54,22 @@ const HeroSection = () => {
           playsInline
         />
       </div>
-      {/* Tape note — announcement */}
-      <div className="absolute bottom-16 md:bottom-auto md:top-1/2 left-4 right-4 md:left-1/3 md:right-[5%] z-30 flex justify-center pointer-events-none">
+      {/* Painter tape note — announcement */}
+      <div className="absolute top-8 right-4 md:top-10 md:left-[45%] md:right-[5%] z-30 flex justify-end md:justify-center pointer-events-none">
         <div
-          className="pointer-events-auto bg-accent/90 px-6 py-3 md:px-10 md:py-4 shadow-md rotate-[-2deg] border border-foreground/10 relative"
+          className="pointer-events-auto px-8 py-2 md:px-12 md:py-3 rotate-[-1.5deg] relative"
           style={{
-            boxShadow: '0 2px 8px hsl(0 0% 0% / 0.10)',
+            background: 'hsl(35 30% 82% / 0.85)',
+            boxShadow: '0 1px 4px hsl(0 0% 0% / 0.06)',
           }}
         >
-          {/* Tape strips */}
-          <div className="absolute -top-2 left-4 w-8 h-4 bg-foreground/10 rounded-sm" />
-          <div className="absolute -top-2 right-4 w-8 h-4 bg-foreground/10 rounded-sm" />
-          <p className="font-serif text-sm md:text-base tracking-[0.2em] uppercase text-accent-foreground whitespace-nowrap">
+          {/* Paper texture on tape */}
+          <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+            }}
+          />
+          <p className="font-serif text-xs md:text-sm tracking-[0.25em] uppercase text-foreground/70 whitespace-nowrap relative z-10">
             Portes obertes 7 març
           </p>
         </div>
