@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
+    <main className="h-screen overflow-y-scroll md:snap-y md:snap-mandatory">
       <HeroSection />
       <SecondSection />
       <Footer />
