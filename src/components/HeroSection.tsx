@@ -54,6 +54,22 @@ const HeroSection = () => {
           playsInline
         />
       </div>
+      {/* Tape note — announcement */}
+      <div className="absolute bottom-16 md:bottom-auto md:top-1/2 left-4 right-4 md:left-1/3 md:right-[5%] z-30 flex justify-center pointer-events-none">
+        <div
+          className="pointer-events-auto bg-accent/90 px-6 py-3 md:px-10 md:py-4 shadow-md rotate-[-2deg] border border-foreground/10 relative"
+          style={{
+            boxShadow: '0 2px 8px hsl(0 0% 0% / 0.10)',
+          }}
+        >
+          {/* Tape strips */}
+          <div className="absolute -top-2 left-4 w-8 h-4 bg-foreground/10 rounded-sm" />
+          <div className="absolute -top-2 right-4 w-8 h-4 bg-foreground/10 rounded-sm" />
+          <p className="font-serif text-sm md:text-base tracking-[0.2em] uppercase text-accent-foreground whitespace-nowrap">
+            Portes obertes 7 març
+          </p>
+        </div>
+      </div>
     </section>
   );
 };
