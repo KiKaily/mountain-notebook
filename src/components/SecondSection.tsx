@@ -3,18 +3,18 @@ import TypewriterText from "./TypewriterText";
 
 const SecondSection = () => {
   return (
-    <section className="h-screen w-full snap-start flex flex-col md:flex-row overflow-hidden">
+    <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
       {/* Left: Image side */}
-      <div className="flex-1 md:flex-[0_0_40%] h-[50vh] md:h-full relative">
+      <div className="md:flex-[0_0_40%] h-screen md:h-full relative">
         <img
           src={mountainLandscape}
-          alt="Misty mountain landscape"
+          alt="Paisatge de muntanya amb boira"
           className="w-full h-full object-cover"
         />
       </div>
 
       {/* Right: Paper/text side */}
-      <div className="flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative">
+      <div className="flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
@@ -25,24 +25,24 @@ const SecondSection = () => {
           <div className="w-24 h-[1px] bg-foreground opacity-30 mb-4" />
 
           <h2 className="text-xl md:text-2xl font-serif leading-relaxed text-foreground">
-            <TypewriterText text="Where silence has texture and light has weight." delay={45} />
+            <TypewriterText text="On el silenci té textura i la llum té pes." delay={45} />
           </h2>
 
           <div className="space-y-5 mt-6">
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
-              The valley holds its breath at dusk. Shadows stretch across meadows like ink on parchment, slow and deliberate.
+              La vall conté la respiració al capvespre. Les ombres s'estenen pels prats com tinta sobre pergamí, lentes i deliberades.
             </p>
 
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-[260px] rotate-[0.5deg]">
-              There is a language here that only the patient can learn — spoken in the creak of timber, the drip of snowmelt, the distant call of a hawk circling above.
+              Hi ha un llenguatge aquí que només els pacients poden aprendre — parlat en el cruixit de la fusta, el degoteig de la neu fosa, la crida llunyana d'un falcó que volta per sobre.
             </p>
 
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-60 max-w-[300px]">
-              We built this refuge not to escape the world, but to remember what the world once sounded like before it forgot how to be quiet.
+              Vam construir aquest refugi no per fugir del món, sinó per recordar com sonava el món abans que oblidés com ser silenciós.
             </p>
 
             <p className="text-xs font-sans leading-loose text-foreground opacity-40 max-w-[240px] rotate-[-0.8deg] mt-4">
-              The fireplace knows every story. The floorboards keep the rhythm of footsteps from decades past. Walls that listen more than they speak.
+              La llar de foc coneix cada història. Les posts del terra guarden el ritme de petjades de dècades passades. Parets que escolten més del que parlen.
             </p>
           </div>
 
