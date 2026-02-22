@@ -1,5 +1,8 @@
 import mountainVideo from "@/assets/mountain-house.mp4";
 import seedLogo from "@/assets/seed-logo.png";
+import note1 from "@/assets/notes/note-1.svg";
+import note2 from "@/assets/notes/note-2.svg";
+import note3 from "@/assets/notes/note-3.svg";
 import TypewriterText from "./TypewriterText";
 
 const HeroSection = () => {
@@ -14,9 +17,9 @@ const HeroSection = () => {
           }}
         />
 
-        {/* Logo — like a notebook stamp */}
-        <div className="absolute top-8 left-8 md:top-10 md:left-12 z-20 flex flex-col items-center gap-1">
-          <img src={seedLogo} alt="La Llavor" className="w-12 h-12 md:w-16 md:h-16 opacity-80 mix-blend-multiply" />
+        {/* Logo — placed bottom-right of the paper/text area */}
+        <div className="absolute bottom-8 right-8 md:bottom-10 md:right-12 z-20 flex flex-col items-end gap-1">
+          <img src={seedLogo} alt="La Llavor" className="w-12 h-12 md:w-16 md:h-16 opacity-90 mix-blend-multiply" />
           <span className="font-serif text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground opacity-50">
             la llavor
           </span>
@@ -41,6 +44,31 @@ const HeroSection = () => {
 
           <div className="w-16 h-[1px] bg-foreground opacity-20 mt-8" />
         </div>
+
+        {/* Decorative handwritten notes (transparent backgrounds). Kept off text and positioned inside the paper area so they scroll with content. */}
+        <img src={note1} alt="" className="pointer-events-none hidden md:block absolute left-6 bottom-24 w-20 opacity-95" />
+        <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-24 top-40 w-24 opacity-95" />
+        <img src={note3} alt="" className="pointer-events-none hidden md:block absolute left-12 top-56 w-16 opacity-95" />
+
+        {/* Painter tape note — now anchored to the left text area so it moves with content (not fixed to the screen). */}
+        <div className="absolute top-8 right-6 z-10 pointer-events-none">
+          <div
+            className="pointer-events-auto px-8 py-2 md:px-12 md:py-3 rotate-[-1.5deg] relative"
+            style={{
+              background: 'hsl(35 30% 82% / 0.85)',
+              boxShadow: '0 1px 4px hsl(0 0% 0% / 0.06)',
+            }}
+          >
+            <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+              }}
+            />
+            <p className="font-serif text-xs md:text-sm tracking-[0.25em] uppercase text-foreground/70 whitespace-nowrap relative z-10">
+              Portes obertes 7 març
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Right: Video side */}
@@ -54,26 +82,7 @@ const HeroSection = () => {
           playsInline
         />
       </div>
-      {/* Painter tape note — announcement */}
-      <div className="absolute top-8 right-4 md:top-10 md:left-[45%] md:right-[5%] z-30 flex justify-end md:justify-center pointer-events-none">
-        <div
-          className="pointer-events-auto px-8 py-2 md:px-12 md:py-3 rotate-[-1.5deg] relative"
-          style={{
-            background: 'hsl(35 30% 82% / 0.85)',
-            boxShadow: '0 1px 4px hsl(0 0% 0% / 0.06)',
-          }}
-        >
-          {/* Paper texture on tape */}
-          <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-            }}
-          />
-          <p className="font-serif text-xs md:text-sm tracking-[0.25em] uppercase text-foreground/70 whitespace-nowrap relative z-10">
-            Portes obertes 7 març
-          </p>
-        </div>
-      </div>
+      {/* Painter tape note — moved inside the left text area so it scrolls with content. */}
     </section>
   );
 };
