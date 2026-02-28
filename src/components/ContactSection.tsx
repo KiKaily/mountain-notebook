@@ -28,7 +28,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
+    <section className="relative min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
       {/* Left: Paper/form side */}
       <div className="flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -65,7 +65,7 @@ const ContactSection = () => {
 
             <div>
               <label className="text-xs font-sans tracking-widest uppercase text-foreground opacity-60">
-                Correo electrònic
+                Correu electrònic
               </label>
               <input
                 type="email"
@@ -119,10 +119,10 @@ const ContactSection = () => {
         <div className="space-y-12 relative z-10">
           <div>
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Correspondència
+              Correu electrònic
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              hola@lallavor.cat
+              teamlallavor@gmail.com
             </p>
           </div>
 
@@ -131,7 +131,7 @@ const ContactSection = () => {
               Ubicació
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              Pirineu Català
+              Sant Esteve de Palautordera, Montseny
             </p>
           </div>
 
@@ -140,7 +140,7 @@ const ContactSection = () => {
               Telèfon
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              +34 973 123 456
+              +34 666 00 91 07
             </p>
           </div>
 
@@ -150,7 +150,20 @@ const ContactSection = () => {
             Estem obertes per a consultes, visites i col·laboracions. La boira del matí és especialment bona per a converses profundes.
           </p>
         </div>
+
+        {/* Decorative notes */}
+        <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-8 top-40 w-28 opacity-85" />
+        <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-20 bottom-24 w-36 opacity-80" />
+        <img src={note7} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-32 w-40 opacity-75" />
       </div>
+
+
+      {/* footer legal */}
+      <footer className="absolute bottom-4 w-full text-center text-xs font-sans text-foreground opacity-60">
+        <p>
+          <a href="/privacy" className="underline">Privacitat</a> &middot; <a href="/cookies" className="underline">Política de cookies</a> &middot; <a href="/legal" className="underline">Avis legal</a>
+        </p>
+      </footer>
     </section>
   );
 };

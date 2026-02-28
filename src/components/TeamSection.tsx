@@ -2,62 +2,13 @@ import note1 from "@/assets/notes/note-1.svg";
 import note3 from "@/assets/notes/note-3.svg";
 import note4 from "@/assets/notes/note-4.svg";
 
-// placeholder avatars for team members (stored under src/assets/team)
-import avatar1 from "@/assets/team/member-1.svg";
-import avatar2 from "@/assets/team/member-2.svg";
-import avatar3 from "@/assets/team/member-3.svg";
-import avatar4 from "@/assets/team/member-4.svg";
-import avatar5 from "@/assets/team/member-5.svg";
+import { NavLink } from "@/components/NavLink";
+import { teamMembers } from "../lib/team";
 
-interface TeamMember {
-  id: number;
-  name: string;
-  role: string;
-  bio: string;
-  avatar: string; // path to image
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    id: 1,
-    name: "Tamara",
-    role: "Directora i acompanyant referent",
-    bio: "Arquitecta per formació, pastora de silencis per vocació. Dissenyà cada racó amb la respiració dels muntanyes en ment.",
-    avatar: avatar1,
-  },
-  {
-    id: 2,
-    name: "Noel Cresencio González",
-    role: "Acompanyant referent",
-    bio: "Mestre ebenista amb 30 anys d'experiència. Les seves mans saben contar les històries de la fusta.",
-    avatar: avatar2,
-  },
-  {
-    id: 3,
-    name: "José",
-    role: "Tallerista de fustería i tecnologia",
-    bio: "Els seus plats són poesia en forma de menjar. Utilitza només el que la terra li ofereix cada estació.",
-    avatar: avatar3,
-  },
-  {
-    id: 4,
-    name: "Amanda",
-    role: "Tallerista de costura i arts",
-    bio: "Guía de muntanya certificat. Coneix cada sender com si fos el seu propi cor.",
-    avatar: avatar4,
-  },
-  {
-    id: 5,
-    name: "Sarai",
-    role: "Tallerista d'arts",
-    bio: "Escriptora i historiadora. Recull les històries de les pedres, els arbres i les persones que visiten.",
-    avatar: avatar5,
-  },
-];
 
 const TeamSection = () => {
   return (
-    <section className="min-h-screen w-full md:snap-start flex flex-col bg-card relative overflow-hidden">
+    <section id="team" className="min-h-screen w-full md:snap-start flex flex-col bg-card relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
@@ -77,11 +28,11 @@ const TeamSection = () => {
           </div>
 
           {/* Team grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
             {teamMembers.map((member) => (
               <div key={member.id} className="flex flex-col space-y-3">
                 {/* member avatar image or fallback initial */}
-                <div className="w-full aspect-square bg-background border border-border flex items-center justify-center overflow-hidden">
+                <div className="w-24 h-24 bg-background border border-border flex items-center justify-center overflow-hidden">
                   {member.avatar ? (
                     <img
                       src={member.avatar}
@@ -107,6 +58,14 @@ const TeamSection = () => {
                 <p className="text-xs md:text-sm font-sans leading-relaxed text-foreground opacity-70">
                   {member.bio}
                 </p>
+                <div>
+                  <NavLink
+                    to={`/team/${member.id}`}
+                    className="text-sm font-sans text-primary underline hover:opacity-80"
+                  >
+                    Veure més
+                  </NavLink>
+                </div>
               </div>
             ))}
           </div>

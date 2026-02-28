@@ -1,8 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import SecondSection from "@/components/SecondSection";
-import ContactSection from "@/components/ContactSection";
 import TeamSection from "@/components/TeamSection";
-import Footer from "@/components/Footer";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -11,7 +10,6 @@ const Index = () => {
       <SecondSection />
       <TeamSection />
       <ContactSection />
-      <Footer />
     </main>
   );
 };

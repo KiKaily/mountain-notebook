@@ -1,4 +1,4 @@
-import mountainVideo from "@/assets/mountain-house.mp4";
+import mountainVideo from "@/assets/la-llavor-video.mp4";
 import seedLogo from "@/assets/seed-logo.png";
 import note1 from "@/assets/notes/note-1.svg";
 import note2 from "@/assets/notes/note-2.svg";
@@ -25,7 +25,7 @@ const HeroSection = () => {
         <div className="absolute bottom-8 right-8 md:bottom-10 md:right-12 z-20 flex flex-col items-end gap-1">
           <img src={seedLogo} alt="La Llavor" className="w-12 h-12 md:w-16 md:h-16 opacity-90 mix-blend-multiply" />
           <span className="font-serif text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground opacity-50">
-            la llavor
+            La Llavor
           </span>
         </div>
 
@@ -33,16 +33,19 @@ const HeroSection = () => {
           <div className="w-24 h-[1px] bg-foreground opacity-30 mb-6" />
 
           <h1 className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground">
-            <TypewriterText text="Un lloc on les muntanyes respiren i les pedres recorden." delay={50} />
+            <TypewriterText text="La Llavor." delay={50} />
+          </h1>
+          <h1 className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground">
+            <TypewriterText text="Educació viva al Montseny." delay={50} />
           </h1>
 
           <div className="space-y-6 mt-8">
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
-              Arrecerat entre cims antics, on la boira del matí travessa les valls com històries xiuxiuejades portades pel vent fred.
+              Projecte d'educació viva d'infantil i primària a Sant Esteve de Palautordera, al cor del Montseny. 
             </p>
 
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-60 max-w-[280px] rotate-[-1deg]">
-              Cada pedra col·locada per mans que coneixien el pes de les estacions. Cada finestra emmarcant un quadre que mai es repeteix.
+              Aquí podràs consultar el nostre projecte pedagógic, el nostre equip, els espais, els nostres referents, i no dubtis en contactar-nos per una visita.
             </p>
           </div>
 

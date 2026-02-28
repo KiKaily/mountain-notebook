@@ -96,6 +96,17 @@ All colors MUST be HSL.
     --spacing: 0.25rem;
   }
 
+  /* paper texture background for cards/general areas
+     the texture image you provided should be placed at:
+     src/assets/paper-texture.jpg (or .png) and will be used here.
+     simply replace the filename below if you prefer a different path.
+  */
+  .bg-background,
+  .bg-card {
+    background-image: url('/src/assets/paper-texture.jpg');
+    background-size: cover;
+  }
+
   .dark {
     --background: 0 0% 9%;
     --foreground: 0 0% 98%;

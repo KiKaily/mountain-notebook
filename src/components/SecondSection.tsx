@@ -1,4 +1,4 @@
-import mountainLandscape from "@/assets/mountain-landscape.jpg";
+import mountainLandscape from "@/assets/la-llavor1.jpg";
 import note1 from "@/assets/notes/note-1.svg";
 import note3 from "@/assets/notes/note-3.svg";
 import note4 from "@/assets/notes/note-4.svg";

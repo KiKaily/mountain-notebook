@@ -45,10 +45,10 @@ const Footer = () => {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="space-y-1">
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Correspondència
+              Correu electrònic
             </p>
             <p className="text-sm font-serif text-foreground opacity-80">
-              hola@lallavor.cat
+              teamlallavor@gmail.com
             </p>
           </div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
               Ubicació
             </p>
             <p className="text-sm font-serif text-foreground opacity-80">
-              Pirineu Català
+              Sant Esteve de Palautordera, Montseny
             </p>
           </div>
 
@@ -66,9 +66,23 @@ const Footer = () => {
               Telèfon
             </p>
             <p className="text-sm font-serif text-foreground opacity-80">
-              +34 973 123 456
+              +34 666 00 91 07
             </p>
           </div>
+        </div>
+      </div>
+      {/* legal / policy links */}
+      <div className="relative z-10 border-t border-border px-8 md:px-16 py-4">
+        <div className="max-w-4xl mx-auto flex flex-wrap gap-4 text-xs text-foreground opacity-60">
+          <a href="/privacy" className="underline hover:opacity-80">
+            Política de privacitat
+          </a>
+          <a href="/cookies" className="underline hover:opacity-80">
+            Política de galetes
+          </a>
+          <a href="/terms" className="underline hover:opacity-80">
+            Condicions d'ús
+          </a>
         </div>
       </div>
     </footer>
