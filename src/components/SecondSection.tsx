@@ -1,4 +1,8 @@
 import mountainLandscape from "@/assets/mountain-landscape.jpg";
+import note1 from "@/assets/notes/note-1.svg";
+import note3 from "@/assets/notes/note-3.svg";
+import note4 from "@/assets/notes/note-4.svg";
+import note6 from "@/assets/notes/note-6.svg";
 import TypewriterText from "./TypewriterText";
 
 const SecondSection = () => {
@@ -48,6 +52,12 @@ const SecondSection = () => {
 
           <div className="w-12 h-[1px] bg-foreground opacity-15 mt-6" />
         </div>
+
+        {/* Decorative handwritten notes */}
+        <img src={note1} alt="" className="pointer-events-none hidden md:block absolute left-8 bottom-32 w-24 opacity-90" />
+        <img src={note3} alt="" className="pointer-events-none hidden md:block absolute right-6 top-20 w-20 opacity-85" />
+        <img src={note4} alt="" className="pointer-events-none hidden lg:block absolute left-40 top-40 w-28 opacity-85" />
+        <img src={note6} alt="" className="pointer-events-none hidden lg:block absolute right-20 bottom-40 w-32 opacity-80" />
       </div>
     </section>
   );

@@ -3,6 +3,10 @@ import seedLogo from "@/assets/seed-logo.png";
 import note1 from "@/assets/notes/note-1.svg";
 import note2 from "@/assets/notes/note-2.svg";
 import note3 from "@/assets/notes/note-3.svg";
+import note4 from "@/assets/notes/note-4.svg";
+import note5 from "@/assets/notes/note-5.svg";
+import note6 from "@/assets/notes/note-6.svg";
+import note7 from "@/assets/notes/note-7.svg";
 import TypewriterText from "./TypewriterText";
 
 const HeroSection = () => {
@@ -49,6 +53,8 @@ const HeroSection = () => {
         <img src={note1} alt="" className="pointer-events-none hidden md:block absolute left-6 bottom-24 w-20 opacity-95" />
         <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-24 top-40 w-24 opacity-95" />
         <img src={note3} alt="" className="pointer-events-none hidden md:block absolute left-12 top-56 w-16 opacity-95" />
+        <img src={note4} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-40 w-28 opacity-90" />
+        <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-32 top-20 w-36 opacity-85" />
 
         {/* Painter tape note — now anchored to the left text area so it moves with content (not fixed to the screen). */}
         <div className="absolute top-8 right-6 z-10 pointer-events-none">
