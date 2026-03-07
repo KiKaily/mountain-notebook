@@ -28,7 +28,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
+    <section data-section="contact" className="relative min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden pb-16">
       {/* Left: Paper/form side */}
       <div className="flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -106,6 +106,8 @@ const ContactSection = () => {
         <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-8 top-40 w-28 opacity-85" />
         <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-20 bottom-24 w-36 opacity-80" />
         <img src={note7} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-32 w-40 opacity-75" />
+        <img src={note1} alt="" className="pointer-events-none hidden xl:block absolute left-12 top-32 w-26 opacity-70" />
+        <img src={note3} alt="" className="pointer-events-none hidden xl:block absolute right-16 bottom-16 w-34 opacity-65" />
       </div>
 
       {/* Right: Contact info side */}
@@ -155,6 +157,8 @@ const ContactSection = () => {
         <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-8 top-40 w-28 opacity-85" />
         <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-20 bottom-24 w-36 opacity-80" />
         <img src={note7} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-32 w-40 opacity-75" />
+        <img src={note4} alt="" className="pointer-events-none hidden xl:block absolute left-32 top-20 w-24 opacity-70" />
+        <img src={note6} alt="" className="pointer-events-none hidden xl:block absolute right-24 bottom-12 w-30 opacity-65" />
       </div>
 
 

@@ -36,7 +36,7 @@ const TeamMemberPage = () => {
           <div className="w-40 h-40 bg-background border border-border flex items-center justify-center overflow-hidden">
             {member.avatar ? (
               <img
-                src={member.avatar}
+                src={member.avatar2}
                 alt={member.name}
                 className="object-cover w-full h-full"
               />

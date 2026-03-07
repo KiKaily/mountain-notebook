@@ -20,8 +20,8 @@ All colors MUST be HSL.
     --popover: 0 0% 89%;
     --popover-foreground: 0 0% 9%;
 
-    --primary: 20 90% 48%;
-    --primary-foreground: 33 100% 96%;
+    --primary: 0 100% 27%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 32%;
     --secondary-foreground: 0 0% 98%;
@@ -45,9 +45,9 @@ All colors MUST be HSL.
 
     --sidebar-foreground: 0 0% 9%;
 
-    --sidebar-primary: 20 90% 48%;
+    --sidebar-primary: 0 100% 27%;
 
-    --sidebar-primary-foreground: 33 100% 96%;
+    --sidebar-primary-foreground: 0 0% 98%;
 
     --sidebar-accent: 0 0% 32%;
 
@@ -94,6 +94,11 @@ All colors MUST be HSL.
     --tracking-normal: 0em;
 
     --spacing: 0.25rem;
+  }
+
+  /* Apply 90% opacity to all text */
+  p, h1, h2, h3, h4, h5, h6, span, a, button, input, textarea, label {
+    opacity: 0.9;
   }
 
   /* paper texture background for cards/general areas

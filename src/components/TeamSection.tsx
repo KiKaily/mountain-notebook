@@ -1,6 +1,8 @@
 import note1 from "@/assets/notes/note-1.svg";
+import note2 from "@/assets/notes/note-2.svg";
 import note3 from "@/assets/notes/note-3.svg";
 import note4 from "@/assets/notes/note-4.svg";
+import note5 from "@/assets/notes/note-5.svg";
 
 import { NavLink } from "@/components/NavLink";
 import { teamMembers } from "../lib/team";
@@ -32,7 +34,7 @@ const TeamSection = () => {
             {teamMembers.map((member) => (
               <div key={member.id} className="flex flex-col space-y-3">
                 {/* member avatar image or fallback initial */}
-                <div className="w-24 h-24 bg-background border border-border flex items-center justify-center overflow-hidden">
+                <div className="w-32 h-32 bg-background border border-border flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
                   {member.avatar ? (
                     <img
                       src={member.avatar}
@@ -78,6 +80,8 @@ const TeamSection = () => {
       <img src={note1} alt="" className="pointer-events-none hidden md:block absolute left-12 bottom-8 w-32 opacity-85" />
       <img src={note3} alt="" className="pointer-events-none hidden lg:block absolute right-20 top-32 w-28 opacity-80" />
       <img src={note4} alt="" className="pointer-events-none hidden lg:block absolute right-12 bottom-20 w-36 opacity-75" />
+      {/* <img src={note2} alt="" className="pointer-events-none hidden xl:block absolute left-32 top-16 w-24 opacity-70" />
+      <img src={note5} alt="" className="pointer-events-none hidden xl:block absolute right-40 bottom-32 w-30 opacity-65" /> */}
     </section>
   );
 };

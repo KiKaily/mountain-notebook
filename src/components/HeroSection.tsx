@@ -8,8 +8,19 @@ import note5 from "@/assets/notes/note-5.svg";
 import note6 from "@/assets/notes/note-6.svg";
 import note7 from "@/assets/notes/note-7.svg";
 import TypewriterText from "./TypewriterText";
+import { useState, useRef } from "react";
 
 const HeroSection = () => {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
       {/* Left: Paper/text side */}
@@ -58,6 +69,8 @@ const HeroSection = () => {
         <img src={note3} alt="" className="pointer-events-none hidden md:block absolute left-12 top-56 w-16 opacity-95" />
         <img src={note4} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-40 w-28 opacity-90" />
         <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-32 top-20 w-36 opacity-85" />
+        <img src={note6} alt="" className="pointer-events-none hidden xl:block absolute right-16 top-32 w-22 opacity-80" />
+        <img src={note7} alt="" className="pointer-events-none hidden xl:block absolute left-24 bottom-16 w-18 opacity-75" />
 
         {/* Painter tape note — now anchored to the left text area so it moves with content (not fixed to the screen). */}
         <div className="absolute top-8 right-6 z-10 pointer-events-none">
@@ -83,13 +96,22 @@ const HeroSection = () => {
       {/* Right: Video side */}
       <div className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative">
         <video
+          ref={videoRef}
           className="w-full h-full object-cover"
           src={mountainVideo}
           autoPlay
           loop
-          muted
+          muted={isMuted}
           playsInline
         />
+        {isMuted && (
+          <button
+            onClick={toggleMute}
+            className="absolute bottom-8 right-8 bg-primary text-primary-foreground px-4 py-2 rounded-full font-serif text-sm hover:opacity-90 transition-opacity shadow-lg"
+          >
+            🔊 Activar so
+          </button>
+        )}
       </div>
       {/* Painter tape note — moved inside the left text area so it scrolls with content. */}
     </section>
