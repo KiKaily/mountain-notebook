@@ -69,6 +69,8 @@ const SecondSection = () => {
         <img src={note3} alt="" className="pointer-events-none hidden md:block absolute right-6 top-20 w-20 opacity-85" />
         <img src={note4} alt="" className="pointer-events-none hidden lg:block absolute left-40 top-40 w-28 opacity-85" />
         <img src={note6} alt="" className="pointer-events-none hidden lg:block absolute right-20 bottom-40 w-32 opacity-80" />
+        <img src={note1} alt="" className="pointer-events-none hidden xl:block absolute left-16 top-60 w-18 opacity-75" />
+        <img src={note3} alt="" className="pointer-events-none hidden xl:block absolute right-32 bottom-20 w-22 opacity-70" />
       </div>
     </section>
   );
