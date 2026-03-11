@@ -7,7 +7,11 @@ import CookieBanner from "@/components/CookieBanner";
 import Index from "./pages/Index";
 import TeamMember from "./pages/TeamMember";
 import ContactPage from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Legal from "./pages/Legal";
+import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
+import SecondReadMore from "./pages/SecondReadMore";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/team/:id" element={<TeamMember />} />
           {/* contact form lives on its own page */}
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/second-read-more" element={<SecondReadMore />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

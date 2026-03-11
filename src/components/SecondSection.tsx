@@ -4,10 +4,14 @@ import note3 from "@/assets/notes/note-3.svg";
 import note4 from "@/assets/notes/note-4.svg";
 import note6 from "@/assets/notes/note-6.svg";
 import TypewriterText from "./TypewriterText";
+import { NavLink } from "@/components/NavLink";
+import { useTranslation } from "react-i18next";
 
 const SecondSection = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
+    <section id="second-section" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
       {/* Left: Image side */}
       <div className="md:flex-[0_0_40%] h-screen md:h-full relative">
         <img
@@ -29,25 +33,32 @@ const SecondSection = () => {
           <div className="w-24 h-[1px] bg-foreground opacity-30 mb-4" />
 
           <h2 className="text-xl md:text-2xl font-serif leading-relaxed text-foreground">
-            <TypewriterText text="On el silenci té textura i la llum té pes." delay={45} />
+            <TypewriterText text={t('second.title')} delay={45} />
           </h2>
 
           <div className="space-y-5 mt-6">
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
-              La vall conté la respiració al capvespre. Les ombres s'estenen pels prats com tinta sobre pergamí, lentes i deliberades.
+              {t('second.text1')}
             </p>
 
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-[260px] rotate-[0.5deg]">
-              Hi ha un llenguatge aquí que només els pacients poden aprendre — parlat en el cruixit de la fusta, el degoteig de la neu fosa, la crida llunyana d'un falcó que volta per sobre.
+              {t('second.text2')}
             </p>
 
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-60 max-w-[300px]">
-              Vam construir aquest refugi no per fugir del món, sinó per recordar com sonava el món abans que oblidés com ser silenciós.
+              {t('second.text3')}
             </p>
 
             <p className="text-xs font-sans leading-loose text-foreground opacity-40 max-w-[240px] rotate-[-0.8deg] mt-4">
-              La llar de foc coneix cada història. Les posts del terra guarden el ritme de petjades de dècades passades. Parets que escolten més del que parlen.
+              {t('second.text4')}
             </p>
+
+            <NavLink
+              to="/second-read-more"
+              className="inline-block text-sm font-sans text-primary underline hover:opacity-80 mt-4"
+            >
+              {t('second.readMore')}
+            </NavLink>
           </div>
 
           <div className="w-12 h-[1px] bg-foreground opacity-15 mt-6" />

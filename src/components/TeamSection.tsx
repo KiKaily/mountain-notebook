@@ -4,9 +4,12 @@ import note4 from "@/assets/notes/note-4.svg";
 
 import { NavLink } from "@/components/NavLink";
 import { teamMembers } from "../lib/team";
+import { useTranslation } from "react-i18next";
 
 
 const TeamSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="team" className="min-h-screen w-full md:snap-start flex flex-col bg-card relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -20,54 +23,95 @@ const TeamSection = () => {
           <div className="mb-16">
             <div className="w-24 h-[1px] bg-foreground opacity-30 mb-8" />
             <h2 className="text-2xl md:text-3xl font-serif leading-relaxed text-foreground max-w-lg">
-              Els Guardians de la Vall
+              {t('team.title')}
             </h2>
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-md mt-6">
-              Cada persona aquí porta el pes de les estacions, les seves mans de fer, i una escuta profunda per a la muntanya.
+              {t('team.description')}
             </p>
           </div>
 
           {/* Team grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="flex flex-col space-y-3">
-                {/* member avatar image or fallback initial */}
-                <div className="w-24 h-24 bg-background border border-border flex items-center justify-center overflow-hidden">
-                  {member.avatar ? (
-                    <img
-                      src={member.avatar}
-                      alt={member.name}
-                      className="object-cover w-full h-full"
+          <div className="space-y-12">
+            {/* Core Team */}
+            <div>
+              <h3 className="text-lg font-serif text-foreground mb-6">Equip Referent</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {teamMembers.filter(m => m.category === 'core').map((member) => (
+                  <div key={member.id} className="flex space-x-6">
+                    {/* member avatar image */}
+                    <div
+                      className="w-32 aspect-[3/4] bg-cover bg-center border border-border flex-shrink-0"
+                      style={{
+                        backgroundImage: `url(${member.avatar})`,
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundImage = `url(${member.hoverAvatar})`}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundImage = `url(${member.avatar})`}
                     />
-                  ) : (
-                    <span className="text-4xl font-serif text-foreground opacity-30">
-                      {member.name[0]}
-                    </span>
-                  )}
-                </div>
 
-                <div>
-                  <h3 className="text-base font-serif text-foreground leading-tight">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs font-sans text-foreground opacity-60 uppercase tracking-widest mt-1">
-                    {member.role}
-                  </p>
-                </div>
-
-                <p className="text-xs md:text-sm font-sans leading-relaxed text-foreground opacity-70">
-                  {member.bio}
-                </p>
-                <div>
-                  <NavLink
-                    to={`/team/${member.id}`}
-                    className="text-sm font-sans text-primary underline hover:opacity-80"
-                  >
-                    Veure més
-                  </NavLink>
-                </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-serif text-foreground leading-tight">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm font-sans text-foreground opacity-60 uppercase tracking-widest mt-1">
+                        {member.role}
+                      </p>
+                      <p className="text-sm font-sans leading-relaxed text-foreground opacity-70 mt-3">
+                        {member.bio}
+                      </p>
+                      <div className="mt-3">
+                        <NavLink
+                          to={`/team/${member.id}`}
+                          className="text-sm font-sans text-primary underline hover:opacity-80"
+                        >
+                          {t('team.viewMore')}
+                        </NavLink>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Helpers */}
+            <div>
+              <h3 className="text-lg font-serif text-foreground mb-6">Col·laboradors</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {teamMembers.filter(m => m.category === 'helper').map((member) => (
+                  <div key={member.id} className="flex flex-col items-center space-y-3">
+                    {/* member avatar image */}
+                    <div
+                      className="w-24 aspect-[3/4] bg-cover bg-center border border-border"
+                      style={{
+                        backgroundImage: `url(${member.avatar})`,
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundImage = `url(${member.hoverAvatar})`}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundImage = `url(${member.avatar})`}
+                    />
+
+                    <div className="text-center">
+                      <h3 className="text-base font-serif text-foreground leading-tight">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs font-sans text-foreground opacity-60 uppercase tracking-widest mt-1">
+                        {member.role}
+                      </p>
+                      <p className="text-xs font-sans leading-relaxed text-foreground opacity-70 mt-2">
+                        {member.bio}
+                      </p>
+                      <div className="mt-2">
+                        <NavLink
+                          to={`/team/${member.id}`}
+                          className="text-xs font-sans text-primary underline hover:opacity-80"
+                        >
+                          {t('team.viewMore')}
+                        </NavLink>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
 
           <div className="w-16 h-[1px] bg-foreground opacity-20 mt-16" />

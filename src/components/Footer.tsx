@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="min-h-screen md:h-screen w-full md:snap-start flex flex-col justify-end bg-card relative">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -13,13 +17,13 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="w-24 h-[1px] bg-foreground opacity-30" />
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
-              El matí arriba sense avisar — només un rentat lent d'or pel terra de fusta, escalfant pedres que han aguantat el fred tota la nit.
+              {t('footer.text1')}
             </p>
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-[260px] rotate-[0.3deg]">
-              La cuina fa olor de cafè i pi. Una finestra oberta deixa que l'aire de muntanya s'instal·li entre les pàgines d'un llibre sense llegir.
+              {t('footer.text2')}
             </p>
             <p className="text-xs font-sans leading-loose text-foreground opacity-50 max-w-[240px] rotate-[-0.5deg]">
-              Alguns matins la boira és tan espessa que oblides que hi ha una vall a sota. Et poses a la porta i respires, i això és suficient.
+              {t('footer.text3')}
             </p>
             <div className="w-12 h-[1px] bg-foreground opacity-15" />
           </div>
@@ -28,13 +32,13 @@ const Footer = () => {
           <div className="space-y-6 md:mt-16">
             <div className="w-16 h-[1px] bg-foreground opacity-20" />
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-75 max-w-[280px]">
-              Cada vespre les muntanyes assagen la seva desaparició — les vores s'estoven, els colors es drenen, fins que només queden siluetes contra l'última llum.
+              {t('footer.text4')}
             </p>
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-60 max-w-[250px] rotate-[0.6deg]">
-              L'estufa de llenya fa tic-tac i sospira. A fora, els estels apareixen un per un, com si algú els recordés perquè existeixin.
+              {t('footer.text5')}
             </p>
             <p className="text-xs font-sans leading-loose text-foreground opacity-40 max-w-[220px] rotate-[-0.4deg]">
-              Aquest és el lloc on el temps va a descansar. No perdut — simplement sense pressa, posant-se com la pols en un raig de llum de tarda.
+              {t('footer.text6')}
             </p>
             <div className="w-10 h-[1px] bg-foreground opacity-10" />
           </div>
@@ -45,16 +49,16 @@ const Footer = () => {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="space-y-1">
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Correu electrònic
+              {t('footer.contact.email')}
             </p>
             <p className="text-sm font-serif text-foreground opacity-80">
-              teamlallavor@gmail.com
+              infolallavor@protonmail.com
             </p>
           </div>
 
           <div className="space-y-1">
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Ubicació
+              {t('footer.contact.location')}
             </p>
             <p className="text-sm font-serif text-foreground opacity-80">
               Sant Esteve de Palautordera, Montseny
@@ -63,7 +67,7 @@ const Footer = () => {
 
           <div className="space-y-1">
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Telèfon
+              {t('footer.contact.phone')}
             </p>
             <p className="text-sm font-serif text-foreground opacity-80">
               +34 666 00 91 07
@@ -75,13 +79,16 @@ const Footer = () => {
       <div className="relative z-10 border-t border-border px-8 md:px-16 py-4">
         <div className="max-w-4xl mx-auto flex flex-wrap gap-4 text-xs text-foreground opacity-60">
           <a href="/privacy" className="underline hover:opacity-80">
-            Política de privacitat
+            {t('footer.links.privacy')}
+          </a>
+          <a href="/legal" className="underline hover:opacity-80">
+            {t('footer.links.legal')}
           </a>
           <a href="/cookies" className="underline hover:opacity-80">
-            Política de galetes
+            {t('footer.links.cookies')}
           </a>
           <a href="/terms" className="underline hover:opacity-80">
-            Condicions d'ús
+            {t('footer.links.terms')}
           </a>
         </div>
       </div>

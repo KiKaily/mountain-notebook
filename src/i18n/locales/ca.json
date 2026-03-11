@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "backToHome": "Tornar a l'inici"
+  },
+  "hero": {
+    "title1": "La Llavor.",
+    "title2": "Educació viva al Montseny.",
+    "description1": "Projecte d'educació viva d'infantil i primària a Sant Esteve de Palautordera, al cor del Montseny.",
+    "description2": "Aquí podràs consultar el nostre projecte pedagógic, el nostre equip, els espais, els nostres referents, i no dubtis en contactar-nos per una visita."
+  },
+  "second": {
+    "title": "On el silenci té textura i la llum té pes.",
+    "text1": "La vall conté la respiració al capvespre. Les ombres s'estenen pels prats com tinta sobre pergamí, lentes i deliberades.",
+    "text2": "Hi ha un llenguatge aquí que només els pacients poden aprendre — parlat en el cruixit de la fusta, el degoteig de la neu fosa, la crida llunyana d'un falcó que volta per sobre.",
+    "text3": "Vam construir aquest refugi no per fugir del món, sinó per recordar com sonava el món abans que oblidés com ser silenciós.",
+    "text4": "La llar de foc coneix cada història. Les posts del terra guarden el ritme de petjades de dècades passades. Parets que escolten més del que parlen.",
+    "readMore": "Llegir més",
+    "backToSection": "Tornar a la segona secció",
+    "readMoreTitle": "El projecte, més enllà del paisatge",
+    "readMoreIntro": "Aquest espai neix del desig d'oferir una infància amb temps real: temps per jugar, observar, preguntar, avorrir-se i tornar a començar.",
+    "readMoreP1": "Treballem des d'una presència curosa, on l'adult acompanya sense envair i sosté sense dirigir cada pas. L'autonomia no s'exigeix: es cultiva.",
+    "readMoreP2": "La natura no és un decorat; és una mestra quotidiana. El bosc, la pluja, el fang i les estacions marquen el ritme de les propostes i de l'aprenentatge.",
+    "readMoreP3": "El nostre compromís és construir comunitat amb les famílies, amb escolta i coherència, perquè cada criatura pugui créixer des de la seguretat, el vincle i la curiositat viva."
+  },
+  "team": {
+    "title": "Els Guardians de la Vall",
+    "description": "Cada persona aquí porta el pes de les estacions, les seves mans de fer, i una escuta profunda per a la muntanya.",
+    "viewMore": "Veure més"
+  },
+  "contact": {
+    "title": "Ens agradaria escoltar-te.",
+    "description": "Envïa una missatge i et respondrem quan abans puguem.",
+    "form": {
+      "name": "Nom",
+      "email": "Correu electrònic",
+      "message": "Missatge",
+      "send": "Enviar",
+      "sending": "Enviant...",
+      "sent": "Missatge enviat"
+    },
+    "info": {
+      "email": "Correu electrònic",
+      "location": "Ubicació",
+      "phone": "Telèfon",
+      "footer": "Estem obertes per a consultes, visites i col·laboracions."
+    }
+  },
+  "footer": {
+    "text1": "El matí arriba sense avisar — només un rentat lent d'or pel terra de fusta, escalfant pedres que han aguantat el fred tota la nit.",
+    "text2": "La cuina fa olor de cafè i pi. Una finestra oberta deixa que l'aire de muntanya s'instal·li entre les pàgines d'un llibre sense llegir.",
+    "text3": "Alguns matins la boira és tan espessa que oblides que hi ha una vall a sota. Et poses a la porta i respires, i això és suficient.",
+    "text4": "Cada vespre les muntanyes assagen la seva desaparició — les vores s'estoven, els colors es drenen, fins que només queden siluetes contra l'última llum.",
+    "text5": "L'estufa de llenya fa tic-tac i sospira. A fora, els estels apareixen un per un, com si algú els recordés perquè existeixin.",
+    "text6": "Aquest és el lloc on el temps va a descansar. No perdut — simplement sense pressa, posant-se com la pols en un raig de llum de tarda.",
+    "contact": {
+      "email": "Correu electrònic",
+      "location": "Ubicació",
+      "phone": "Telèfon"
+    },
+    "links": {
+      "privacy": "Política de privacitat",
+      "legal": "Avís legal",
+      "cookies": "Política de galetes",
+      "terms": "Condicions d'ús"
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacitat",
+    "back": "Tornar a l'inici",
+    "sections": {
+      "info": "Informació que Recopilem",
+      "usage": "Com Utilitzem la Teva Informació",
+      "sharing": "Compartició d'Informació",
+      "security": "Seguretat de les Dades",
+      "rights": "Els Teus Drets",
+      "changes": "Canvis a aquesta Política",
+      "contact": "Contacte"
+    },
+    "content": {
+      "intro": "A La Llavor, respectem la teva privacitat i ens comprometem a protegir les dades personals que ens proporcions. Aquesta política de privacitat explica com recopilem, utilitzem i protegim la teva informació quan visites el nostre lloc web o interactues amb nosaltres.",
+      "info1": "Informació proporcionada per tu:",
+      "info2": "Quan utilitzes el nostre formulari de contacte, recopilem el teu nom, correu electrònic i missatge. Aquesta informació s'envia directament al nostre equip via Formspree, un servei de tercers.",
+      "cookies": "Cookies:",
+      "cookiesText": "Utilitzem cookies per millorar la teva experiència al nostre lloc web. Pots gestionar les teves preferències de cookies mitjançant el nostre bàner de cookies.",
+      "usage": "Utilitzem la informació recopilada per:",
+      "usage1": "Respondre a les teves consultes i missatges.",
+      "usage2": "Millorar el nostre lloc web i serveis.",
+      "usage3": "Complir amb les nostres obligacions legals.",
+      "sharing": "No venem, lloguem ni compartim les teves dades personals amb tercers, excepte quan sigui necessari per proporcionar els nostres serveis (com Formspree per al formulari de contacte) o quan ho requereixi la llei.",
+      "security": "Prenem mesures raonables per protegir les teves dades personals contra pèrdua, ús indegut o accés no autoritzat. Tanmateix, cap mètode de transmissió per internet és 100% segur.",
+      "rights": "Tens dret a accedir, corregir, suprimir o limitar l'ús de les teves dades personals. Per exercir aquests drets, contacta'ns a través del nostre formulari de contacte.",
+      "changes": "Podem actualitzar aquesta política de privacitat de tant en tant. Qualsevol canvi serà publicat en aquesta pàgina.",
+      "contact": "Si tens preguntes sobre aquesta política de privacitat, contacta'ns a",
+      "lastUpdate": "Última actualització: Març 2026"
+    }
+  },
+  "legal": {
+    "title": "Avís Legal",
+    "back": "Tornar a l'inici",
+    "sections": {
+      "identificativos": "Dades identificatives",
+      "objeto": "Objecte",
+      "condiciones": "Condicions d'ús",
+      "propiedad": "Propietat intel·lectual i industrial",
+      "responsabilidad": "Responsabilitat",
+      "enlaces": "Enllaços externs",
+      "proteccion": "Protecció de dades",
+      "cookies": "Ús de cookies",
+      "legislacion": "Legislació aplicable"
+    },
+    "content": {
+      "intro": "En compliment amb el deure d'informació recollit a la Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSI-CE), s'informa que el present lloc web és titularitat de:",
+      "titular": "La Llavor",
+      "nif": "NIF pendent",
+      "domicilio": "Sant Esteve de Palautordera, Montseny",
+      "email": "infolallavor@protonmail.com",
+      "sitio": "projectelallavor.web.app",
+      "objeto": "El present lloc web té com a finalitat proporcionar informació sobre el projecte educatiu La Llavor, dedicat a l'acompanyament pedagògic i emocional en educació infantil i primària.",
+      "objeto2": "L'accés i ús del lloc web atribueix la condició d'usuari i implica l'acceptació de les condicions d'ús incloses en aquest Avís Legal.",
+      "condiciones": "L'usuari es compromet a utilitzar el lloc web, els seus continguts i serveis de conformitat amb la legislació vigent, la bona fe, l'ordre públic i el present Avís Legal.",
+      "condiciones2": "Queda prohibit l'ús del lloc web amb fins il·lícits o lesius que puguin causar perjudici al titular del lloc web o a tercers.",
+      "propiedad": "Tots els continguts del lloc web, incloent a títol enunciatiu però no limitatiu textos, imatges, dissenys, logotips, vídeos, codi font i altres elements, són propietat del titular del lloc web o es disposa dels drets necessaris per a la seva utilització.",
+      "propiedad2": "Queda prohibida la reproducció, distribució o modificació total o parcial dels continguts sense l'autorització expressa del titular.",
+      "responsabilidad": "El titular del lloc web no es fa responsable dels danys o perjudicis que poguessin derivar-se de l'ús de la informació continguda en aquest lloc web ni de possibles errors u omissions en els continguts.",
+      "responsabilidad2": "Així mateix, no es garanteix la disponibilitat contínua del lloc web ni l'absència d'errors en l'accés al mateix.",
+      "enlaces": "En cas que en el lloc web es disposin enllaços o hipervincles cap a altres llocs d'Internet, el titular no exercirà cap tipus de control sobre aquests llocs i continguts.",
+      "enlaces2": "En cap cas el titular assumirà responsabilitat alguna pels continguts d'enllaços pertanyents a llocs web de tercers.",
+      "proteccion": "El tractament de les dades personals que es recullin a través del lloc web, per exemple mitjançant formularis de contacte, es regirà pel que s'estableix a la corresponent Política de Privacitat.",
+      "cookies": "Aquest lloc web pot utilitzar cookies pròpies i de tercers per millorar l'experiència de navegació de l'usuari i analitzar l'ús del lloc web.",
+      "cookies2": "L'usuari pot obtenir més informació a la corresponent Política de Cookies.",
+      "legislacion": "La relació entre el titular del lloc web i els usuaris es regirà per la normativa espanyola vigent, i qualsevol controvèrsia se sotmetrà als jutjats i tribunals que corresponguin conforme a la legislació aplicable.",
+      "lastUpdate": "Última actualització: Març 2026"
+    }
+  },
+  "language": {
+    "switch": "Canviar idioma",
+    "catalan": "Català",
+    "spanish": "Español",
+    "english": "English"
+  },
+  "cookies": {
+    "title": "Política de Galetes",
+    "back": "Tornar a l'inici",
+    "sections": {
+      "what": "Què són les Galetes?",
+      "types": "Tipus de Galetes que Utilitzem",
+      "manage": "Com Gestionar les Galetes",
+      "contact": "Contacte"
+    },
+    "content": {
+      "intro": "Aquesta política de galetes explica com utilitzem les galetes i tecnologies similars al nostre lloc web. En continuar navegant pel nostre lloc, acceptes l'ús de galetes d'acord amb aquesta política.",
+      "what": "Les galetes són petits fitxers de text que s'emmagatzemen al teu dispositiu quan visites un lloc web. Ens permeten recordar les teves preferències, millorar la teva experiència de navegació i analitzar l'ús del lloc.",
+      "types": "Utilitzem els següents tipus de galetes:",
+      "essential": "Galetes Essencials:",
+      "essentialDesc": "Aquestes galetes són necessàries per al funcionament bàsic del lloc web, com recordar la teva acceptació del bàner de galetes i mantenir la funcionalitat del lloc.",
+      "analytics": "Galetes d'Anàlisi:",
+      "analyticsDesc": "Utilitzem galetes d'anàlisi per recopilar informació sobre com els visitants utilitzen el nostre lloc web, com les pàgines visitades i el temps de permanència. Aquesta informació ens ajuda a millorar el lloc.",
+      "functional": "Galetes Funcionals:",
+      "functionalDesc": "Aquestes galetes permeten al lloc recordar eleccions que fas (com el teu idioma preferit) i proporcionen característiques millorades i més personals.",
+      "manage": "Pots gestionar les teves preferències de galetes a través de la configuració del teu navegador. La majoria dels navegadors et permeten bloquejar o eliminar galetes. No obstant això, tingues en compte que desactivar certes galetes pot afectar la funcionalitat del lloc.",
+      "contact": "Si tens preguntes sobre la nostra política de galetes, pots contactar-nos a través del nostre formulari de contacte.",
+      "lastUpdate": "Última actualització: Març 2026"
+    }
+  }
+}

@@ -27,39 +27,59 @@ const TeamMemberPage = () => {
       <div className="max-w-4xl mx-auto">
         <button
           onClick={handleBack}
-          className="text-sm font-sans text-primary underline hover:opacity-80 mb-6 inline-block"
+          className="text-sm font-sans text-primary underline hover:opacity-80 mb-8 inline-block"
         >
-          ← Tornar
+          ← Tornar a l'equip
         </button>
 
-        <div className="flex flex-col md:flex-row items-start gap-8">
-          <div className="w-40 h-40 bg-background border border-border flex items-center justify-center overflow-hidden">
-            {member.avatar ? (
-              <img
-                src={member.avatar}
-                alt={member.name}
-                className="object-cover w-full h-full"
-              />
-            ) : (
-              <span className="text-4xl font-serif text-foreground opacity-30">
-                {member.name[0]}
-              </span>
-            )}
+        <div className="flex flex-col md:flex-row items-start gap-12">
+          <div className="flex-shrink-0">
+            <div className="w-56 aspect-[3/4] bg-cover bg-center border border-border rounded"
+              style={{
+                backgroundImage: `url(${member.hoverAvatar})`,
+              }}
+            />
           </div>
 
-          <div>
-            <h1 className="text-2xl font-serif text-foreground leading-tight">
-              {member.name}
-            </h1>
-            <p className="text-sm font-sans text-foreground opacity-60 uppercase tracking-widest mt-1">
-              {member.role}
-            </p>
-            <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-70 mt-4">
-              {member.bio}
-            </p>
-            {/* Placeholder for expanded content */}
-            <p className="text-sm font-sans text-foreground opacity-60 mt-8">
-              Aquí podríem ampliar la informació sobre {member.name}. Afegirem més detalls, fotografies o històries particulars quan estiguin disponibles.
+          <div className="flex-1 space-y-8">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
+                {member.name}
+              </h1>
+              <p className="text-sm font-sans text-foreground opacity-50 uppercase tracking-widest mt-2">
+                {member.role}
+              </p>
+            </div>
+
+            <div className="w-16 h-[1px] bg-foreground opacity-20" />
+
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-lg font-serif text-foreground mb-3">Presentació</h2>
+                <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
+                  {member.bio}
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-serif text-foreground mb-3">L'acompanyament a La Llavor</h2>
+                <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
+                  {member.name} acompanya les criatures des de la seva experiència i saber, creant espais segurs per a l'exploració i el creixement. Cada activitat és una oportunitat per a aprendre del que la natura i la comunitat ofereixen.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-serif text-foreground mb-3">Taller o especialitat</h2>
+                <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
+                  {member.role} — És aquí on {member.name} desplegà la seva passió i expertesa amb les criatures, combinant joc, creativitat i aprenentatge práctico.
+                </p>
+              </div>
+            </div>
+
+            <div className="w-16 h-[1px] bg-foreground opacity-20" />
+
+            <p className="text-sm font-sans leading-relaxed text-foreground opacity-60 italic">
+              Si desitges conèixer més sobre l'acompanyament de {member.name} i la nostra pedagogia, no dubtis en contactar-nos.
             </p>
           </div>
         </div>

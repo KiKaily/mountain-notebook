@@ -2,29 +2,67 @@ import { useState } from "react";
 import note2 from "@/assets/notes/note-2.svg";
 import note5 from "@/assets/notes/note-5.svg";
 import note7 from "@/assets/notes/note-7.svg";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || "";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to actual backend/email service
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
+    // If a Formspree endpoint is configured, POST the form from the site.
+    if (FORMSPREE_ENDPOINT) {
+      try {
+        setSending(true);
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        });
+
+        if (response.ok) {
+          setSuccess(true);
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          // fallback to mailto if the endpoint fails
+          const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
+          const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+          window.location.href = `mailto:infolallavor@protonmail.com?subject=${subject}&body=${body}`;
+        }
+      } catch (err) {
+        const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+        window.location.href = `mailto:infolallavor@protonmail.com?subject=${subject}&body=${body}`;
+      } finally {
+        setSending(false);
+        setTimeout(() => setSuccess(false), 4000);
+      }
+    } else {
+      // No endpoint configured — fallback to mailto behavior
+      const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+      window.location.href = `mailto:infolallavor@protonmail.com?subject=${subject}&body=${body}`;
+      setTimeout(() => {
+        setFormData({ name: "", email: "", message: "" });
+      }, 3000);
+    }
   };
 
   return (
@@ -41,17 +79,17 @@ const ContactSection = () => {
           <div className="w-24 h-[1px] bg-foreground opacity-30 mb-4" />
 
           <h2 className="text-xl md:text-2xl font-serif leading-relaxed text-foreground">
-            Ens agradaria escoltar-te.
+            {t('contact.title')}
           </h2>
 
           <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
-            Envïa una missatge i et respondrem quan abans puguem. La correspondent era lent, però més sincera.
+            {t('contact.description')}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4 mt-8">
             <div>
               <label className="text-xs font-sans tracking-widest uppercase text-foreground opacity-60">
-                Nom
+                {t('contact.form.name')}
               </label>
               <input
                 type="text"
@@ -59,13 +97,13 @@ const ContactSection = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full mt-1 px-3 py-2 bg-background border border-border text-foreground placeholder-foreground/40 focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full mt-1 px-3 py-2 bg-transparent border border-gray-500 text-foreground placeholder-foreground/40 focus:outline-none"
               />
             </div>
 
             <div>
               <label className="text-xs font-sans tracking-widest uppercase text-foreground opacity-60">
-                Correu electrònic
+                {t('contact.form.email')}
               </label>
               <input
                 type="email"
@@ -73,13 +111,13 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full mt-1 px-3 py-2 bg-background border border-border text-foreground placeholder-foreground/40 focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full mt-1 px-3 py-2 bg-transparent border border-gray-500 text-foreground placeholder-foreground/40 focus:outline-none"
               />
             </div>
 
             <div>
               <label className="text-xs font-sans tracking-widest uppercase text-foreground opacity-60">
-                Missatge
+                {t('contact.form.message')}
               </label>
               <textarea
                 name="message"
@@ -87,15 +125,17 @@ const ContactSection = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full mt-1 px-3 py-2 bg-background border border-border text-foreground placeholder-foreground/40 focus:outline-none focus:ring-1 focus:ring-primary resize-none"
+                className="w-full mt-1 px-3 py-2 bg-transparent border border-gray-500 text-foreground placeholder-foreground/40 focus:outline-none resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="mt-4 px-6 py-2 bg-primary text-primary-foreground font-serif tracking-wide hover:opacity-90 transition-opacity"
+              disabled={sending}
+              aria-busy={sending}
+              className="mt-4 px-6 py-2 bg-primary text-primary-foreground font-serif tracking-wide hover:opacity-90 transition-opacity disabled:opacity-60"
             >
-              {submitted ? "Gràcies!" : "Enviar"}
+              {success ? t('contact.form.sent') : sending ? t('contact.form.sending') : t('contact.form.send')}
             </button>
           </form>
 
@@ -119,35 +159,35 @@ const ContactSection = () => {
         <div className="space-y-12 relative z-10">
           <div>
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Correu electrònic
+              {t('contact.info.email')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              teamlallavor@gmail.com
+              <a href="mailto:infolallavor@protonmail.com" className="underline hover:opacity-90">infolallavor@protonmail.com</a>
             </p>
           </div>
 
           <div>
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Ubicació
+              {t('contact.info.location')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              Sant Esteve de Palautordera, Montseny
+              <a href="https://maps.app.goo.gl/ExweY2uko9SgWDyt7" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-90">Cal Curt, Sant Esteve de Palautordera, Montseny</a>
             </p>
           </div>
 
           <div>
             <p className="text-xs font-sans text-foreground opacity-50 uppercase tracking-[0.2em]">
-              Telèfon
+              {t('contact.info.phone')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              +34 666 00 91 07
+              <a href="tel:+34666009107" className="underline hover:opacity-90">+34 666 00 91 07</a>
             </p>
           </div>
 
           <div className="w-12 h-[1px] bg-foreground opacity-15 mt-12" />
 
           <p className="text-xs md:text-sm font-sans leading-relaxed text-foreground opacity-60 max-w-xs">
-            Estem obertes per a consultes, visites i col·laboracions. La boira del matí és especialment bona per a converses profundes.
+            {t('contact.info.footer')}
           </p>
         </div>
 
@@ -161,7 +201,7 @@ const ContactSection = () => {
       {/* footer legal */}
       <footer className="absolute bottom-4 w-full text-center text-xs font-sans text-foreground opacity-60">
         <p>
-          <a href="/privacy" className="underline">Privacitat</a> &middot; <a href="/cookies" className="underline">Política de cookies</a> &middot; <a href="/legal" className="underline">Avis legal</a>
+          <a href="/privacy" className="underline">{t('footer.links.privacy')}</a> &middot; <a href="/cookies" className="underline">{t('footer.links.cookies')}</a> &middot; <a href="/legal" className="underline">{t('footer.links.legal')}</a>
         </p>
       </footer>
     </section>

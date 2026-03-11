@@ -7,9 +7,14 @@ import note4 from "@/assets/notes/note-4.svg";
 import note5 from "@/assets/notes/note-5.svg";
 import note6 from "@/assets/notes/note-6.svg";
 import note7 from "@/assets/notes/note-7.svg";
+import tape from "@/assets/tape.png";
 import TypewriterText from "./TypewriterText";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
       {/* Left: Paper/text side */}
@@ -21,31 +26,29 @@ const HeroSection = () => {
           }}
         />
 
-        {/* Logo — placed bottom-right of the paper/text area */}
-        <div className="absolute bottom-8 right-8 md:bottom-10 md:right-12 z-20 flex flex-col items-end gap-1">
+        {/* Logo and Language Switcher — positioned over the horizontal rule above titles */}
+        <div className="absolute top-16 right-8 md:top-20 md:right-8 z-20 flex items-center space-x-4">
+          <LanguageSwitcher />
           <img src={seedLogo} alt="La Llavor" className="w-12 h-12 md:w-16 md:h-16 opacity-90 mix-blend-multiply" />
-          <span className="font-serif text-[10px] md:text-xs tracking-[0.3em] uppercase text-foreground opacity-50">
-            La Llavor
-          </span>
         </div>
 
-        <div className="max-w-md relative z-10 space-y-8 mt-24 md:mt-0">
+        <div className="max-w-md relative z-10 space-y-8 mt-32 md:mt-36">
           <div className="w-24 h-[1px] bg-foreground opacity-30 mb-6" />
 
           <h1 className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground">
-            <TypewriterText text="La Llavor." delay={50} />
+            <TypewriterText text={t('hero.title1')} delay={50} />
           </h1>
           <h1 className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground">
-            <TypewriterText text="Educació viva al Montseny." delay={50} />
+            <TypewriterText text={t('hero.title2')} delay={50} />
           </h1>
 
           <div className="space-y-6 mt-8">
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
-              Projecte d'educació viva d'infantil i primària a Sant Esteve de Palautordera, al cor del Montseny. 
+              {t('hero.description1')}
             </p>
 
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-60 max-w-[280px] rotate-[-1deg]">
-              Aquí podràs consultar el nostre projecte pedagógic, el nostre equip, els espais, els nostres referents, i no dubtis en contactar-nos per una visita.
+              {t('hero.description2')}
             </p>
           </div>
 
@@ -59,23 +62,42 @@ const HeroSection = () => {
         <img src={note4} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-40 w-28 opacity-90" />
         <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-32 top-20 w-36 opacity-85" />
 
-        {/* Painter tape note — now anchored to the left text area so it moves with content (not fixed to the screen). */}
-        <div className="absolute top-8 right-6 z-10 pointer-events-none">
-          <div
-            className="pointer-events-auto px-8 py-2 md:px-12 md:py-3 rotate-[-1.5deg] relative"
-            style={{
-              background: 'hsl(35 30% 82% / 0.85)',
-              boxShadow: '0 1px 4px hsl(0 0% 0% / 0.06)',
-            }}
-          >
-            <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-              }}
-            />
-            <p className="font-serif text-xs md:text-sm tracking-[0.25em] uppercase text-foreground/70 whitespace-nowrap relative z-10">
-              Portes obertes 7 març
-            </p>
+        {/* Painter tape note with text overlay, aligned with logo, smaller, padded, and 90% opacity */}
+        <div
+          className="absolute z-10 pointer-events-none select-none flex items-center"
+          style={{
+            left: '2.5rem',
+            top: '4.5rem',
+            width: '22rem', // smaller tape
+            maxWidth: '90vw',
+            height: 'auto',
+            paddingLeft: '0.5rem',
+            paddingRight: '0.5rem',
+          }}
+        >
+          <div style={{position: 'relative', width: '100%'}}>
+            <img src={tape} alt="Portes obertes 18 d'abril" className="w-full h-auto" style={{opacity: 0.9}} />
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ pointerEvents: 'none', width: '100%', height: '100%' }}
+            >
+              <span
+                className="font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
+                style={{
+                  width: '84%', // more margin
+                  lineHeight: 1.1,
+                  whiteSpace: 'nowrap',
+                  fontSize: 'clamp(0.7rem, 2vw, 1.05rem)', // smaller max size
+                  letterSpacing: '0.04em',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  background: 'transparent',
+                  padding: '0 0.7em', // more horizontal padding
+                }}
+              >
+                Portes obertes 18 d'abril
+              </span>
+            </div>
           </div>
         </div>
       </div>

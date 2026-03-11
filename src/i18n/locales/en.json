@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "backToHome": "Back to home"
+  },
+  "hero": {
+    "title1": "La Llavor.",
+    "title2": "Living education in Montseny.",
+    "description1": "Living education project for preschool and primary school in Sant Esteve de Palautordera, in the heart of Montseny.",
+    "description2": "Here you can consult our pedagogical project, our team, the spaces, our references, and don't hesitate to contact us for a visit."
+  },
+  "second": {
+    "title": "Where silence has texture and light has weight.",
+    "text1": "The valley holds the evening breath. Shadows stretch across the meadows like ink on parchment, slow and deliberate.",
+    "text2": "There is a language here that only the patient can learn — spoken in the creak of wood, the drip of melting snow, the distant cry of a hawk circling above.",
+    "text3": "We built this refuge not to flee the world, but to remember how the world sounded before it forgot how to be silent.",
+    "text4": "The hearth knows every story. The floorboards keep the rhythm of footsteps from decades past. Walls that listen more than they speak.",
+    "readMore": "Read more",
+    "backToSection": "Back to the second section",
+    "readMoreTitle": "The project, beyond the landscape",
+    "readMoreIntro": "This space was born from the wish to offer childhood with real time: time to play, observe, ask questions, get bored, and begin again.",
+    "readMoreP1": "We work from careful presence, where adults accompany without invading and support without directing every step. Autonomy is not demanded; it is cultivated.",
+    "readMoreP2": "Nature is not scenery; it is a daily teacher. The forest, rain, mud, and seasons set the rhythm of proposals and learning.",
+    "readMoreP3": "Our commitment is to build community with families through listening and coherence, so every child can grow from safety, connection, and living curiosity."
+  },
+  "team": {
+    "title": "The Guardians of the Valley",
+    "description": "Each person here carries the weight of the seasons, their working hands, and a deep listening for the mountain.",
+    "viewMore": "View more"
+  },
+  "contact": {
+    "title": "We'd like to hear from you.",
+    "description": "Send a message and we'll respond as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending...",
+      "sent": "Message sent"
+    },
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "phone": "Phone",
+      "footer": "We are open for consultations, visits and collaborations. Morning mist is especially good for deep conversations."
+    }
+  },
+  "footer": {
+    "text1": "Morning arrives unannounced — just a slow wash of gold across the wooden floor, warming stones that have endured the cold all night.",
+    "text2": "The kitchen smells of coffee and pine. An open window lets mountain air settle between the pages of an unread book.",
+    "text3": "Some mornings the fog is so thick you forget there's a valley below. You stand at the door and breathe, and that's enough.",
+    "text4": "Each evening the mountains rehearse their disappearance — edges soften, colors drain, until only silhouettes remain against the last light.",
+    "text5": "The wood stove ticks and sighs. Outside, stars appear one by one, as if someone remembered them into existence.",
+    "text6": "This is the place where time goes to rest. Not lost — simply unhurried, settling like dust in a late afternoon sunbeam.",
+    "contact": {
+      "email": "Email",
+      "location": "Location",
+      "phone": "Phone"
+    },
+    "links": {
+      "privacy": "Privacy Policy",
+      "legal": "Legal Notice",
+      "cookies": "Cookie Policy",
+      "terms": "Terms of Use"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "back": "Back to home",
+    "sections": {
+      "info": "Information We Collect",
+      "usage": "How We Use Your Information",
+      "sharing": "Information Sharing",
+      "security": "Data Security",
+      "rights": "Your Rights",
+      "changes": "Changes to this Policy",
+      "contact": "Contact"
+    },
+    "content": {
+      "intro": "At La Llavor, we respect your privacy and are committed to protecting the personal data you provide. This privacy policy explains how we collect, use and protect your information when you visit our website or interact with us.",
+      "info1": "Information provided by you:",
+      "info2": "When you use our contact form, we collect your name, email and message. This information is sent directly to our team via Formspree, a third-party service.",
+      "cookies": "Cookies:",
+      "cookiesText": "We use cookies to improve your experience on our website. You can manage your cookie preferences through our cookie banner.",
+      "usage": "We use the collected information to:",
+      "usage1": "Respond to your inquiries and messages.",
+      "usage2": "Improve our website and services.",
+      "usage3": "Comply with our legal obligations.",
+      "sharing": "We do not sell, rent or share your personal data with third parties, except when necessary to provide our services (such as Formspree for the contact form) or when required by law.",
+      "security": "We take reasonable measures to protect your personal data against loss, misuse or unauthorized access. However, no method of internet transmission is 100% secure.",
+      "rights": "You have the right to access, correct, delete or limit the use of your personal data. To exercise these rights, contact us through our contact form.",
+      "changes": "We may update this privacy policy from time to time. Any changes will be posted on this page.",
+      "contact": "If you have questions about this privacy policy, contact us at",
+      "lastUpdate": "Last updated: March 2026"
+    }
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "back": "Back to home",
+    "sections": {
+      "identificativos": "Identification Data",
+      "objeto": "Purpose",
+      "condiciones": "Terms of use",
+      "propiedad": "Intellectual and industrial property",
+      "responsabilidad": "Responsibility",
+      "enlaces": "External links",
+      "proteccion": "Data protection",
+      "cookies": "Use of cookies",
+      "legislacion": "Applicable legislation"
+    },
+    "content": {
+      "intro": "In compliance with the information duty established in Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI-CE), it is hereby stated that this website is owned by:",
+      "titular": "La Llavor",
+      "nif": "NIF pending",
+      "domicilio": "Sant Esteve de Palautordera, Montseny",
+      "email": "infolallavor@protonmail.com",
+      "sitio": "projectelallavor.web.app",
+      "objeto": "This website aims to provide information about the La Llavor educational project, dedicated to pedagogical and emotional accompaniment in preschool and primary education.",
+      "objeto2": "Access to and use of the website grants user status and implies acceptance of the terms of use included in this Legal Notice.",
+      "condiciones": "The user undertakes to use the website, its contents and services in accordance with current legislation, good faith, public order and this Legal Notice.",
+      "condiciones2": "The use of the website for illicit or harmful purposes that may cause damage to the website owner or third parties is prohibited.",
+      "propiedad": "All contents of the website, including but not limited to texts, images, designs, logos, videos, source code and other elements, are owned by the website owner or the necessary rights for their use are available.",
+      "propiedad2": "Reproduction, distribution or total or partial modification of the contents without the express authorization of the owner is prohibited.",
+      "responsabilidad": "The website owner is not responsible for damages or losses that may arise from the use of the information contained in this website or from possible errors or omissions in the contents.",
+      "responsabilidad2": "Likewise, continuous availability of the website or the absence of errors in access to it is not guaranteed.",
+      "enlaces": "In case the website contains links or hyperlinks to other Internet sites, the owner will not exercise any type of control over said sites and contents.",
+      "enlaces2": "In no case will the owner assume any responsibility for the contents of links belonging to third-party websites.",
+      "proteccion": "The processing of personal data collected through the website, for example through contact forms, will be governed by the provisions of the corresponding Privacy Policy.",
+      "cookies": "This website may use its own and third-party cookies to improve the user's browsing experience and analyze the use of the website.",
+      "cookies2": "The user can obtain more information in the corresponding Cookies Policy.",
+      "legislacion": "The relationship between the website owner and users will be governed by current Spanish regulations, and any controversy will be submitted to the courts and tribunals that correspond in accordance with the applicable legislation.",
+      "lastUpdate": "Last updated: March 2026"
+    }
+  },
+  "language": {
+    "switch": "Change language",
+    "catalan": "Catalan",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "back": "Back to Home",
+    "sections": {
+      "what": "What are Cookies?",
+      "types": "Types of Cookies We Use",
+      "manage": "How to Manage Cookies",
+      "contact": "Contact"
+    },
+    "content": {
+      "intro": "This cookie policy explains how we use cookies and similar technologies on our website. By continuing to browse our site, you agree to the use of cookies in accordance with this policy.",
+      "what": "Cookies are small text files that are stored on your device when you visit a website. They allow us to remember your preferences, improve your browsing experience, and analyze site usage.",
+      "types": "We use the following types of cookies:",
+      "essential": "Essential Cookies:",
+      "essentialDesc": "These cookies are necessary for the basic functioning of the website, such as remembering your acceptance of the cookie banner and maintaining site functionality.",
+      "analytics": "Analytics Cookies:",
+      "analyticsDesc": "We use analytics cookies to collect information about how visitors use our website, such as pages visited and time spent. This information helps us improve the site.",
+      "functional": "Functional Cookies:",
+      "functionalDesc": "These cookies allow the site to remember choices you make (such as your preferred language) and provide enhanced and more personal features.",
+      "manage": "You can manage your cookie preferences through your browser settings. Most browsers allow you to block or delete cookies. However, please note that disabling certain cookies may affect site functionality.",
+      "contact": "If you have questions about our cookie policy, you can contact us through our contact form.",
+      "lastUpdate": "Last updated: March 2026"
+    }
+  }
+}
