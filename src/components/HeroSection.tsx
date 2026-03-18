@@ -8,27 +8,22 @@ import note5 from "@/assets/notes/note-5.svg";
 import note6 from "@/assets/notes/note-6.svg";
 import note7 from "@/assets/notes/note-7.svg";
 import tape from "@/assets/tape.png";
+
 import TypewriterText from "./TypewriterText";
-<<<<<<< HEAD
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { useRef, useState } from "react";
 
 const HeroSection = () => {
   const { t } = useTranslation();
-=======
-import { useState, useRef } from "react";
-
-const HeroSection = () => {
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
+  const videoRef = useRef(null);
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(!isMuted);
     }
   };
->>>>>>> 79a530b6a5330a8502d2355f97e168b8f12df213
 
   return (
     <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">

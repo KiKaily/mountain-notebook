@@ -1,6 +1,10 @@
 import { useState } from "react";
+import note1 from "@/assets/notes/note-1.svg";
 import note2 from "@/assets/notes/note-2.svg";
+import note3 from "@/assets/notes/note-3.svg";
+import note4 from "@/assets/notes/note-4.svg";
 import note5 from "@/assets/notes/note-5.svg";
+import note6 from "@/assets/notes/note-6.svg";
 import note7 from "@/assets/notes/note-7.svg";
 import { useTranslation } from "react-i18next";
 

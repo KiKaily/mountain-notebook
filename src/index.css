@@ -20,13 +20,8 @@ All colors MUST be HSL.
     --popover: 0 0% 89%;
     --popover-foreground: 0 0% 9%;
 
-<<<<<<< HEAD
     --primary: 25 50% 48%;
     --primary-foreground: 33 100% 96%;
-=======
-    --primary: 0 100% 27%;
-    --primary-foreground: 0 0% 98%;
->>>>>>> 79a530b6a5330a8502d2355f97e168b8f12df213
 
     --secondary: 0 0% 32%;
     --secondary-foreground: 0 0% 98%;
@@ -50,11 +45,7 @@ All colors MUST be HSL.
 
     --sidebar-foreground: 0 0% 9%;
 
-<<<<<<< HEAD
     --sidebar-primary: 25 50% 48%;
-=======
-    --sidebar-primary: 0 100% 27%;
->>>>>>> 79a530b6a5330a8502d2355f97e168b8f12df213
 
     --sidebar-primary-foreground: 0 0% 98%;
 

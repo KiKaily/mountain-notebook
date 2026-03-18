@@ -33,7 +33,6 @@ const TeamSection = () => {
           </div>
 
           {/* Team grid */}
-<<<<<<< HEAD
           <div className="space-y-12">
             {/* Core Team */}
             <div>
@@ -49,18 +48,6 @@ const TeamSection = () => {
                       }}
                       onMouseEnter={(e) => e.currentTarget.style.backgroundImage = `url(${member.hoverAvatar})`}
                       onMouseLeave={(e) => e.currentTarget.style.backgroundImage = `url(${member.avatar})`}
-=======
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="flex flex-col space-y-3">
-                {/* member avatar image or fallback initial */}
-                <div className="w-32 h-32 bg-background border border-border flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
-                  {member.avatar ? (
-                    <img
-                      src={member.avatar}
-                      alt={member.name}
-                      className="object-cover w-full h-full"
->>>>>>> 79a530b6a5330a8502d2355f97e168b8f12df213
                     />
 
                     <div className="flex-1">
