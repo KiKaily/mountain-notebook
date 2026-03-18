@@ -78,75 +78,7 @@ const TeamMemberPage = () => {
                   <div>
                     <h2 className="text-lg font-serif text-foreground mb-3">Recorregut</h2>
                   </div>
-                  <>
-                    {member.name === "Noel Cresencio González" ? (
-                      <>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">Presentació</h2>
-                          <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                            Acompanyant Infantil, Terapeuta d’Integració Psico-corporal i Psicomotricista Preventiu Aucouturier.
-                          </p>
-                        </div>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">L'acompanyament a La Llavor</h2>
-                          <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                            Noel Cresencio González acompanya les criatures des de la seva experiència i saber, creant vincles segurs per a la relació, l'exploració i el creixement de cada infant. Cada moment és una oportunitat per a aprendre del que el grup i la vida ofereixen.
-                          </p>
-                        </div>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">Especialitat</h2>
-                          <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                            Acompanyament relacional, al joc lliure i als processos de projectes personals i grupals, enriquint i cuidant. Creativitat i aprenentatge pràctic. Vídeo, digital, jocs de taula, anglès, matemàtiques aplicades, cos i moviment.
-                          </p>
-                        </div>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">Recorregut</h2>
-                          <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 whitespace-pre-line">
-                            Vaig créixer en un entorn d'educació viva a casa. La meva mare, Begoña González, al costat del meu padrí Cristóbal Gutiérrez, va fundar La Caseta a Barcelona (1996) i l'escola viva El Roure (2001). El meu pare, Gustavo Cresencio, és mestre de tai-chi, chi-kung, arts marcials i creixement personal. Vaig estudiar a l'escola estatal, un any en El Roure, i als 14 anys em vaig traslladar a Anglaterra per a estudiar en Brockwood Park School, internat internacional fundat en 1969 pel filòsof i mestre espiritual JidduKrishnamurti.
-                            <br /><br />
-                            En 2008-2010 em vaig formar en cinema, fotografia i interpretació en Filmosofía (Granada). Les meves principals formacions inclouen:
-                            <br /><br />
-                            · Psicoterapeuta en Integració Psico-Corporal en la ETIP amb Marc Costa i Agustín Prieto (2013-2018).
-                            <br />
-                            · Psicomotricista en Pràctica Preventiva Aucouturier en la AEC amb Iolanda Vives (2011-2012).
-                            <br />
-                            · Educació viva amb Jordi Mateu (2013) i amb Begoña González (2014 i 2024).
-                            <br /><br />
-                            També em vaig especialitzar en comunicació conscient amb Chema Irusta i Begoña González; acompanyament emocional, agressivitat i conflictes en Senda amb Verónica Antón; i Seitai en Espaidó amb Magda Berneda.
-                            <br /><br />
-                            Des de 2011 vaig treballar 14 anys a l'escola Congrés-Indians, en la franja de migdia i fent costat a l'equip docent en la jornada lectiva. A més, vaig ser assistent terapeuta psicomotriu de Verónica Antón en Senda (2014-2015).
-                            <br /><br />
-                            En 2018 vaig cofundar Kun Koro, i en 2024 vaig llançar Rcrear amb Cristina, un estudi creatiu de disseny gràfic i comunicació honesta.
-                            <br /><br />
-                            L'any 2026 vaig arribar a La Llavor, un regal de la vida i de Tamara, amb qui ens coneixíem de Congrès-Indians i que va apostar per mi. =)
-                          </p>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">Presentació</h2>
-                          <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                            {member.bio}
-                          </p>
-                        </div>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">L'acompanyament a La Llavor</h2>
-                          <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                            {member.name} acompanya les criatures des de la seva experiència i saber, creant espais segurs per a l'exploració i el creixement. Cada activitat és una oportunitat per a aprendre del que la natura i la comunitat ofereixen.
-                          </p>
-                        </div>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">{["Tamara", "Noel Cresencio González"].includes(member.name) ? "Especialitat" : "Taller o especialitat"}</h2>
-                          <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                            {member.role} — És aquí on {member.name} desplegà la seva passió i expertesa amb les criatures, combinant joc, creativitat i aprenentatge práctico.
-                          </p>
-                        </div>
-                        <div>
-                          <h2 className="text-lg font-serif text-foreground mb-3">Recorregut</h2>
-                        </div>
-                      </>
-                    )}
+                </>
               ) : (
                 <>
                   <div>
