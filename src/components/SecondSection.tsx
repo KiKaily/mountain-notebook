@@ -29,27 +29,28 @@ const SecondSection = () => {
           }}
         />
 
-        <div className="max-w-md relative z-10 space-y-6">
+        <div className="max-w-3xl relative z-10 space-y-6">
           <div className="w-24 h-[1px] bg-foreground opacity-30 mb-4" />
 
-          <h2 className="text-xl md:text-2xl font-serif leading-relaxed text-foreground">
+          <h2 className="text-lg md:text-xl font-serif leading-relaxed text-foreground">
             <TypewriterText text={t('second.title')} delay={45} />
           </h2>
 
+
           <div className="space-y-5 mt-6">
-            <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
+            <p className="text-xs md:text-sm font-sans leading-loose text-foreground opacity-80">
               {t('second.text1')}
             </p>
 
-            <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-[260px] rotate-[0.5deg]">
+            <p className="text-xs md:text-sm font-sans leading-loose text-foreground opacity-70">
               {t('second.text2')}
             </p>
 
-            <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-60 max-w-[300px]">
+            <p className="text-xs md:text-sm font-sans leading-loose text-foreground opacity-60">
               {t('second.text3')}
             </p>
 
-            <p className="text-xs font-sans leading-loose text-foreground opacity-40 max-w-[240px] rotate-[-0.8deg] mt-4">
+            <p className="text-xs font-sans leading-loose text-foreground opacity-40 mt-4">
               {t('second.text4')}
             </p>
 

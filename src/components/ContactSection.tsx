@@ -48,12 +48,12 @@ const ContactSection = () => {
           // fallback to mailto if the endpoint fails
           const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
           const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
-          window.location.href = `mailto:infolallavor@protonmail.com?subject=${subject}&body=${body}`;
+          window.location.href = `mailto:info@projectelallavor.com?subject=${subject}&body=${body}`;
         }
       } catch (err) {
         const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
         const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
-        window.location.href = `mailto:infolallavor@protonmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:info@projectelallavor.com?subject=${subject}&body=${body}`;
       } finally {
         setSending(false);
         setTimeout(() => setSuccess(false), 4000);
@@ -62,7 +62,7 @@ const ContactSection = () => {
       // No endpoint configured — fallback to mailto behavior
       const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
       const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
-      window.location.href = `mailto:infolallavor@protonmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:info@projectelallavor.com?subject=${subject}&body=${body}`;
       setTimeout(() => {
         setFormData({ name: "", email: "", message: "" });
       }, 3000);
@@ -168,7 +168,7 @@ const ContactSection = () => {
               {t('contact.info.email')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              <a href="mailto:infolallavor@protonmail.com" className="underline hover:opacity-90">infolallavor@protonmail.com</a>
+              <a href="mailto:info@projectelallavor.com" className="underline hover:opacity-90">info@projectelallavor.com</a>
             </p>
           </div>
 
@@ -177,7 +177,7 @@ const ContactSection = () => {
               {t('contact.info.location')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              <a href="https://maps.app.goo.gl/ExweY2uko9SgWDyt7" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-90">Cal Curt, Sant Esteve de Palautordera, Montseny</a>
+              <a href="https://maps.app.goo.gl/ExweY2uko9SgWDyt7" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-90">Sant Esteve de Palautordera, Montseny</a>
             </p>
           </div>
 

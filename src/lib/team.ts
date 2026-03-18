@@ -2,8 +2,8 @@ import avatarTamara1 from "@/assets/team/_Tamara1.webp";
 import avatarTamara2 from "@/assets/team/_Tamara2.webp";
 import avatarNoel1 from "@/assets/team/_Noel1.webp";
 import avatarNoel2 from "@/assets/team/_Noel2.webp";
-import avatarJose1 from "@/assets/team/_Amanda1.webp";
-import avatarJose2 from "@/assets/team/_Amanda2.webp";
+import avatarJose1 from "@/assets/team/_Jose1.webp";
+import avatarJose2 from "@/assets/team/_Jose2.webp";
 import avatarAmanda1 from "@/assets/team/_Amanda1.webp";
 import avatarAmanda2 from "@/assets/team/_Amanda2.webp";
 import avatarSarai1 from "@/assets/team/_Sarai1.webp";
@@ -35,16 +35,16 @@ export const teamMembers: TeamMember[] = [
     id: 2,
     name: "Noel Cresencio González",
     role: "Acompanyant referent",
-    bio: "Mestre ebenista amb 30 anys d'experiència. Les seves mans saben contar les històries de la fusta.",
+    bio: "Acompanyant Infantil, Terapeuta d’Integració Psico-corporal i Psicomotricista Preventiu Aucouturier.",
     avatar: avatarNoel1,
     hoverAvatar: avatarNoel2,
     category: 'core',
   },
   {
     id: 3,
-    name: "José",
-    role: "Tallerista de fustería i tecnologia",
-    bio: "Els seus plats són poesia en forma de menjar. Utilitza només el que la terra li ofereix cada estació.",
+    name: "José Andrés Mingorance",
+    role: "Tallerista de fusteria i tecnologia.",
+    bio: "Acompanyant en projectes d'Educació Viva i Educador Emocional en el Lleure.",
     avatar: avatarJose1,
     hoverAvatar: avatarJose2,
     category: 'helper',

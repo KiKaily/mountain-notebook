@@ -24,11 +24,11 @@ const TeamSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <div className="w-24 h-[1px] bg-foreground opacity-30 mb-8" />
-            <h2 className="text-2xl md:text-3xl font-serif leading-relaxed text-foreground max-w-lg">
-              {t('team.title')}
-            </h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight mb-8">
+                {t('team.title')}
+              </h2>
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-md mt-6">
-              {t('team.description')}
+              Text sobre l'equip per decidir.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ const TeamSection = () => {
 
             {/* Helpers */}
             <div>
-              <h3 className="text-lg font-serif text-foreground mb-6">Col·laboradors</h3>
+              <h3 className="text-lg font-serif text-foreground mb-6">Talleristes</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {teamMembers.filter(m => m.category === 'helper').map((member) => (
                   <div key={member.id} className="flex flex-col items-center space-y-3">

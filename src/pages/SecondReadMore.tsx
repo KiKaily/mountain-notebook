@@ -36,6 +36,18 @@ const SecondReadMore = () => {
           <p>{t('second.readMoreP1')}</p>
           <p>{t('second.readMoreP2')}</p>
           <p>{t('second.readMoreP3')}</p>
+
+          {/* Insert PDF button after La Selva paragraph (readMoreP3) */}
+          <div className="mt-4">
+            <a
+              href="/projecte_pedagogic_la_llavor.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-sm font-sans text-primary underline hover:opacity-80 mt-4"
+            >
+              Per llegir el projecte educatiu complert en pdf, clica aquí.
+            </a>
+          </div>
         </div>
 
         <div className="w-16 h-[1px] bg-foreground opacity-20 mt-10" />
