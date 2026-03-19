@@ -89,6 +89,31 @@ const TeamMemberPage = () => {
                     </p>
                   </div>
                 </>
+              ) : member.id === 1 ? (
+                <>
+                  ...existing code...
+                </>
+              ) : member.id === 3 ? (
+                <>
+                  <div>
+                    <h2 className="text-lg font-serif text-foreground mb-3">Presentació</h2>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
+                      Presentació: acompanyant en projectes d'Educació Viva i Educador Emocional en el Lleure. Format en diferents pedagogies educatives i en Enginyeria. El seu camí vital forma part del seu procés d'aprenentatge.
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-serif text-foreground mb-3">L'acompanyament a la Llavor</h2>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
+                      L'acompanyament a la Llavor: creació d'espais d'aprenentatge vivencials i segurs, acompanyant a través del que s'està donant en cada moment i de l'observació dels diferents processos dels infants a tots els nivells.
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-serif text-foreground mb-3">Taller o especialitat</h2>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
+                      Taller o especialitat: a la fusteria a mida que els infants crean van construint-se internament posant les bases de la seva seguretat a l'hora d'afrontar projectes o reptes més grans. Explorar, provar i equivocar-se forma part d'aquest aprenentatge.
+                    </p>
+                  </div>
+                </>
               ) : (
                 <>...existing code...</>
               )}
@@ -99,6 +124,28 @@ const TeamMemberPage = () => {
             <p className="text-sm font-sans leading-relaxed text-foreground opacity-60 italic">
               Si desitges conèixer més sobre l'acompanyament de {member.name} i la nostra pedagogia, no dubtis en contactar-nos.
             </p>
+
+            {/* CV links at the very bottom for Tamara and Noel */}
+            {member.id === 1 && (
+              <a
+                href="/public/TamaraCV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-sans text-primary underline hover:opacity-80 block mt-8"
+              >
+                Per veure el CV complert, clica aquí
+              </a>
+            )}
+            {member.id === 2 && (
+              <a
+                href="/public/NoelCV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-sans text-primary underline hover:opacity-80 block mt-8"
+              >
+                Per veure el CV complert, clica aquí
+              </a>
+            )}
           </div>
         </div>
       </div>
