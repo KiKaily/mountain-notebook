@@ -1,9 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { normalizeLanguage, translateHash, translatePath } from "@/lib/routes";
 
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const languages = [
     { code: 'ca', name: 'Català', flag: 'catalan' },
@@ -11,10 +15,13 @@ const LanguageSwitcher = () => {
     { code: 'en', name: 'English', flag: '🇬🇧' }
   ];
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+  const currentLanguage = languages.find(lang => lang.code === normalizeLanguage(i18n.language)) || languages[0];
 
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode);
+    const nextPath = translatePath(location.pathname, langCode);
+    const nextHash = translateHash(location.hash, langCode);
+    navigate(`${nextPath}${nextHash}`);
     setIsOpen(false);
   };
 
@@ -36,7 +43,7 @@ const LanguageSwitcher = () => {
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
               className={`w-full text-left px-3 py-2 text-xs font-sans hover:bg-background transition-colors ${
-                i18n.language === lang.code ? 'text-primary' : 'text-foreground opacity-70'
+                normalizeLanguage(i18n.language) === lang.code ? 'text-primary' : 'text-foreground opacity-70'
               }`}
             >
               <span>{lang.name}</span>

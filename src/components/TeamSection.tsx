@@ -2,10 +2,11 @@
 import { NavLink } from "@/components/NavLink";
 import { teamMembers } from "../lib/team";
 import { useTranslation } from "react-i18next";
+import { getTeamMemberPath } from "@/lib/routes";
 
 
 const TeamSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <section id="team" className="min-h-screen w-full md:snap-start flex flex-col bg-card relative overflow-hidden">
@@ -19,7 +20,7 @@ const TeamSection = () => {
                 {t('team.title')}
               </h2>
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-md mt-6">
-              Tot l'equip tenim molt present en el nostre acompanyament l'infant que vam ser.
+              {t('team.description')}
             </p>
           </div>
 
@@ -27,7 +28,7 @@ const TeamSection = () => {
           <div className="space-y-12">
             {/* Core Team */}
             <div>
-              <h3 className="text-lg font-serif text-foreground mb-6">Equip Referent</h3>
+              <h3 className="text-lg font-serif text-foreground mb-6">{t('team.coreTitle')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {teamMembers.filter(m => m.category === 'core').map((member) => (
                   <div key={member.id} className="flex space-x-6">
@@ -46,14 +47,14 @@ const TeamSection = () => {
                         {member.name}
                       </h3>
                       <p className="text-sm font-sans text-foreground opacity-60 uppercase tracking-widest mt-1">
-                        {member.role}
+                        {t(member.roleKey)}
                       </p>
                       <p className="text-sm font-sans leading-relaxed text-foreground opacity-70 mt-3">
-                        {member.bio}
+                        {t(member.bioKey)}
                       </p>
                       <div className="mt-3">
                         <NavLink
-                          to={`/team/${member.id}`}
+                          to={getTeamMemberPath(i18n.language, member)}
                           className="text-sm font-sans text-primary underline hover:opacity-80"
                         >
                           {t('team.viewMore')}
@@ -67,7 +68,7 @@ const TeamSection = () => {
 
             {/* Helpers */}
             <div>
-              <h3 className="text-lg font-serif text-foreground mb-6">Talleristes</h3>
+              <h3 className="text-lg font-serif text-foreground mb-6">{t('team.helpersTitle')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {teamMembers.filter(m => m.category === 'helper').map((member) => (
                   <div key={member.id} className="flex flex-col items-center space-y-3">
@@ -86,14 +87,14 @@ const TeamSection = () => {
                         {member.name}
                       </h3>
                       <p className="text-xs font-sans text-foreground opacity-60 uppercase tracking-widest mt-1">
-                        {member.role}
+                        {t(member.roleKey)}
                       </p>
                       <p className="text-xs font-sans leading-relaxed text-foreground opacity-70 mt-2">
-                        {member.bio}
+                        {t(member.bioKey)}
                       </p>
                       <div className="mt-2">
                         <NavLink
-                          to={`/team/${member.id}`}
+                          to={getTeamMemberPath(i18n.language, member)}
                           className="text-xs font-sans text-primary underline hover:opacity-80"
                         >
                           {t('team.viewMore')}

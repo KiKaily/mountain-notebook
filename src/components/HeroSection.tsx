@@ -1,16 +1,27 @@
 import mountainVideo from "@/assets/la-llavor-video.mp4";
-import seedLogo from "@/assets/seed-logo.png";
+import seedLogo from "@/assets/la_llavor_logo.png";
 import tape from "@/assets/tape.png";
 
 import TypewriterText from "./TypewriterText";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { getSectionHash } from "@/lib/routes";
 
 const HeroSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.play().catch(() => {
+      // Some browsers delay autoplay until enough data is available.
+    });
+  }, []);
+
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
@@ -43,17 +54,17 @@ const HeroSection = () => {
 
           <div className="space-y-6 mt-8 flex flex-col items-start relative" style={{ height: "6rem" }}>
             {/* Scattered links with typed labels */}
-            <a href="#second-section" className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{ fontWeight: 600 }}>
-              <TypewriterText text="naixement" delay={35} startDelay={1500} />
+            <a href={getSectionHash("second", i18n.language)} className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{ fontWeight: 600 }}>
+              <TypewriterText text={t('hero.menu.birth')} delay={35} startDelay={1500} />
             </a>
             <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline min-w-[13rem]" style={{ fontWeight: 600 }}>
-              <TypewriterText text="projecte pedagògic" delay={35} startDelay={1500} />
+              <TypewriterText text={t('hero.menu.pedagogicalProject')} delay={35} startDelay={1500} />
             </a>
-            <a href="#team" className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{ fontWeight: 600 }}>
-              <TypewriterText text="equip" delay={35} startDelay={1500} />
+            <a href={getSectionHash("team", i18n.language)} className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{ fontWeight: 600 }}>
+              <TypewriterText text={t('hero.menu.team')} delay={35} startDelay={1500} />
             </a>
-            <a href="#contact-section" className="font-serif text-primary text-lg absolute left-64 top-12 rotate-[6deg] hover:underline" style={{ fontWeight: 600 }}>
-              <TypewriterText text="contacte" delay={35} startDelay={1500} />
+            <a href={getSectionHash("contact", i18n.language)} className="font-serif text-primary text-lg absolute left-64 top-12 rotate-[6deg] hover:underline" style={{ fontWeight: 600 }}>
+              <TypewriterText text={t('hero.menu.contact')} delay={35} startDelay={1500} />
             </a>
           </div>
 
@@ -148,12 +159,20 @@ const HeroSection = () => {
         <video
           ref={videoRef}
           className="w-full h-full object-cover"
-          src={mountainVideo}
           autoPlay
           loop
+          preload="auto"
           muted={isMuted}
+          defaultMuted
           playsInline
-        />
+          onLoadedData={(event) => {
+            event.currentTarget.play().catch(() => {
+              // Ignore autoplay rejection; muted playback is attempted again on interaction.
+            });
+          }}
+        >
+          <source src={mountainVideo} type="video/mp4" />
+        </video>
         {isMuted && (
           <button
             onClick={toggleMute}

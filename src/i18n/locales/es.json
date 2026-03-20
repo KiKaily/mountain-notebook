@@ -6,26 +6,71 @@
     "title1": "La Llavor.",
     "title2": "Educación viva en el Montseny.",
     "description1": "Proyecto de educación viva de infantil y primaria en Sant Esteve de Palautordera, en el corazón del Montseny.",
-    "description2": "Aquí podrás consultar nuestro proyecto pedagógico, nuestro equipo, los espacios, nuestros referentes, y no dudes en contactarnos para una visita."
+    "description2": "Aquí podrás consultar nuestro proyecto pedagógico, nuestro equipo, los espacios, nuestros referentes, y no dudes en contactarnos para una visita.",
+    "menu": {
+      "birth": "nacimiento",
+      "pedagogicalProject": "proyecto pedagógico",
+      "team": "equipo",
+      "contact": "contacto"
+    }
   },
   "second": {
-    "title": "Donde el silencio tiene textura y la luz tiene peso.",
-    "text1": "El valle contiene la respiración al atardecer. Las sombras se extienden por los prados como tinta sobre pergamino, lentas y deliberadas.",
-    "text2": "Hay un lenguaje aquí que solo los pacientes pueden aprender — hablado en el crujido de la madera, el goteo de la nieve derretida, el grito lejano de un halcón que vuela por encima.",
-    "text3": "Construimos este refugio no para huir del mundo, sino para recordar cómo sonaba el mundo antes de que olvidara cómo ser silencioso.",
-    "text4": "La chimenea conoce cada historia. Las tablas del suelo guardan el ritmo de pisadas de décadas pasadas. Paredes que escuchan más de lo que hablan.",
+    "title": "Nacimiento",
+    "text1": "La semilla nace de una necesidad inesperada, pero también de una convicción muy profunda: que la infancia merece crecer en espacios donde sea mirada con respeto, confianza y amor por su propio ritmo.",
+    "text2": "En agosto de 2025, un grupo de familias del Baix Montseny se encontró inesperadamente sin proyecto educativo para sus hijos e hijas. Ante esta situación, decidieron agruparse y empezar a buscar alternativas que estuvieran alineadas con su mirada hacia la infancia y con la necesidad de un acompañamiento educativo más consciente y respetuoso.",
+    "text3": "En este camino aparece el apoyo de El Planter, el proyecto de secundaria que acompaña a adolescentes desde una mirada de educación viva. Junto con un primer equipo de educadoras, el equipo de El Planter y las familias empiezan a imaginar y construir un sueño compartido por las profesionales que nos dedicamos al mundo de la educación alternativa: ofrecer a las familias la posibilidad de que sus hijos e hijas puedan crecer y transitar las etapas de infantil, primaria y secundaria dentro de un mismo ecosistema educativo, coherente y respetuoso, en un mismo espacio físico en el Baix Montseny, en contacto con la naturaleza y con el territorio.",
+    "text4": "Así empieza a gestarse La Llavor.",
     "readMore": "Leer más",
-    "backToSection": "Volver a la segunda sección",
-    "readMoreTitle": "El proyecto, más allá del paisaje",
-    "readMoreIntro": "Este espacio nace del deseo de ofrecer una infancia con tiempo real: tiempo para jugar, observar, preguntar, aburrirse y volver a empezar.",
-    "readMoreP1": "Trabajamos desde una presencia cuidadosa, donde el adulto acompaña sin invadir y sostiene sin dirigir cada paso. La autonomía no se exige: se cultiva.",
-    "readMoreP2": "La naturaleza no es un decorado; es una maestra cotidiana. El bosque, la lluvia, el barro y las estaciones marcan el ritmo de las propuestas y del aprendizaje.",
-    "readMoreP3": "Nuestro compromiso es construir comunidad con las familias, con escucha y coherencia, para que cada criatura pueda crecer desde la seguridad, el vínculo y la curiosidad viva."
+    "backToSection": "Volver",
+    "readMoreTitle": "Así empieza a gestarse La Llavor.",
+    "readMoreIntro": "Durante este proceso, el proyecto también buscaba su nombre, la palabra que pudiera representar aquello que estaba naciendo. Aparecieron muchas propuestas que hablaban de naturaleza, de crecimiento y de vida: El Brot, L’Avet, La Fageda, L’Arrel, La Llavor, La Llavor de Colors, L’Arbre de Colors, El Rebrot, El Cabirol, L’Esquirol, La Guineu, El Pinyol, L’Esqueix, La Malva, L’Espurna… Entre todas ellas, finalmente resonó con fuerza La Llavor, porque simboliza el inicio, el potencial y la confianza en todo aquello que puede crecer si se cuida con tiempo, respeto y dedicación.",
+    "readMoreP1": "Los inicios fueron intensos: conversaciones largas, pruebas, dudas, momentos de incertidumbre y también mucha esperanza. Como ocurre con los proyectos que nacen de verdad, el camino no fue lineal. El equipo fue transformándose, buscando la forma para que este sueño pudiera arraigar con coherencia y solidez.",
+    "readMoreP2": "En este proceso también se produce un paso importante: El Planter decide mover su proyecto y establecerse en la masía que hoy compartimos en el corazón del Baix Montseny, haciendo posible que los dos proyectos convivan en un mismo ecosistema educativo. Infancia y adolescencia comparten así un espacio vivo donde diferentes etapas de la vida pueden crecer, observarse e inspirarse mutuamente.",
+    "readMoreP3": "Algunos días, el espacio también recibe la visita del proyecto La Selva, una propuesta de acompañamiento educativo en el bosque que forma parte de la cooperativa que actualmente impulsa también El Planter. Una vez a la semana, sus niños y educadoras visitan la masía y comparten momentos de vida y aprendizaje con la comunidad.",
+    "readMoreP4": "Su presencia enriquece el ecosistema educativo que habita este rincón del Baix Montseny, aportando una mirada profunda de conexión con el bosque y con la naturaleza. A pesar de esta proximidad y colaboración, cada proyecto mantiene su identidad, su equipo y su propio camino.",
+    "readMoreP5": "Esta convivencia respetuosa entre proyectos diferentes pero afines nos recuerda que educar también es crear comunidad, tejer vínculos y abrir espacios donde diversas maneras de acompañar la infancia pueden dialogar e inspirarse mutuamente.",
+    "readMoreP6": "A finales de enero de 2026 el proyecto da un giro importante. Tamara Depares asume la dirección y coordinación, consolida el equipo educativo y da estructura al ritmo del día a día. A partir de aquí, el proyecto empieza a ganar fuerza, claridad y arraigo.",
+    "readMoreP7": "Lo que empezó como una necesidad se transforma en una comunidad.",
+    "readMoreP8": "Hoy La Llavor es un espacio vivo en el Baix Montseny donde los niños pueden explorar, investigar, jugar, equivocarse, crear y construir su propio aprendizaje en contacto con la naturaleza y con el ritmo de la vida real. Un lugar donde la curiosidad es bienvenida, donde las preguntas tienen valor y donde cada niño es acompañado con respeto por su proceso.",
+    "readMoreP9": "Un lugar donde el tiempo de la infancia se cuida con presencia, consciencia y estima.",
+    "readMoreP10": "Si quieres conocer con más profundidad la mirada educativa que sostiene este camino, puedes consultar aquí nuestro proyecto pedagógico completo.",
+    "readMorePdfLink": "Para leer el proyecto pedagógico completo en pdf, haz clic aquí."
   },
   "team": {
-    "title": "Los Guardianes del Valle",
-    "description": "Cada persona aquí lleva el peso de las estaciones, sus manos de hacer, y una escucha profunda para la montaña.",
-    "viewMore": "Ver más"
+    "title": "El equipo de La Llavor",
+    "description": "Todo el equipo tenemos muy presente en nuestro acompañamiento a la niña o el niño que fuimos.",
+    "viewMore": "Ver más",
+    "coreTitle": "Equipo referente",
+    "helpersTitle": "Talleristas",
+    "backToTeam": "Volver al equipo",
+    "memberNotFound": "Miembro no encontrado",
+    "profile": {
+      "presentation": "Presentación",
+      "contactNote": "Si deseas conocer más sobre el acompañamiento de {{name}} y nuestra pedagogía, no dudes en contactarnos.",
+      "cvLink": "Para ver el CV completo, haz clic aquí"
+    },
+    "members": {
+      "tamara": {
+        "role": "Directora y acompañante referente",
+        "bio": "Arquitecta de formación, con una mirada sensible para crear espacios vivos, cuidados y coherentes con la infancia."
+      },
+      "noel": {
+        "role": "Acompañante referente",
+        "bio": "Acompañante infantil, terapeuta de integración psico-corporal y psicomotricista preventivo Aucouturier."
+      },
+      "jose": {
+        "role": "Tallerista de carpintería y tecnología",
+        "bio": "Acompañante en proyectos de educación viva y educador emocional en el tiempo libre."
+      },
+      "amanda": {
+        "role": "Tallerista de costura y artes",
+        "bio": "Artista, creadora, que combina técnicas ancestrales con tejidos naturales utilizando la técnica del upcycling. Transformando materiales con las manos, la mente y el corazón."
+      },
+      "sarai": {
+        "role": "Tallerista de artes",
+        "bio": "Artista y acompañante creativa, sensible a los procesos expresivos y a la belleza del gesto cotidiano."
+      }
+    }
   },
   "contact": {
     "title": "Nos gustaría escucharte.",
@@ -42,7 +87,7 @@
       "email": "Correo electrónico",
       "location": "Ubicación",
       "phone": "Teléfono",
-      "footer": "Estamos abiertas para consultas, visitas y colaboraciones. La niebla de la mañana es especialmente buena para conversaciones profundas."
+      "footer": "Estamos abiertas para consultas, visitas y colaboraciones."
     }
   },
   "footer": {

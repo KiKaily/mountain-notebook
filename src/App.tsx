@@ -12,6 +12,7 @@ import Legal from "./pages/Legal";
 import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
 import SecondReadMore from "./pages/SecondReadMore";
+import { getReadMorePath, getTeamBasePath } from "@/lib/routes";
 
 const queryClient = new QueryClient();
 
@@ -24,15 +25,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* individual team member pages */}
           <Route path="/team/:id" element={<TeamMember />} />
-          {/* contact form lives on its own page */}
+          <Route path={`${getTeamBasePath("ca")}/:memberSlug`} element={<TeamMember />} />
+          <Route path={`${getTeamBasePath("es")}/:memberSlug`} element={<TeamMember />} />
+          <Route path={`${getTeamBasePath("en")}/:memberSlug`} element={<TeamMember />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/second-read-more" element={<SecondReadMore />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path={getReadMorePath("ca")} element={<SecondReadMore />} />
+          <Route path={getReadMorePath("es")} element={<SecondReadMore />} />
+          <Route path={getReadMorePath("en")} element={<SecondReadMore />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

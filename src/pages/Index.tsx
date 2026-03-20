@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import SecondSection from "@/components/SecondSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
+import { resolveHashToSectionId } from "@/lib/routes";
 
 const Index = () => {
   const { hash } = useLocation();
@@ -11,7 +12,7 @@ const Index = () => {
   useEffect(() => {
     if (!hash) return;
 
-    const targetId = hash.replace("#", "");
+    const targetId = resolveHashToSectionId(hash);
     const target = document.getElementById(targetId);
     if (!target) return;
 

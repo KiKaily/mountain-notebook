@@ -1,13 +1,30 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { teamMembers } from "../lib/team";
+import { findMemberBySlug, getSectionHash } from "@/lib/routes";
+import { useTranslation } from "react-i18next";
+import { getTeamProfileSections } from "@/lib/teamProfiles";
 
 const TeamMemberPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id, memberSlug } = useParams<{ id?: string; memberSlug?: string }>();
   const navigate = useNavigate();
-  const member = teamMembers.find((m) => m.id === Number(id));
+  const { t, i18n } = useTranslation();
+  const member = findMemberBySlug(memberSlug) || teamMembers.find((m) => m.id === Number(id));
+  const profileSections = member
+    ? getTeamProfileSections(member.id, i18n.language) ?? [
+        {
+          title: t("team.profile.presentation"),
+          paragraphs: [t(member.bioKey)],
+        },
+      ]
+    : [];
+  const cvLinks: Partial<Record<number, string>> = {
+    1: "/TamaraCV.pdf",
+    2: "/NoelCV.pdf",
+    3: "/JoseCV.pdf",
+  };
 
   const handleBack = () => {
-    navigate("/", { replace: true });
+    navigate(`/${getSectionHash("team", i18n.language)}`, { replace: true });
     setTimeout(() => {
       const el = document.getElementById("team");
       if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -17,7 +34,7 @@ const TeamMemberPage = () => {
   if (!member) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-lg font-serif">Membre no trobat</p>
+        <p className="text-lg font-serif">{t('team.memberNotFound')}</p>
       </div>
     );
   }
@@ -29,7 +46,7 @@ const TeamMemberPage = () => {
           onClick={handleBack}
           className="text-sm font-sans text-primary underline hover:opacity-80 mb-8 inline-block"
         >
-          ← Tornar a l'equip
+          ← {t('team.backToTeam')}
         </button>
 
         <div className="flex flex-col md:flex-row items-start gap-12">
@@ -47,149 +64,44 @@ const TeamMemberPage = () => {
                 {member.name}
               </h1>
               <p className="text-sm font-sans text-foreground opacity-50 uppercase tracking-widest mt-2">
-                {member.role}
+                {t(member.roleKey)}
               </p>
             </div>
 
             <div className="w-16 h-[1px] bg-foreground opacity-20" />
 
             <div className="space-y-6">
-              {member.id === 2 ? (
-                <>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">Presentació</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      Acompanyant Infantil, Terapeuta d’Integració Psico-corporal i Psicomotricista Preventiu Aucouturier.
-                    </p>
+              {profileSections.map((section) => (
+                <div key={section.title}>
+                  <h2 className="text-lg font-serif text-foreground mb-3">{section.title}</h2>
+                  <div className="space-y-4">
+                    {section.paragraphs.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
                   </div>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">L'acompanyament a La Llavor</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      Noel Cresencio González acompanya les criatures des de la seva experiència i saber, creant vincles segurs per a la relació, l'exploració i el creixement de cada infant. Cada moment és una oportunitat per a aprendre del que el grup i la vida ofereixen.
-                    </p>
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">Especialitat</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      Acompanyament relacional, al joc lliure i als processos de projectes personals i grupals, enriquint i cuidant. Creativitat i aprenentatge pràctic. Vídeo, digital, jocs de taula, anglès, matemàtiques aplicades, cos i moviment.
-                    </p>
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">Recorregut</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      Vaig créixer en un entorn d'educació viva a casa. La meva mare, Begoña González, al costat del meu padrí Cristóbal Gutiérrez, va fundar La Caseta a Barcelona (1996) i l'escola viva El Roure (2001). El meu pare, Gustavo Cresencio, és mestre de tai-chi, chi-kung, arts marcials i creixement personal. Vaig estudiar a l'escola estatal, un any en El Roure, i als 14 anys em vaig traslladar a Anglaterra per a estudiar en Brockwood Park School, internat internacional fundat en 1969 pel filòsof i mestre espiritual JidduKrishnamurti.<br /><br />
-                      En 2008-2010 em vaig formar en cinema, fotografia i interpretació en Filmosofía (Granada). Les meves principals formacions inclouen:<br /><br />
-                      · Psicoterapeuta en Integració Psico-Corporal en la ETIP amb Marc Costa i Agustín Prieto (2013-2018).<br />
-                      · Psicomotricista en Pràctica Preventiva Aucouturier en la AEC amb Iolanda Vives (2011-2012).<br />
-                      · Educació viva amb Jordi Mateu (2013) i amb Begoña González (2014 i 2024).<br /><br />
-                      També em vaig especialitzar en comunicació conscient amb Chema Irusta i Begoña González; acompanyament emocional, agressivitat i conflictes en Senda amb Verónica Antón; i Seitai en Espaidó amb Magda Berneda.<br /><br />
-                      Des de 2011 vaig treballar 14 anys a l'escola Congrés-Indians, en la franja de migdia i fent costat a l'equip docent en la jornada lectiva. A més, vaig ser assistent terapeuta psicomotriu de Verónica Antón en Senda (2014-2015).<br /><br />
-                      En 2018 vaig cofundar Kun Koro, i en 2024 vaig llançar Rcrear amb Cristina, un estudi creatiu de disseny gràfic i comunicació honesta.<br /><br />
-                      L'any 2026 vaig arribar a La Llavor, un regal de la vida i de Tamara, amb qui ens coneixíem de Congrès-Indians i que va apostar per mi. =)
-                    </p>
-                  </div>
-                </>
-              ) : member.id === 1 ? (
-                <>
-                  ...existing code...
-                </>
-              ) : member.id === 3 ? (
-                <>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">Presentació</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      Acompanyant en projectes d'Educació Viva i Educador Emocional en el Lleure. Format en diferents pedagogies educatives i en Enginyeria. El seu camí vital forma part del seu procés d'aprenentatge.
-                    </p>
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">L'acompanyament a la Llavor</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      Creació d'espais d'aprenentatge vivencials i segurs, acompanyant a través del que s'està donant en cada moment i de l'observació dels diferents processos dels infants a tots els nivells.
-                    </p>
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">Taller o especialitat</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      A la fusteria a mida que els infants crean van construint-se internament posant les bases de la seva seguretat a l'hora d'afrontar projectes o reptes més grans. Explorar, provar i equivocar-se forma part d'aquest aprenentatge.
-                    </p>
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-serif text-foreground mb-3">Recorregut</h2>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
-                      La meva trajectòria en el món de l'educació s'inicia el 2009 després d'un gran canvi en l'àmbit personal i professional. Fins aquell moment la meva formació com a Enginyer m'havia portat a treballar 10 anys dintre de l'empresa privada.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Els primers passos els vaig donar participant de diferents voluntariats en projectes educatius no formals al Casal dels Infants del Raval, Intermón Oxfam, Casals d'estiu Itaca i a Permacultura Barcelona.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Del 2011 al 2014 vaig fer la formació en monitor de lleure i altres com: kinesologia, aprenentatge i integració cerebral a l'ICE de l'UAB, metodologia ASIRI, Clown terapèutic, Coaching Transformacional, formador de formadors i creixement personal amb Gestalt.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      El 2015 em vaig formar en Coaching Essencial per Essential Institute amb acreditació ICF i el 2016 com a Professor 3000 a l'institut Científic Internacional de la Paz a Bolívia.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Totes aquestes experiències anaven despertant en mi la necessitat de continuar indagant i formant-me en metodologies i pedagogies alternatives en l'acompanyament d'infants i adults.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Per profunditzar més en pedagogies alternatives, el 2016 vaig fer la formació en Educació Viva/Lliure al projecte educatiu de l'Albada (Arbúcies) i al CAIEV amb el Jordi Mateu. Al projecte educatiu de l'Albada vaig estar formant part de l'equip educatiu l'any 2018, acompanyant l'etapa del grup de més grans (CS).
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Entre 2012 i 2015 vaig formar part de la coordinació a l'Oficina d'Educació de la Cooperativa Integral Catalana a Aurea Social, on vaig fer assessorament a famílies i grups de criança, creació de xarxa de persones i projectes d'educació alternativa i posada en marxa de les Convivències Comunitàries per a adolescents.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Cofundador i membre des del 2013 fins al 2020 d'un equip interdisciplinar de professionals de l'educació a l'associació Espirals d'Aprenentatge. En aquesta entitat vam desenvolupar una metodologia d'aprenentatge anomenada "Condicionament Zero". Aquesta metodologia la vam portar a la pràctica dintre de l'escola formal amb infants i professorat, en el lleure oferint colònies per a adolescents, fent formació i residencials amb professorat, en processos d'acompanyament a claustres i direccions...
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Del 2015 i fins a l'any 2020 vaig treballar com a Educador Emocional a l'escola Granja de Palautordera, acompanyant a grups escolars des d'infantil fins universitaris, fent formació a professorat i formant part del projecte Masia 360 al FCB.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Entre 2020 i 2025 com a educador referent i coordinador de primària del projecte d'educació Viva del Picot de Colors.
-                    </p>
-                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
-                      Actualment formant part de l'equip de la Llavor, amb ganes de continuar creixent, aprenent i fent aquest camí que va de la mà del meu procés personal i de vida!!!
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <>...existing code...</>
-              )}
+                </div>
+              ))}
             </div>
 
             <div className="w-16 h-[1px] bg-foreground opacity-20" />
 
             <p className="text-sm font-sans leading-relaxed text-foreground opacity-60 italic">
-              Si desitges conèixer més sobre l'acompanyament de {member.name} i la nostra pedagogia, no dubtis en contactar-nos.
+              {t("team.profile.contactNote", { name: member.name })}
             </p>
 
-            {/* CV links at the very bottom for Tamara and Noel */}
-            {member.id === 1 && (
+            {cvLinks[member.id] && (
               <a
-                href="/public/TamaraCV.pdf"
+                href={cvLinks[member.id]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-sans text-primary underline hover:opacity-80 block mt-8"
               >
-                Per veure el CV complert, clica aquí
-              </a>
-            )}
-            {member.id === 2 && (
-              <a
-                href="/public/NoelCV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-sans text-primary underline hover:opacity-80 block mt-8"
-              >
-                Per veure el CV complert, clica aquí
-              </a>
-            )}
-            {member.id === 3 && (
-              <a
-                href="/public/JoseCV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-sans text-primary underline hover:opacity-80 block mt-8"
-              >
-                Per veure el CV complert, clica aquí
+                {t("team.profile.cvLink")}
               </a>
             )}
           </div>

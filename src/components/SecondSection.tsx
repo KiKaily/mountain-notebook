@@ -1,24 +1,43 @@
-import mountainLandscape from "@/assets/la-llavor1.jpg";
 import mountainVideo from "@/assets/la-llavor-video.mp4";
 import { NavLink } from "@/components/NavLink";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { getReadMorePath } from "@/lib/routes";
 
 const SecondSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.play().catch(() => {
+      // Some browsers delay autoplay until enough data is available.
+    });
+  }, []);
 
   return (
     <section id="second-section" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
       {/* Left: Video side */}
       <div className="md:flex-[0_0_40%] h-screen md:h-full relative">
         <video
+          ref={videoRef}
           className="w-full h-full object-cover"
-          src={mountainVideo}
-          poster={mountainLandscape}
           autoPlay
           loop
+          preload="auto"
           muted
+          defaultMuted
           playsInline
-        />
+          onLoadedData={(event) => {
+            event.currentTarget.play().catch(() => {
+              // Ignore autoplay rejection; muted playback is attempted again when possible.
+            });
+          }}
+        >
+          <source src={mountainVideo} type="video/mp4" />
+        </video>
       </div>
 
       {/* Right: Paper/text side */}
@@ -28,9 +47,8 @@ const SecondSection = () => {
         <div className="max-w-3xl relative z-10 space-y-6">
           <div className="w-24 h-[1px] bg-foreground opacity-30 mb-4" />
 
-          {/* Title changed to 'Naixement' */}
           <h2 className="text-2xl md:text-3xl font-serif leading-relaxed text-foreground">
-            Naixement
+            {t('second.title')}
           </h2>
 
           <div className="space-y-5 mt-6">
@@ -51,7 +69,7 @@ const SecondSection = () => {
             </p>
 
             <NavLink
-              to="/second-read-more"
+              to={getReadMorePath(i18n.language)}
               className="inline-block text-sm font-sans text-primary underline hover:opacity-80 mt-4"
             >
               {t('second.readMore')}

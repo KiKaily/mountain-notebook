@@ -6,7 +6,13 @@
     "title1": "La Llavor.",
     "title2": "Educació viva al Montseny.",
     "description1": "Projecte d'educació viva d'infantil i primària a Sant Esteve de Palautordera, al cor del Montseny.",
-    "description2": "Aquí podràs consultar el nostre projecte pedagógic, el nostre equip, els espais, els nostres referents, i no dubtis en contactar-nos per una visita."
+    "description2": "Aquí podràs consultar el nostre projecte pedagògic, el nostre equip, els espais, els nostres referents, i no dubtis en contactar-nos per una visita.",
+    "menu": {
+      "birth": "naixement",
+      "pedagogicalProject": "projecte pedagògic",
+      "team": "equip",
+      "contact": "contacte"
+    }
   },
   "second": {
     "title": "Naixement",
@@ -23,17 +29,48 @@
     "readMoreP3": "Alguns dies, l’espai també rep la visita del projecte La Selva, una proposta d’acompanyament educatiu al bosc que forma part de la cooperativa que actualment impulsa també El Planter. Un cop a la setmana, els seus infants i educadores visiten la masia i comparteixen moments de vida i aprenentatge amb la comunitat.",
     "readMoreP4": "La seva presència enriqueix l’ecosistema educatiu que habita aquest racó del Baix Montseny, aportant una mirada profunda de connexió amb el bosc i amb la natura. Tot i aquesta proximitat i col·laboració, cada projecte manté la seva identitat, el seu equip i el seu camí propi.",
     "readMoreP5": "Aquesta convivència respectuosa entre projectes diferents però afins ens recorda que educar també és crear comunitat, teixir vincles i obrir espais on diverses maneres d’acompanyar la infància poden dialogar i inspirar-se mútuament.",
-    "readMoreP6": "A finals de gener de 2026 el projecte fa un gir important. La Tamara Depares assumeix el lideratge pedagògic, consolida l’equip educatiu i dona estructura al ritme del dia a dia. A partir d’aquí, el projecte comença a agafar força, claredat i arrelament.",
-      "readMoreP6": "A finals de gener de 2026 el projecte fa un gir important. La Tamara Depares assumeix la direcció i coordinació, consolida l’equip educatiu i dona estructura al ritme del dia a dia. A partir d’aquí, el projecte comença a agafar força, claredat i arrelament.",
+    "readMoreP6": "A finals de gener de 2026 el projecte fa un gir important. La Tamara Depares assumeix la direcció i coordinació, consolida l’equip educatiu i dona estructura al ritme del dia a dia. A partir d’aquí, el projecte comença a agafar força, claredat i arrelament.",
     "readMoreP7": "El que va començar com una necessitat es transforma en una comunitat.",
     "readMoreP8": "Avui La Llavor és un espai viu al Baix Montseny on els infants poden explorar, investigar, jugar, equivocar-se, crear i construir el seu propi aprenentatge en contacte amb la natura i amb el ritme de la vida real. Un lloc on la curiositat és benvinguda, on les preguntes tenen valor i on cada infant és acompanyat amb respecte pel seu procés.",
     "readMoreP9": "Un lloc on el temps de la infància és cuidat amb presència, consciència i estima.",
-    "readMoreP10": "Si vols conèixer amb més profunditat la mirada educativa que sosté aquest camí, pots consultar aquí el nostre projecte pedagògic complet."
+    "readMoreP10": "Si vols conèixer amb més profunditat la mirada educativa que sosté aquest camí, pots consultar aquí el nostre projecte pedagògic complet.",
+    "readMorePdfLink": "Per llegir el projecte pedagògic complert en pdf, clica aquí."
   },
   "team": {
     "title": "L'equip de La Llavor",
     "description": "Totes les persones de l'equip acompanyem tenint molt present l'infant que vam ser.",
-    "viewMore": "Veure més"
+    "viewMore": "Veure més",
+    "coreTitle": "Equip referent",
+    "helpersTitle": "Talleristes",
+    "backToTeam": "Tornar a l'equip",
+    "memberNotFound": "Membre no trobat",
+    "profile": {
+      "presentation": "Presentació",
+      "contactNote": "Si desitges conèixer més sobre l'acompanyament de {{name}} i la nostra pedagogia, no dubtis a contactar-nos.",
+      "cvLink": "Per veure el CV complet, clica aquí"
+    },
+    "members": {
+      "tamara": {
+        "role": "Directora i acompanyant referent",
+        "bio": "Arquitecta per formació, amb una mirada sensible per crear espais vius, cuidats i coherents amb la infància."
+      },
+      "noel": {
+        "role": "Acompanyant referent",
+        "bio": "Acompanyant infantil, terapeuta d’integració psico-corporal i psicomotricista preventiu Aucouturier."
+      },
+      "jose": {
+        "role": "Tallerista de fusteria i tecnologia",
+        "bio": "Acompanyant en projectes d'educació viva i educador emocional en el lleure."
+      },
+      "amanda": {
+        "role": "Tallerista de costura i arts",
+        "bio": "Artista, creadora, que combina tècniques ancestrals amb teixits naturals utilitzant la tècnica de l'upcycling. Transformant materials amb les mans, la ment i el cor."
+      },
+      "sarai": {
+        "role": "Tallerista d'arts",
+        "bio": "Artista i acompanyant creativa, sensible als processos expressius i a la bellesa del gest quotidià."
+      }
+    }
   },
   "contact": {
     "title": "Ens agradaria escoltar-te.",

@@ -12,12 +12,11 @@ import avatarSarai2 from "@/assets/team/_Sarai2.webp";
 export interface TeamMember {
   id: number;
   name: string;
-  role: string;
-  bio: string;
+  roleKey: string;
+  bioKey: string;
   avatar: string;
   hoverAvatar: string;
   category: 'core' | 'helper';
-  // future fields (e.g. extended description) can be added here
 }
 
 // exported list used by TeamSection and the individual member pages
@@ -25,8 +24,8 @@ export const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Tamara",
-    role: "Directora i acompanyant referent",
-    bio: "Arquitecta per formació, pastora de silencis per vocació. Dissenyà cada racó amb la respiració dels muntanyes en ment.",
+    roleKey: "team.members.tamara.role",
+    bioKey: "team.members.tamara.bio",
     avatar: avatarTamara1,
     hoverAvatar: avatarTamara2,
     category: 'core',
@@ -34,8 +33,8 @@ export const teamMembers: TeamMember[] = [
   {
     id: 2,
     name: "Noel Cresencio González",
-    role: "Acompanyant referent",
-    bio: "Acompanyant Infantil, Terapeuta d’Integració Psico-corporal i Psicomotricista Preventiu Aucouturier.",
+    roleKey: "team.members.noel.role",
+    bioKey: "team.members.noel.bio",
     avatar: avatarNoel1,
     hoverAvatar: avatarNoel2,
     category: 'core',
@@ -43,17 +42,17 @@ export const teamMembers: TeamMember[] = [
   {
     id: 3,
     name: "José Andrés Mingorance",
-    role: "Tallerista de fusteria i tecnologia.",
-    bio: "Acompanyant en projectes d'Educació Viva i Educador Emocional en el Lleure.",
+    roleKey: "team.members.jose.role",
+    bioKey: "team.members.jose.bio",
     avatar: avatarJose1,
     hoverAvatar: avatarJose2,
     category: 'helper',
   },
   {
     id: 4,
-    name: "Amanda",
-    role: "Tallerista de costura i arts",
-    bio: "Guía de muntanya certificat. Coneix cada sender com si fos el seu propi cor.",
+    name: "Amanda Brusés Pinart",
+    roleKey: "team.members.amanda.role",
+    bioKey: "team.members.amanda.bio",
     avatar: avatarAmanda1,
     hoverAvatar: avatarAmanda2,
     category: 'helper',
@@ -61,8 +60,8 @@ export const teamMembers: TeamMember[] = [
   {
     id: 5,
     name: "Sarai",
-    role: "Tallerista d'arts",
-    bio: "Escriptora i historiadora. Recull les històries de les pedres, els arbres i les persones que visiten.",
+    roleKey: "team.members.sarai.role",
+    bioKey: "team.members.sarai.bio",
     avatar: avatarSarai1,
     hoverAvatar: avatarSarai2,
     category: 'helper',
