@@ -4,7 +4,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer id="footer-contact" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col justify-end bg-card relative">
+    <footer className="min-h-screen md:h-screen w-full md:snap-start flex flex-col justify-end bg-card relative">
       {/* SVG overlay removed */}
 
       <div className="flex-1 flex items-center px-8 md:px-16 py-12">

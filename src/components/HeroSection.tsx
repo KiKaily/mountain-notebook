@@ -38,15 +38,23 @@ const HeroSection = () => {
             <TypewriterText text={t('hero.title1')} delay={50} />
           </h1>
           <h1 className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground">
-            <TypewriterText text={t('hero.title2')} delay={50} />
+            <TypewriterText text={t('hero.title2')} delay={50} startDelay={500} />
           </h1>
 
-          <div className="space-y-6 mt-8 flex flex-col items-start relative" style={{height: '6rem'}}>
-            {/* Scattered links with updated targets */}
-            <a href="/second" className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{fontWeight:600}}>naixement</a>
-            <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline" style={{fontWeight:600}}>projecte pedagògic</a>
-            <a href="#team" className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{fontWeight:600}}>equip</a>
-            <a href="#contact-section" className="font-serif text-primary text-lg absolute left-48 top-8 rotate-[6deg] hover:underline" style={{fontWeight:600}}>contacte</a>
+          <div className="space-y-6 mt-8 flex flex-col items-start relative" style={{ height: "6rem" }}>
+            {/* Scattered links with typed labels */}
+            <a href="#second-section" className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{ fontWeight: 600 }}>
+              <TypewriterText text="naixement" delay={35} startDelay={1500} />
+            </a>
+            <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline min-w-[13rem]" style={{ fontWeight: 600 }}>
+              <TypewriterText text="projecte pedagògic" delay={35} startDelay={1500} />
+            </a>
+            <a href="#team" className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{ fontWeight: 600 }}>
+              <TypewriterText text="equip" delay={35} startDelay={1500} />
+            </a>
+            <a href="#contact-section" className="font-serif text-primary text-lg absolute left-64 top-12 rotate-[6deg] hover:underline" style={{ fontWeight: 600 }}>
+              <TypewriterText text="contacte" delay={35} startDelay={1500} />
+            </a>
           </div>
 
           <div className="w-16 h-[1px] bg-foreground opacity-20 mt-8" />
@@ -86,14 +94,10 @@ const HeroSection = () => {
                   background: 'transparent',
                   padding: '0 0.7em',
                 }}
-            >
-              {/* Optional content for the span, or leave empty for layout */}
-            </span>
-            {/* Scattered links with updated targets */}
-            <a href="#second-section" className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{fontWeight:600}}>naixement</a>
-            <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline" style={{fontWeight:600}}>projecte pedagògic</a>
-            <a href="#team" className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{fontWeight:600}}>equip</a>
-            <a href="#footer-contact" className="font-serif text-primary text-lg absolute left-48 top-8 rotate-[6deg] hover:underline" style={{fontWeight:600}}>contacte</a>
+              >
+                Portes obertes el 18 d'abril
+              </span>
+            </div>
           </div>
         </div>
 
@@ -102,35 +106,24 @@ const HeroSection = () => {
           className="absolute z-10 select-none flex items-center"
           style={{
             left: '2.5rem',
+            top: '7.2rem',
+            width: '22rem',
+            maxWidth: '90vw',
+            height: 'auto',
+            transform: 'rotate(-2deg)',
+            paddingLeft: '0.5rem',
+            paddingRight: '0.5rem',
           }}
         >
-          <div className="absolute z-10 select-none flex items-center" style={{/* ...existing code... */}}>
-            <span className="absolute left-1/2 transform -translate-x-1/2 text-xs md:text-sm font-sans text-primary" style={{top: '50%', width: '100%', textAlign: 'center', left: '50%'}}>
-              clica aquí per apuntar-te
-            </span>
-          </div>
-          <a
-            href="https://forms.gle/kmRUNsSKacXLsDG96"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute inset-0 flex items-center justify-center font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
-            style={{
-              width: '84%',
-              lineHeight: 1.1,
-              whiteSpace: 'nowrap',
-              fontSize: 'clamp(0.7rem, 2vw, 1.05rem)',
-              letterSpacing: '0.04em',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              background: 'transparent',
-              padding: '0 0.7em',
-              textDecoration: 'underline',
-              pointerEvents: 'auto',
-            }}
-          >
-            clica aquí per apuntar-te
-          </a>
+          <div style={{position: 'relative', width: '100%'}}>
+            <img src={tape} alt="Clica aquí per apuntar-te" className="w-full h-auto" style={{opacity: 0.9}} />
+            <a
+              href="https://forms.gle/kmRUNsSKacXLsDG96"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-1/2 left-1/2 flex items-center justify-center font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
               style={{
+                transform: 'translate(-52%, -50%)',
                 width: '84%',
                 lineHeight: 1.1,
                 whiteSpace: 'nowrap',
@@ -147,6 +140,7 @@ const HeroSection = () => {
               clica aquí per apuntar-te
             </a>
           </div>
+        </div>
       </div>
 
       {/* Right: Video side */}

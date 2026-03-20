@@ -1,5 +1,5 @@
 import mountainLandscape from "@/assets/la-llavor1.jpg";
-import TypewriterText from "./TypewriterText";
+import mountainVideo from "@/assets/la-llavor-video.mp4";
 import { NavLink } from "@/components/NavLink";
 import { useTranslation } from "react-i18next";
 
@@ -8,12 +8,16 @@ const SecondSection = () => {
 
   return (
     <section id="second-section" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
-      {/* Left: Image side */}
+      {/* Left: Video side */}
       <div className="md:flex-[0_0_40%] h-screen md:h-full relative">
-        <img
-          src={mountainLandscape}
-          alt="Paisatge de muntanya amb boira"
+        <video
           className="w-full h-full object-cover"
+          src={mountainVideo}
+          poster={mountainLandscape}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
       </div>
 
@@ -42,15 +46,13 @@ const SecondSection = () => {
               {t('second.text3')}
             </p>
 
-            {/* Make 'Així comença a gestar-se La Llavor.' bigger and styled as a title */}
-            <p className="text-xl md:text-2xl font-serif leading-loose text-primary mt-4">
+            <p className="text-xs md:text-sm font-sans leading-loose text-foreground opacity-90 mt-4">
               {t('second.text4')}
             </p>
 
             <NavLink
               to="/second-read-more"
               className="inline-block text-sm font-sans text-primary underline hover:opacity-80 mt-4"
-              style={{ marginLeft: '0.5rem' }}
             >
               {t('second.readMore')}
             </NavLink>

@@ -19,7 +19,7 @@ const TeamSection = () => {
                 {t('team.title')}
               </h2>
             <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-70 max-w-md mt-6">
-              Tot l'equip tenim molt present en el nostre acompanyament el infant que vam ser.
+              Tot l'equip tenim molt present en el nostre acompanyament l'infant que vam ser.
             </p>
           </div>
 

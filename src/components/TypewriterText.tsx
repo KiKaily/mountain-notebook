@@ -3,10 +3,11 @@ import { useEffect, useState, useRef } from "react";
 interface TypewriterTextProps {
   text: string;
   delay?: number;
+  startDelay?: number;
   className?: string;
 }
 
-const TypewriterText = ({ text, delay = 40, className = "" }: TypewriterTextProps) => {
+const TypewriterText = ({ text, delay = 40, startDelay = 0, className = "" }: TypewriterTextProps) => {
   const [displayed, setDisplayed] = useState("");
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
@@ -26,19 +27,29 @@ const TypewriterText = ({ text, delay = 40, className = "" }: TypewriterTextProp
 
   useEffect(() => {
     if (!started) return;
+    setDisplayed("");
     let i = 0;
-    const interval = setInterval(() => {
-      setDisplayed(text.slice(0, i + 1));
-      i++;
-      if (i >= text.length) clearInterval(interval);
-    }, delay);
-    return () => clearInterval(interval);
-  }, [started, text, delay]);
+    let interval: ReturnType<typeof setInterval> | null = null;
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        setDisplayed(text.slice(0, i + 1));
+        i++;
+        if (i >= text.length && interval) {
+          clearInterval(interval);
+        }
+      }, delay);
+    }, startDelay);
+
+    return () => {
+      clearTimeout(timeout);
+      if (interval) clearInterval(interval);
+    };
+  }, [started, text, delay, startDelay]);
 
   return (
     <span ref={ref} className={`font-serif ${className}`}>
       {displayed}
-      {started && displayed.length < text.length && (
+      {started && displayed.length > 0 && displayed.length < text.length && (
         <span className="animate-pulse">|</span>
       )}
     </span>

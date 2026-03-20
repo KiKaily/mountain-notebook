@@ -113,6 +113,42 @@ const TeamMemberPage = () => {
                       A la fusteria a mida que els infants crean van construint-se internament posant les bases de la seva seguretat a l'hora d'afrontar projectes o reptes més grans. Explorar, provar i equivocar-se forma part d'aquest aprenentatge.
                     </p>
                   </div>
+                  <div>
+                    <h2 className="text-lg font-serif text-foreground mb-3">Recorregut</h2>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75">
+                      La meva trajectòria en el món de l'educació s'inicia el 2009 després d'un gran canvi en l'àmbit personal i professional. Fins aquell moment la meva formació com a Enginyer m'havia portat a treballar 10 anys dintre de l'empresa privada.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Els primers passos els vaig donar participant de diferents voluntariats en projectes educatius no formals al Casal dels Infants del Raval, Intermón Oxfam, Casals d'estiu Itaca i a Permacultura Barcelona.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Del 2011 al 2014 vaig fer la formació en monitor de lleure i altres com: kinesologia, aprenentatge i integració cerebral a l'ICE de l'UAB, metodologia ASIRI, Clown terapèutic, Coaching Transformacional, formador de formadors i creixement personal amb Gestalt.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      El 2015 em vaig formar en Coaching Essencial per Essential Institute amb acreditació ICF i el 2016 com a Professor 3000 a l'institut Científic Internacional de la Paz a Bolívia.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Totes aquestes experiències anaven despertant en mi la necessitat de continuar indagant i formant-me en metodologies i pedagogies alternatives en l'acompanyament d'infants i adults.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Per profunditzar més en pedagogies alternatives, el 2016 vaig fer la formació en Educació Viva/Lliure al projecte educatiu de l'Albada (Arbúcies) i al CAIEV amb el Jordi Mateu. Al projecte educatiu de l'Albada vaig estar formant part de l'equip educatiu l'any 2018, acompanyant l'etapa del grup de més grans (CS).
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Entre 2012 i 2015 vaig formar part de la coordinació a l'Oficina d'Educació de la Cooperativa Integral Catalana a Aurea Social, on vaig fer assessorament a famílies i grups de criança, creació de xarxa de persones i projectes d'educació alternativa i posada en marxa de les Convivències Comunitàries per a adolescents.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Cofundador i membre des del 2013 fins al 2020 d'un equip interdisciplinar de professionals de l'educació a l'associació Espirals d'Aprenentatge. En aquesta entitat vam desenvolupar una metodologia d'aprenentatge anomenada "Condicionament Zero". Aquesta metodologia la vam portar a la pràctica dintre de l'escola formal amb infants i professorat, en el lleure oferint colònies per a adolescents, fent formació i residencials amb professorat, en processos d'acompanyament a claustres i direccions...
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Del 2015 i fins a l'any 2020 vaig treballar com a Educador Emocional a l'escola Granja de Palautordera, acompanyant a grups escolars des d'infantil fins universitaris, fent formació a professorat i formant part del projecte Masia 360 al FCB.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Entre 2020 i 2025 com a educador referent i coordinador de primària del projecte d'educació Viva del Picot de Colors.
+                    </p>
+                    <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-75 mt-4">
+                      Actualment formant part de l'equip de la Llavor, amb ganes de continuar creixent, aprenent i fent aquest camí que va de la mà del meu procés personal i de vida!!!
+                    </p>
+                  </div>
                 </>
               ) : (
                 <>...existing code...</>
@@ -139,6 +175,16 @@ const TeamMemberPage = () => {
             {member.id === 2 && (
               <a
                 href="/public/NoelCV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-sans text-primary underline hover:opacity-80 block mt-8"
+              >
+                Per veure el CV complert, clica aquí
+              </a>
+            )}
+            {member.id === 3 && (
+              <a
+                href="/public/JoseCV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-sans text-primary underline hover:opacity-80 block mt-8"

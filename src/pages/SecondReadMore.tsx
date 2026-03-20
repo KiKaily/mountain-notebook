@@ -37,7 +37,6 @@ const SecondReadMore = () => {
           <p>{t('second.readMoreP2')}</p>
           <p>{t('second.readMoreP3')}</p>
 
-          {/* New text after La Selva paragraph */}
           <p>
             La seva presència enriqueix l’ecosistema educatiu que habita aquest racó del Baix Montseny, aportant una mirada profunda de connexió amb el bosc i amb la natura. Tot i aquesta proximitat i col·laboració, cada projecte manté la seva identitat, el seu equip i el seu camí propi.
           </p>
@@ -60,7 +59,7 @@ const SecondReadMore = () => {
             Si vols conèixer amb més profunditat la mirada educativa que sosté aquest bateg, pots consultar aquí el nostre projecte pedagògic complet.
           </p>
 
-          {/* Insert PDF button after new text */}
+          {/* Insert PDF button after La Selva paragraph (readMoreP3) */}
           <div className="mt-4">
             <a
               href="/projecte_pedagogic_la_llavor.pdf"
@@ -68,7 +67,7 @@ const SecondReadMore = () => {
               rel="noopener noreferrer"
               className="inline-block text-sm font-sans text-primary underline hover:opacity-80 mt-4"
             >
-              Per llegir el projecte educatiu complert en pdf, clica aquí.
+              Per llegir el projecte pedagògic complert en pdf, clica aquí.
             </a>
           </div>
         </div>

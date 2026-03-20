@@ -63,7 +63,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section data-section="contact" className="relative min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden pb-16">
+    <section id="contact-section" data-section="contact" className="relative min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden pb-16">
       {/* Left: Paper/form side */}
       <div className="flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
