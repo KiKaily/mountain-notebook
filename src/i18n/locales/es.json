@@ -1,4 +1,8 @@
 {
+  "common": {
+    "loadingVideo": "Cargando vídeo",
+    "playVideo": "Reproducir vídeo"
+  },
   "nav": {
     "backToHome": "Volver al inicio"
   },

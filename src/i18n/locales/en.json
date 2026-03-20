@@ -1,4 +1,8 @@
 {
+  "common": {
+    "loadingVideo": "Loading video",
+    "playVideo": "Play video"
+  },
   "nav": {
     "backToHome": "Back to home"
   },

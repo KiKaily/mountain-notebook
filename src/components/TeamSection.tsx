@@ -7,6 +7,14 @@ import { getTeamMemberPath } from "@/lib/routes";
 
 const TeamSection = () => {
   const { t, i18n } = useTranslation();
+  const prepareBackToTeamUrl = () => {
+    if (typeof window === "undefined") return;
+    const teamHash = getSectionHash("team", i18n.language);
+    const nextUrl = `/${teamHash}`;
+    if (`${window.location.pathname}${window.location.hash}` !== nextUrl) {
+      window.history.replaceState(window.history.state, "", nextUrl);
+    }
+  };
 
   return (
     <section id="team" className="min-h-screen w-full md:snap-start flex flex-col bg-card relative overflow-hidden">
@@ -55,6 +63,7 @@ const TeamSection = () => {
                       <div className="mt-3">
                         <NavLink
                           to={getTeamMemberPath(i18n.language, member)}
+                          onClick={prepareBackToTeamUrl}
                           className="text-sm font-sans text-primary underline hover:opacity-80"
                         >
                           {t('team.viewMore')}
@@ -95,6 +104,7 @@ const TeamSection = () => {
                       <div className="mt-2">
                         <NavLink
                           to={getTeamMemberPath(i18n.language, member)}
+                          onClick={prepareBackToTeamUrl}
                           className="text-xs font-sans text-primary underline hover:opacity-80"
                         >
                           {t('team.viewMore')}

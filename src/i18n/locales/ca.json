@@ -1,4 +1,8 @@
 {
+  "common": {
+    "loadingVideo": "Carregant vídeo",
+    "playVideo": "Reproduir vídeo"
+  },
   "nav": {
     "backToHome": "Tornar a l'inici"
   },

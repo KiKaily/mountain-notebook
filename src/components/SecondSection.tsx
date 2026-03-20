@@ -1,12 +1,15 @@
 import mountainVideo from "@/assets/la-llavor-video.mp4";
 import { NavLink } from "@/components/NavLink";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getReadMorePath } from "@/lib/routes";
 
 const SecondSection = () => {
   const { t, i18n } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const [showVideoFallback, setShowVideoFallback] = useState(false);
+  const secondPosterPath = "/naixement-video-thumbnail.jpg";
 
   useEffect(() => {
     const video = videoRef.current;
@@ -17,24 +20,73 @@ const SecondSection = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (isVideoReady) return;
+    const timeout = setTimeout(() => {
+      setShowVideoFallback(true);
+    }, 8000);
+    return () => clearTimeout(timeout);
+  }, [isVideoReady]);
+
+  const handleManualPlay = () => {
+    if (!videoRef.current) return;
+    videoRef.current.play().then(() => {
+      setIsVideoReady(true);
+    }).catch(() => {
+      // Keep fallback visible if manual play fails.
+    });
+  };
+
   return (
     <section id="second-section" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
       {/* Left: Video side */}
       <div className="md:flex-[0_0_40%] h-screen md:h-full relative">
+        <div
+          className={`absolute inset-0 z-10 transition-opacity duration-500 ${isVideoReady ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          style={{
+            backgroundColor: "hsl(var(--muted))",
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(${secondPosterPath})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black/10 text-white">
+            {!showVideoFallback ? (
+              <>
+                <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+                <p className="text-xs md:text-sm font-sans uppercase tracking-[0.2em] opacity-90">
+                  {t('common.loadingVideo')}
+                </p>
+              </>
+            ) : (
+              <button
+                onClick={handleManualPlay}
+                className="px-4 py-2 bg-white/85 text-foreground text-xs md:text-sm font-sans uppercase tracking-[0.15em]"
+              >
+                {t('common.playVideo')}
+              </button>
+            )}
+          </div>
+        </div>
         <video
           ref={videoRef}
           className="w-full h-full object-cover"
           autoPlay
           loop
           preload="auto"
+          poster={secondPosterPath}
           muted
           defaultMuted
           playsInline
           onLoadedData={(event) => {
+            setIsVideoReady(true);
             event.currentTarget.play().catch(() => {
               // Ignore autoplay rejection; muted playback is attempted again when possible.
             });
           }}
+          onCanPlay={() => setIsVideoReady(true)}
+          onError={() => setShowVideoFallback(true)}
         >
           <source src={mountainVideo} type="video/mp4" />
         </video>
