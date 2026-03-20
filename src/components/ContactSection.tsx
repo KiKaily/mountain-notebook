@@ -1,11 +1,4 @@
 import { useState } from "react";
-import note1 from "@/assets/notes/note-1.svg";
-import note2 from "@/assets/notes/note-2.svg";
-import note3 from "@/assets/notes/note-3.svg";
-import note4 from "@/assets/notes/note-4.svg";
-import note5 from "@/assets/notes/note-5.svg";
-import note6 from "@/assets/notes/note-6.svg";
-import note7 from "@/assets/notes/note-7.svg";
 import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
@@ -146,12 +139,7 @@ const ContactSection = () => {
           <div className="w-12 h-[1px] bg-foreground opacity-15 mt-6" />
         </div>
 
-        {/* Decorative notes */}
-        <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-8 top-40 w-28 opacity-85" />
-        <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-20 bottom-24 w-36 opacity-80" />
-        <img src={note7} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-32 w-40 opacity-75" />
-        <img src={note1} alt="" className="pointer-events-none hidden xl:block absolute left-12 top-32 w-26 opacity-70" />
-        <img src={note3} alt="" className="pointer-events-none hidden xl:block absolute right-16 bottom-16 w-34 opacity-65" />
+        {/* Decorative notes removed */}
       </div>
 
       {/* Right: Contact info side */}
@@ -197,12 +185,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        {/* Decorative notes */}
-        <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-8 top-40 w-28 opacity-85" />
-        <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-20 bottom-24 w-36 opacity-80" />
-        <img src={note7} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-32 w-40 opacity-75" />
-        <img src={note4} alt="" className="pointer-events-none hidden xl:block absolute left-32 top-20 w-24 opacity-70" />
-        <img src={note6} alt="" className="pointer-events-none hidden xl:block absolute right-24 bottom-12 w-30 opacity-65" />
+        {/* Decorative notes removed */}
       </div>
 
 

@@ -4,12 +4,8 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="min-h-screen md:h-screen w-full md:snap-start flex flex-col justify-end bg-card relative">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-        }}
-      />
+    <footer id="footer-contact" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col justify-end bg-card relative">
+      {/* SVG overlay removed */}
 
       <div className="flex-1 flex items-center px-8 md:px-16 py-12">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">

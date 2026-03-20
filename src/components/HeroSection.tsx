@@ -1,12 +1,5 @@
 import mountainVideo from "@/assets/la-llavor-video.mp4";
 import seedLogo from "@/assets/seed-logo.png";
-import note1 from "@/assets/notes/note-1.svg";
-import note2 from "@/assets/notes/note-2.svg";
-import note3 from "@/assets/notes/note-3.svg";
-import note4 from "@/assets/notes/note-4.svg";
-import note5 from "@/assets/notes/note-5.svg";
-import note6 from "@/assets/notes/note-6.svg";
-import note7 from "@/assets/notes/note-7.svg";
 import tape from "@/assets/tape.png";
 
 import TypewriterText from "./TypewriterText";
@@ -30,11 +23,7 @@ const HeroSection = () => {
       {/* Left: Paper/text side */}
       <div className="order-2 md:order-1 flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
         {/* Paper texture overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-          }}
-        />
+        {/* SVG overlay removed */}
 
         {/* Logo and Language Switcher — positioned over the horizontal rule above titles */}
         <div className="absolute top-16 right-8 md:top-20 md:right-8 z-20 flex items-center space-x-4">
@@ -52,35 +41,26 @@ const HeroSection = () => {
             <TypewriterText text={t('hero.title2')} delay={50} />
           </h1>
 
-          <div className="space-y-6 mt-8">
-            <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-80 max-w-xs">
-              {t('hero.description1')}
-            </p>
-
-            <p className="text-sm md:text-base font-sans leading-loose text-foreground opacity-60 max-w-[280px] rotate-[-1deg]">
-              {t('hero.description2')}
-            </p>
+          <div className="space-y-6 mt-8 flex flex-col items-start relative" style={{height: '6rem'}}>
+            {/* Scattered links with updated targets */}
+            <a href="/second" className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{fontWeight:600}}>naixement</a>
+            <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline" style={{fontWeight:600}}>projecte pedagògic</a>
+            <a href="#team" className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{fontWeight:600}}>equip</a>
+            <a href="#contact-section" className="font-serif text-primary text-lg absolute left-48 top-8 rotate-[6deg] hover:underline" style={{fontWeight:600}}>contacte</a>
           </div>
 
           <div className="w-16 h-[1px] bg-foreground opacity-20 mt-8" />
         </div>
 
-        {/* Decorative handwritten notes (transparent backgrounds). Kept off text and positioned inside the paper area so they scroll with content. */}
-        <img src={note1} alt="" className="pointer-events-none hidden md:block absolute left-6 bottom-24 w-20 opacity-95" />
-        <img src={note2} alt="" className="pointer-events-none hidden md:block absolute right-24 top-40 w-24 opacity-95" />
-        <img src={note3} alt="" className="pointer-events-none hidden md:block absolute left-12 top-56 w-16 opacity-95" />
-        <img src={note4} alt="" className="pointer-events-none hidden lg:block absolute right-32 bottom-40 w-28 opacity-90" />
-        <img src={note5} alt="" className="pointer-events-none hidden lg:block absolute left-32 top-20 w-36 opacity-85" />
-        <img src={note6} alt="" className="pointer-events-none hidden xl:block absolute right-16 top-32 w-22 opacity-80" />
-        <img src={note7} alt="" className="pointer-events-none hidden xl:block absolute left-24 bottom-16 w-18 opacity-75" />
+        {/* Decorative notes removed */}
 
         {/* Painter tape note with text overlay, aligned with logo, smaller, padded, and 90% opacity */}
         <div
-          className="absolute z-10 pointer-events-none select-none flex items-center"
+          className="absolute z-10 select-none flex items-center"
           style={{
             left: '2.5rem',
             top: '4.5rem',
-            width: '22rem', // smaller tape
+            width: '22rem',
             maxWidth: '90vw',
             height: 'auto',
             paddingLeft: '0.5rem',
@@ -96,22 +76,77 @@ const HeroSection = () => {
               <span
                 className="font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                 style={{
-                  width: '84%', // more margin
+                  width: '84%',
                   lineHeight: 1.1,
                   whiteSpace: 'nowrap',
-                  fontSize: 'clamp(0.7rem, 2vw, 1.05rem)', // smaller max size
+                  fontSize: 'clamp(0.7rem, 2vw, 1.05rem)',
                   letterSpacing: '0.04em',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   background: 'transparent',
-                  padding: '0 0.7em', // more horizontal padding
+                  padding: '0 0.7em',
                 }}
-              >
-                Portes obertes 18 d'abril
-              </span>
-            </div>
+            >
+              {/* Optional content for the span, or leave empty for layout */}
+            </span>
+            {/* Scattered links with updated targets */}
+            <a href="#second-section" className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{fontWeight:600}}>naixement</a>
+            <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline" style={{fontWeight:600}}>projecte pedagògic</a>
+            <a href="#team" className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{fontWeight:600}}>equip</a>
+            <a href="#footer-contact" className="font-serif text-primary text-lg absolute left-48 top-8 rotate-[6deg] hover:underline" style={{fontWeight:600}}>contacte</a>
           </div>
         </div>
+
+        {/* Second tape, bigger and closer */}
+        <div
+          className="absolute z-10 select-none flex items-center"
+          style={{
+            left: '2.5rem',
+          }}
+        >
+          <div className="absolute z-10 select-none flex items-center" style={{/* ...existing code... */}}>
+            <span className="absolute left-1/2 transform -translate-x-1/2 text-xs md:text-sm font-sans text-primary" style={{top: '50%', width: '100%', textAlign: 'center', left: '50%'}}>
+              clica aquí per apuntar-te
+            </span>
+          </div>
+          <a
+            href="https://forms.gle/kmRUNsSKacXLsDG96"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 flex items-center justify-center font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
+            style={{
+              width: '84%',
+              lineHeight: 1.1,
+              whiteSpace: 'nowrap',
+              fontSize: 'clamp(0.7rem, 2vw, 1.05rem)',
+              letterSpacing: '0.04em',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              background: 'transparent',
+              padding: '0 0.7em',
+              textDecoration: 'underline',
+              pointerEvents: 'auto',
+            }}
+          >
+            clica aquí per apuntar-te
+          </a>
+              style={{
+                width: '84%',
+                lineHeight: 1.1,
+                whiteSpace: 'nowrap',
+                fontSize: 'clamp(0.7rem, 2vw, 1.05rem)',
+                letterSpacing: '0.04em',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                background: 'transparent',
+                padding: '0 0.7em',
+                textDecoration: 'underline',
+                pointerEvents: 'auto',
+              }}
+            >
+              clica aquí per apuntar-te
+            </a>
+          </div>
       </div>
 
       {/* Right: Video side */}

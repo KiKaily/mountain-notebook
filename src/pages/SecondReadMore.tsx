@@ -37,7 +37,30 @@ const SecondReadMore = () => {
           <p>{t('second.readMoreP2')}</p>
           <p>{t('second.readMoreP3')}</p>
 
-          {/* Insert PDF button after La Selva paragraph (readMoreP3) */}
+          {/* New text after La Selva paragraph */}
+          <p>
+            La seva presència enriqueix l’ecosistema educatiu que habita aquest racó del Baix Montseny, aportant una mirada profunda de connexió amb el bosc i amb la natura. Tot i aquesta proximitat i col·laboració, cada projecte manté la seva identitat, el seu equip i el seu camí propi.
+          </p>
+          <p>
+            Aquesta convivència respectuosa entre projectes diferents però afins ens recorda que educar també és crear comunitat, teixir vincles i obrir espais on diverses maneres d’acompanyar la infància poden dialogar i inspirar-se mútuament.
+          </p>
+          <p>
+            A finals de gener de 2026 el projecte fa un gir important. La Tamara Depares assumeix la direcció i coordinació, consolida l’equip educatiu i dona estructura al ritme del dia a dia. A partir d’aquí, el projecte comença a agafar força, claredat i arrelament.
+          </p>
+          <p>
+            El que va començar com una necessitat es transforma en una comunitat.
+          </p>
+          <p>
+            Avui La Llavor és un espai viu al Baix Montseny on els infants poden explorar, investigar, jugar, equivocar-se, crear i construir el seu propi aprenentatge en contacte amb la natura i amb el ritme de la vida real. Un lloc on la curiositat és benvinguda, on les preguntes tenen valor i on cada infant és acompanyat amb respecte pel seu procés.
+          </p>
+          <p>
+            Un lloc on el temps de la infància és cuidat amb presència, consciència i estima.
+          </p>
+          <p>
+            Si vols conèixer amb més profunditat la mirada educativa que sosté aquest bateg, pots consultar aquí el nostre projecte pedagògic complet.
+          </p>
+
+          {/* Insert PDF button after new text */}
           <div className="mt-4">
             <a
               href="/projecte_pedagogic_la_llavor.pdf"
