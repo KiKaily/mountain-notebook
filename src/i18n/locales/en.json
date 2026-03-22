@@ -7,6 +7,9 @@
     "backToHome": "Back to home"
   },
   "hero": {
+        "openDay": "Open day on April 18th",
+        "signupHere": "click here to sign up",
+      "unmute": "Unmute",
     "title1": "La Llavor.",
     "title2": "Living education in Montseny.",
     "description1": "Living education project for preschool and primary school in Sant Esteve de Palautordera, in the heart of Montseny.",
@@ -64,7 +67,7 @@
       },
       "jose": {
         "role": "Woodwork and technology workshop facilitator",
-        "bio": "Guide in living education projects and emotional educator in non-formal education."
+        "bio": "Volunteer guide in living education projects and emotional educator in non-formal education."
       },
       "amanda": {
         "role": "Sewing and arts workshop facilitator",

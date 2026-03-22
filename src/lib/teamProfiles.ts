@@ -19,7 +19,7 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "L'acompanyament a La Llavor",
         paragraphs: [
-          "Noel Cresencio González acompanya les criatures des de la seva experiència i saber, creant vincles segurs per a la relació, l'exploració i el creixement de cada infant. Cada moment és una oportunitat per aprendre del que el grup i la vida ofereixen.",
+          "Noel acompanya les criatures des de la seva experiència i saber, creant vincles segurs per a la relació, l'exploració i el creixement de cada infant. Cada moment és una oportunitat per aprendre del que el grup i la vida ofereixen.",
         ],
       },
       {
@@ -108,7 +108,7 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "Presentació",
         paragraphs: [
-          "Acompanyant en projectes d'educació viva i educador emocional en el lleure. Format en diferents pedagogies educatives i en enginyeria. El seu camí vital forma part del seu procés d'aprenentatge.",
+          "Acompanyant voluntari en projectes d'educació viva i educador emocional en el lleure. Format en diferents pedagogies educatives i en enginyeria. El seu camí vital forma part del seu procés d'aprenentatge.",
         ],
       },
       {
@@ -180,7 +180,7 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "Introduction",
         paragraphs: [
-          "Guide in living education projects and emotional educator in non-formal education. Trained in different educational approaches and in engineering. His life path is part of his learning process.",
+          "Volunteer guide in living education projects and emotional educator in non-formal education. Trained in different educational approaches and in engineering. His life path is part of his learning process.",
         ],
       },
       {

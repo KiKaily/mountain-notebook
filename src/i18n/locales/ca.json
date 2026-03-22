@@ -7,6 +7,9 @@
     "backToHome": "Tornar a l'inici"
   },
   "hero": {
+        "openDay": "Portes obertes el 18 d'abril",
+        "signupHere": "clica aquí per apuntar-te",
+      "unmute": "Activar so",
     "title1": "La Llavor.",
     "title2": "Educació viva al Montseny.",
     "description1": "Projecte d'educació viva d'infantil i primària a Sant Esteve de Palautordera, al cor del Montseny.",
@@ -64,7 +67,7 @@
       },
       "jose": {
         "role": "Tallerista de fusteria i tecnologia",
-        "bio": "Acompanyant en projectes d'educació viva i educador emocional en el lleure."
+        "bio": "Acompanyant voluntari en projectes d'educació viva i educador emocional en el lleure."
       },
       "amanda": {
         "role": "Tallerista de costura i arts",
@@ -78,7 +81,7 @@
   },
   "contact": {
     "title": "Ens agradaria escoltar-te.",
-    "description": "Envïa una missatge i et respondrem quan abans puguem.",
+    "description": "Envia un missatge i et respondrem quan abans puguem.",
     "form": {
       "name": "Nom",
       "email": "Correu electrònic",

@@ -1,4 +1,4 @@
-import mountainVideo from "@/assets/la-llavor-video.mp4";
+// import mountainVideo from "@/assets/la-llavor-video.mp4";
 import seedLogo from "@/assets/la_llavor_logo.png";
 import tape from "@/assets/tape.png";
 
@@ -10,44 +10,9 @@ import { getSectionHash } from "@/lib/routes";
 
 const HeroSection = () => {
   const { t, i18n } = useTranslation();
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoReady, setIsVideoReady] = useState(false);
-  const [showVideoFallback, setShowVideoFallback] = useState(false);
   const heroPosterPath = "/hero-video-thumbnail.jpg";
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.play().catch(() => {
-      // Some browsers delay autoplay until enough data is available.
-    });
-  }, []);
-
-  useEffect(() => {
-    if (isVideoReady) return;
-    const timeout = setTimeout(() => {
-      setShowVideoFallback(true);
-    }, 8000);
-    return () => clearTimeout(timeout);
-  }, [isVideoReady]);
-
-  const handleManualPlay = () => {
-    if (!videoRef.current) return;
-    videoRef.current.play().then(() => {
-      setIsVideoReady(true);
-    }).catch(() => {
-      // If play still fails, keep the fallback UI visible.
-    });
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
-    }
-  };
+  // No hooks needed for simple muted autoplay video and Instagram embed
 
   return (
     <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
@@ -66,8 +31,14 @@ const HeroSection = () => {
             alt="La Llavor"
             className="w-24 md:w-32 h-auto opacity-90 mix-blend-multiply"
           />
-          <h1 className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground">
+          <h1
+            className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground relative"
+            style={{ minHeight: '2.5em', display: 'flex', alignItems: 'center' }}
+          >
             <TypewriterText text={t('hero.title2')} delay={50} startDelay={500} />
+            <span aria-hidden="true" className="invisible absolute left-0 top-0 w-full">
+              {t('hero.title2')}
+            </span>
           </h1>
 
           <div className="space-y-6 mt-8 flex flex-col items-start relative" style={{ height: "6rem" }}>
@@ -113,16 +84,17 @@ const HeroSection = () => {
                 style={{
                   width: '84%',
                   lineHeight: 1.1,
-                  whiteSpace: 'nowrap',
-                  fontSize: 'clamp(0.7rem, 2vw, 1.05rem)',
+                  fontSize: 'clamp(0.7rem, 2vw, 1.05rem)', // igual que la frase de abajo
                   letterSpacing: '0.04em',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
                   background: 'transparent',
                   padding: '0 0.7em',
+                  display: 'block',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
                 }}
               >
-                Portes obertes el 18 d'abril
+                {t('hero.openDay')}
               </span>
             </div>
           </div>
@@ -164,72 +136,26 @@ const HeroSection = () => {
                 pointerEvents: 'auto',
               }}
             >
-              clica aquí per apuntar-te
+              {t('hero.signupHere')}
             </a>
           </div>
         </div>
       </div>
 
       {/* Right: Video side */}
-      <div className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative">
-        <div
-          className={`absolute inset-0 z-10 transition-opacity duration-500 ${isVideoReady ? "opacity-0 pointer-events-none" : "opacity-100"}`}
-          style={{
-            backgroundColor: "hsl(var(--muted))",
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(${heroPosterPath})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black/10 text-white">
-            <img src={seedLogo} alt="La Llavor" className="w-16 md:w-20 h-auto opacity-90" />
-            {!showVideoFallback ? (
-              <>
-                <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/40 border-t-white" />
-                <p className="text-xs md:text-sm font-sans uppercase tracking-[0.2em] opacity-90">
-                  {t('common.loadingVideo')}
-                </p>
-              </>
-            ) : (
-              <button
-                onClick={handleManualPlay}
-                className="px-4 py-2 bg-white/85 text-foreground text-xs md:text-sm font-sans uppercase tracking-[0.15em]"
-              >
-                {t('common.playVideo')}
-              </button>
-            )}
-          </div>
-        </div>
+      <div className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative flex flex-col gap-6 items-center justify-center">
+        {/* Primer video: local, muted, autoplay, sin controles ni botón de sonido, ocupa todo el alto */}
         <video
-          ref={videoRef}
           className="w-full h-full object-cover"
+          src="/video1llavor.mp4"
           autoPlay
           loop
+          muted
+          playsInline
           preload="auto"
           poster={heroPosterPath}
-          muted={isMuted}
-          defaultMuted
-          playsInline
-          onLoadedData={(event) => {
-            setIsVideoReady(true);
-            event.currentTarget.play().catch(() => {
-              // Ignore autoplay rejection; muted playback is attempted again on interaction.
-            });
-          }}
-          onCanPlay={() => setIsVideoReady(true)}
-          onError={() => setShowVideoFallback(true)}
-        >
-          <source src={mountainVideo} type="video/mp4" />
-        </video>
-        {isMuted && (
-          <button
-            onClick={toggleMute}
-            className="absolute bottom-8 right-8 bg-primary text-primary-foreground px-4 py-2 rounded-full font-serif text-sm hover:opacity-90 transition-opacity shadow-lg"
-          >
-            🔊 Activar so
-          </button>
-        )}
+          style={{ background: 'black' }}
+        />
       </div>
       {/* Painter tape note — moved inside the left text area so it scrolls with content. */}
     </section>
