@@ -1,5 +1,7 @@
 
 import { NavLink } from "@/components/NavLink";
+import ScrollDownArrow from "./ScrollDownArrow";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { teamMembers } from "../lib/team";
 import { useTranslation } from "react-i18next";
 import { getTeamMemberPath } from "@/lib/routes";
@@ -7,6 +9,7 @@ import { getTeamMemberPath } from "@/lib/routes";
 
 const TeamSection = () => {
   const { t, i18n } = useTranslation();
+  const isMobile = useIsMobile();
   const prepareBackToTeamUrl = () => {
     if (typeof window === "undefined") return;
     const teamHash = getSectionHash("team", i18n.language);
@@ -14,6 +17,12 @@ const TeamSection = () => {
     if (`${window.location.pathname}${window.location.hash}` !== nextUrl) {
       window.history.replaceState(window.history.state, "", nextUrl);
     }
+  };
+
+  // Helper to scroll to next section
+  const scrollToNext = () => {
+    const next = document.getElementById("contact-section");
+    if (next) next.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -31,6 +40,12 @@ const TeamSection = () => {
               {t('team.description')}
             </p>
           </div>
+          {/* Arrow at bottom of section (desktop & mobile, except last section) */}
+          <ScrollDownArrow
+            onClick={scrollToNext}
+            className="bottom-4 md:bottom-8"
+            label={t('team.scrollDown')}
+          />
 
           {/* Team grid */}
           <div className="space-y-12">

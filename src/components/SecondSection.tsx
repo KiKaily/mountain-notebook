@@ -1,15 +1,24 @@
 import { NavLink } from "@/components/NavLink";
+import ScrollDownArrow from "./ScrollDownArrow";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useTranslation } from "react-i18next";
 import { getReadMorePath } from "@/lib/routes";
 
 const SecondSection = () => {
   const { t, i18n } = useTranslation();
+  const isMobile = useIsMobile();
   // Video replaced by Instagram reel embed
 
   // No video logic needed for Instagram embed
 
+  // Helper to scroll to next section
+  const scrollToNext = () => {
+    const next = document.getElementById("team");
+    if (next) next.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="second-section" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
+    <section id="second-section" className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden relative">
       {/* Left: Instagram Reel embed instead of video */}
       <div className="md:flex-[0_0_40%] h-screen md:h-full relative flex items-center justify-center bg-black">
         {/* Instagram embed with attempt to hide UI overlays */}
@@ -73,6 +82,12 @@ const SecondSection = () => {
 
         {/* Decorative notes removed */}
       </div>
+      {/* Arrow at bottom of section (desktop & mobile, except last section) */}
+      <ScrollDownArrow
+        onClick={scrollToNext}
+        className="bottom-4 left-1/2 md:left-[70%] md:bottom-6"
+        label={t('second.scrollDown')}
+      />
     </section>
   );
 };

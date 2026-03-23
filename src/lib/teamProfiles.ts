@@ -5,6 +5,7 @@ type ProfileSection = {
   paragraphs: string[];
 };
 
+
 type LocalizedProfile = Record<AppLanguage, ProfileSection[]>;
 
 const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
@@ -40,37 +41,77 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
         ],
       },
     ],
-    es: [
-      {
-        title: "Presentación",
-        paragraphs: [
-          "Acompañante infantil, terapeuta de integración psico-corporal y psicomotricista preventivo Aucouturier.",
-        ],
-      },
-      {
-        title: "El acompañamiento en La Llavor",
-        paragraphs: [
-          "Noel Cresencio González acompaña a las criaturas desde su experiencia y saber, creando vínculos seguros para la relación, la exploración y el crecimiento de cada niña y niño. Cada momento es una oportunidad para aprender de lo que el grupo y la vida ofrecen.",
-        ],
-      },
-      {
-        title: "Especialidad",
-        paragraphs: [
-          "Acompañamiento relacional, al juego libre y a los procesos de proyectos personales y grupales, enriqueciendo y cuidando. Creatividad y aprendizaje práctico. Vídeo, digital, juegos de mesa, inglés, matemáticas aplicadas, cuerpo y movimiento.",
-        ],
-      },
-      {
-        title: "Recorrido",
-        paragraphs: [
-          "Crecí en un entorno de educación viva en casa. Mi madre, Begoña González, junto a mi padrino Cristóbal Gutiérrez, fundó La Caseta en Barcelona en 1996 y la escuela viva El Roure en 2001. Mi padre, Gustavo Cresencio, es maestro de tai-chi, chi-kung, artes marciales y crecimiento personal. Estudié en la escuela estatal, un año en El Roure, y a los 14 años me trasladé a Inglaterra para estudiar en Brockwood Park School, internado internacional fundado en 1969 por el filósofo y maestro espiritual Jiddu Krishnamurti.",
-          "Entre 2008 y 2010 me formé en cine, fotografía e interpretación en Filmosofía, en Granada. Mis principales formaciones incluyen la psicoterapia en Integración Psico-Corporal en ETIP con Marc Costa y Agustín Prieto, la psicomotricidad en Práctica Preventiva Aucouturier en la AEC con Iolanda Vives, y la educación viva con Jordi Mateu y Begoña González.",
-          "También me especialicé en comunicación consciente con Chema Irusta y Begoña González; acompañamiento emocional, agresividad y conflictos en Senda con Verónica Antón; y Seitai en Espaidó con Magda Berneda.",
-          "Desde 2011 trabajé 14 años en la escuela Congrés-Indians, en la franja del mediodía y apoyando al equipo docente dentro de la jornada lectiva. Además, fui asistente terapeuta psicomotriz de Verónica Antón en Senda entre 2014 y 2015.",
-          "En 2018 cofundé Kun Koro, y en 2024 impulsé Rcrear con Cristina, un estudio creativo de diseño gráfico y comunicación honesta.",
-          "En 2026 llegué a La Llavor, un regalo de la vida y de Tamara, con quien nos conocíamos de Congrés-Indians y que apostó por mí.",
-        ],
-      },
-    ],
+  },
+  1: {
+      ca: [
+        {
+          title: "Sobre mi",
+          paragraphs: [
+            "Sóc la Tamara Depares, llicenciada en Filosofia i acompanyant en processos d’educació viva, criança conscient i desenvolupament humà.",
+            "Fa més de deu anys que camino al costat de la infància, les famílies i els equips educatius, sostenint processos que van molt més enllà de l’aprenentatge acadèmic: processos de vida.",
+            "La meva trajectòria neix d’una recerca profunda de sentit. Des de ben petita m’han acompanyat preguntes essencials sobre l’existència, la vida i la naturalesa humana. Però és amb la maternitat, l’any 2012, quan aquesta recerca pren cos i direcció: comprendre i protegir la infància es converteix en el centre del meu camí."
+          ],
+        },
+        {
+          title: "Mirada i enfocament",
+          paragraphs: [
+            "La meva feina està travessada per una certesa: educar no és només transmetre, és sostenir vida en procés.",
+            "Acompanyo des de la presència, l’escolta i el compromís profund amb el que és essencial. Integro una mirada:",
+            "pedagògica (educació viva i mirada activa cap a l’infant)",
+            "corporal (moviment, expressió i psicomotricitat)",
+            "emocional i sistèmica (vincles, història familiar i processos profunds)",
+            "filosòfica (sentit, consciència i coherència vital)",
+            "Treballo entenent que l’infant no es pot separar del seu sistema familiar ni del món relacional que l’envolta, i que qualsevol procés educatiu necessita ser sostingut amb consciència també des de les persones adultes."
+          ],
+        },
+        {
+          title: "Trajectòria",
+          paragraphs: [
+            "He format part de diversos projectes d’educació viva al Baix Montseny i a Barcelona, com: El Picot de Colors, L’Estol (escola bosc), Les Cuques (escola bosc), Escoleta Congrés-Indians.",
+            "També he acompanyat en projectes com Petit Molinet, Kaleidoscopio o Aupa, i he desenvolupat tasques de coordinació pedagògica, supervisió d’equips i orientació familiar.",
+            "En paral·lel, desenvolupo el meu propi projecte d’acompanyament terapèutic, amb processos individuals i grupals adreçats a infants, famílies i persones adultes. Podeu veure més aquí: tamaradepares.com"
+          ],
+        },
+        {
+          title: "Formació",
+          paragraphs: [
+            "La meva formació s’ha anat construint al llarg dels anys des d’una necessitat de comprensió profunda de la infància i dels processos humans, integrant diferents àmbits que avui donen sentit a la meva pràctica:",
+            "Base acadèmica i pedagògica",
+            "Llicenciatura en Filosofia (Universitat de Barcelona)",
+            "Formació en Educació Viva (CRAEV)",
+            "L’art d’acompanyar infants amb presència (La Caseta)",
+            "Formacions en educació creadora, enfocaments inspirats en Reggio Emilia i educació emocional (Institut de la Infància)",
+            "Mirada sistèmica i familiar",
+            "Intervenció sistèmica en infància i família – metodologia CAMP de Mercé Travesset (Institut Gestalt)",
+            "Formació en constel·lacions familiars (ECOS, amb Peter Bourquin i Carmen Cortés)",
+            "Cos, expressió i regulació",
+            "Teràpia corporal amb enfocament reichià (Institut Gestalt)",
+            "Pràctica psicomotriu relacional Aucouturier (AEC)",
+            "Àmbit terapèutic i emocional",
+            "Brainspotting (Instituto Alecés, amb Mario Salvador)",
+            "Sandplay – teràpia de joc amb sorra (Espai Lúdic amb Joaquín Blix)",
+            "Formació en criança conscient i emocional (amb Yvonne Laborda)"
+          ],
+        },
+        {
+          title: "El meu lloc a La Llavor",
+          paragraphs: [
+            "Actualment lidero el projecte pedagògic de La Llavor, sostenint la visió, l’equip i els processos educatius del dia a dia.",
+            "Ho faig des d’un lloc de responsabilitat i, alhora, de lideratge compartit, tant amb l’equip educatiu com amb les famílies, entenent que els projectes vius es construeixen en relació, des de la confiança i la corresponsabilitat.",
+            "També he estat la persona encarregada de donar forma i paraula al projecte, elaborant els textos pedagògics i els continguts que defineixen la seva identitat.",
+            "La meva tasca és vetllar perquè el projecte mantingui coherència amb la seva essència: posar la vida, la infància i el vincle al centre."
+          ],
+        },
+        {
+          title: "Una mica més enllà",
+          paragraphs: [
+            "Més enllà de la formació i l’experiència, hi ha una manera d’estar.",
+            "M’agrada caminar descalça, enfilar-me als arbres, cantar sense saber ben bé per què, escoltar el silenci i deixar-me tocar per allò invisible que sosté la vida.",
+            "Els meus pilars són clars: silenci, presència i arrel.",
+            "I la meva ofrena també: Ajudar a comprendre i protegir la innocència de la infància, acompanyant també a les persones adultes a reconnectar amb allò essencial."
+          ],
+        },
+      ],
     en: [
       {
         title: "Introduction",

@@ -23,7 +23,7 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Tamara",
+    name: "Tamara Depares",
     roleKey: "team.members.tamara.role",
     bioKey: "team.members.tamara.bio",
     avatar: avatarTamara1,

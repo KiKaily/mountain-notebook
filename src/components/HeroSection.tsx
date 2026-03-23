@@ -6,16 +6,26 @@ import TypewriterText from "./TypewriterText";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
+import ScrollDownArrow from "./ScrollDownArrow";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { getSectionHash } from "@/lib/routes";
+import { useFitText } from "@/hooks/useFitText";
 
 const HeroSection = () => {
   const { t, i18n } = useTranslation();
+  const isMobile = useIsMobile();
   const heroPosterPath = "/hero-video-thumbnail.jpg";
 
   // No hooks needed for simple muted autoplay video and Instagram embed
 
+  // Helper to scroll to next section
+  const scrollToNext = () => {
+    const next = document.getElementById("second-section");
+    if (next) next.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden">
+    <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden relative">
       {/* Left: Paper/text side */}
       <div className="order-2 md:order-1 flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
         {/* Paper texture overlay */}
@@ -79,23 +89,33 @@ const HeroSection = () => {
               className="absolute inset-0 flex items-center justify-center"
               style={{ pointerEvents: 'none', width: '100%', height: '100%' }}
             >
-              <span
-                className="font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
-                style={{
-                  width: '84%',
-                  lineHeight: 1.1,
-                  fontSize: 'clamp(0.7rem, 2vw, 1.05rem)', // igual que la frase de abajo
-                  letterSpacing: '0.04em',
-                  background: 'transparent',
-                  padding: '0 0.7em',
-                  display: 'block',
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                }}
-              >
-                {t('hero.openDay')}
-              </span>
+              {(() => {
+                // El padding horizontal debe coincidir con el del tape
+                const horizontalPadding = 12; // px, igual a 0.7em aprox
+                const [fitRef, fontSize] = useFitText({ minFontSize: 10, maxFontSize: 22, padding: horizontalPadding });
+                return (
+                  <span
+                    ref={fitRef}
+                    className="font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
+                    style={{
+                      width: '84%',
+                      lineHeight: 1.1,
+                      fontSize,
+                      letterSpacing: '0.04em',
+                      background: 'transparent',
+                      padding: `0 ${horizontalPadding}px`,
+                      display: 'block',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'clip',
+                      boxSizing: 'border-box',
+                      maxWidth: '100%',
+                    }}
+                  >
+                    {t('hero.openDay')}
+                  </span>
+                );
+              })()}
             </div>
           </div>
         </div>
@@ -156,8 +176,22 @@ const HeroSection = () => {
           poster={heroPosterPath}
           style={{ background: 'black' }}
         />
+        {/* Mobile: Arrow at bottom of video */}
+        {isMobile && (
+          <ScrollDownArrow
+            onClick={scrollToNext}
+            className="bottom-4"
+            label={t('hero.scrollDown')}
+          />
+        )}
       </div>
       {/* Painter tape note — moved inside the left text area so it scrolls with content. */}
+      {/* Arrow at bottom of section (desktop & mobile, except last section) */}
+      <ScrollDownArrow
+        onClick={scrollToNext}
+        className="bottom-4 md:bottom-8"
+        label={t('hero.scrollDown')}
+      />
     </section>
   );
 };

@@ -1,8 +1,11 @@
 import { useState } from "react";
+import ScrollDownArrow from "./ScrollDownArrow";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -195,6 +198,7 @@ const ContactSection = () => {
           <a href="/privacy" className="underline">{t('footer.links.privacy')}</a> &middot; <a href="/cookies" className="underline">{t('footer.links.cookies')}</a> &middot; <a href="/legal" className="underline">{t('footer.links.legal')}</a>
         </p>
       </footer>
+      {/* No arrow in last section */}
     </section>
   );
 };
