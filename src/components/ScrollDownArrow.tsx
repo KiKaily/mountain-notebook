@@ -7,9 +7,10 @@ interface ScrollDownArrowProps {
   className?: string;
   style?: React.CSSProperties;
   label?: string;
+  big?: boolean;
 }
 
-const ScrollDownArrow: React.FC<ScrollDownArrowProps> = ({ onClick, className = "", style = {}, label }) => {
+const ScrollDownArrow: React.FC<ScrollDownArrowProps> = ({ onClick, className = "", style = {}, label, big }) => {
   const isMobile = useIsMobile();
   return (
     <button
@@ -19,7 +20,7 @@ const ScrollDownArrow: React.FC<ScrollDownArrowProps> = ({ onClick, className = 
       style={style}
       tabIndex={0}
     >
-      <AssetArrowDown className="h-8 w-8 md:h-10 md:w-10 animate-bounce drop-shadow-lg opacity-80 group-hover:opacity-100 transition" />
+      <AssetArrowDown className={big && isMobile ? "h-24 w-24 animate-bounce drop-shadow-lg opacity-80 group-hover:opacity-100 transition" : "h-8 w-8 md:h-10 md:w-10 animate-bounce drop-shadow-lg opacity-80 group-hover:opacity-100 transition"} />
       <span className="sr-only">{label || "Scroll down"}</span>
     </button>
   );

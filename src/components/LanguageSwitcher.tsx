@@ -29,22 +29,24 @@ const LanguageSwitcher = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-1 text-xs font-sans text-foreground opacity-60 hover:opacity-80 transition-opacity"
+        className="flex items-center space-x-2 text-xl font-sans text-foreground opacity-80 hover:opacity-100 transition-opacity px-4 py-2 bg-background"
+        style={{ minWidth: '80px', minHeight: '48px' }}
         aria-label={t('language.switch')}
       >
-        <span className="uppercase tracking-widest">{currentLanguage.code}</span>
-        <span className="text-xs">▼</span>
+        <span className="uppercase tracking-widest text-xl">{currentLanguage.code}</span>
+        <span className="text-xl">▼</span>
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-1 bg-card border border-border rounded-sm shadow-lg py-1 min-w-[100px] z-50">
+        <div className="absolute top-full right-0 mt-2 bg-card py-2 min-w-[180px] z-50">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className={`w-full text-left px-3 py-2 text-xs font-sans hover:bg-background transition-colors ${
-                normalizeLanguage(i18n.language) === lang.code ? 'text-primary' : 'text-foreground opacity-70'
+              className={`w-full text-left px-5 py-4 text-lg font-sans hover:bg-background transition-colors ${
+                normalizeLanguage(i18n.language) === lang.code ? 'text-primary font-bold' : 'text-foreground opacity-80'
               }`}
+              style={{ minHeight: '48px' }}
             >
               <span>{lang.name}</span>
             </button>

@@ -180,18 +180,23 @@ const HeroSection = () => {
         {isMobile && (
           <ScrollDownArrow
             onClick={scrollToNext}
-            className="bottom-4"
+            className="bottom-24" // move up
+            style={{ zIndex: 40 }}
             label={t('hero.scrollDown')}
+            big // custom prop for big arrow
           />
         )}
       </div>
       {/* Painter tape note — moved inside the left text area so it scrolls with content. */}
       {/* Arrow at bottom of section (desktop & mobile, except last section) */}
-      <ScrollDownArrow
-        onClick={scrollToNext}
-        className="bottom-4 md:bottom-8"
-        label={t('hero.scrollDown')}
-      />
+      {/* Only show bottom arrow on desktop, not mobile */}
+      {!isMobile && (
+        <ScrollDownArrow
+          onClick={scrollToNext}
+          className="bottom-4 md:bottom-8"
+          label={t('hero.scrollDown')}
+        />
+      )}
     </section>
   );
 };
