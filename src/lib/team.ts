@@ -32,7 +32,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 2,
-    name: "Noel",
+    name: "Noel Cresencio Gonzalez",
     roleKey: "team.members.noel.role",
     bioKey: "team.members.noel.bio",
     avatar: avatarNoel1,

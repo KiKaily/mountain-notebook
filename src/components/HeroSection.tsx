@@ -16,12 +16,64 @@ const HeroSection = () => {
   const isMobile = useIsMobile();
   const heroPosterPath = "/hero-video-thumbnail.jpg";
 
+  // Mobile video play state
+  const videoRef = useRef(null);
+  const [showPlay, setShowPlay] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+
+  // On mobile, check if video can autoplay, else show play button
+  useEffect(() => {
+    if (!isMobile) return;
+    const video = videoRef.current;
+    if (!video) return;
+    // Try to play on mount
+    const tryPlay = async () => {
+      try {
+        await video.play();
+        setShowPlay(false);
+      } catch (e) {
+        setShowPlay(true);
+      }
+    };
+    // Listen for pause events (e.g., browser blocks autoplay after 1s)
+    const onPause = () => {
+      if (!video.paused) return;
+      setShowPlay(true);
+    };
+    video.addEventListener('pause', onPause);
+    // Try to play on ready
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener('canplay', tryPlay, { once: true });
+    }
+    setVideoReady(true);
+    return () => {
+      video.removeEventListener('pause', onPause);
+      video.removeEventListener('canplay', tryPlay);
+    };
+  }, [isMobile]);
+
+  const handlePlay = () => {
+    const video = videoRef.current;
+    if (video) {
+      video.play();
+      setShowPlay(false);
+    }
+  };
+
   // No hooks needed for simple muted autoplay video and Instagram embed
 
   // Helper to scroll to next section
   const scrollToNext = () => {
-    const next = document.getElementById("second-section");
-    if (next) next.scrollIntoView({ behavior: "smooth" });
+    if (isMobile) {
+      // On mobile, scroll to tapes/logo section
+      const next = document.getElementById("tapes-section");
+      if (next) next.scrollIntoView({ behavior: "smooth" });
+    } else {
+      const next = document.getElementById("second-section");
+      if (next) next.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -72,15 +124,17 @@ const HeroSection = () => {
 
         {/* Painter tape note with text overlay, aligned with logo, smaller, padded, and 90% opacity */}
         <div
-          className="absolute z-10 select-none flex items-center"
+          className="z-10 select-none flex items-center"
           style={{
-            left: '2.5rem',
-            top: '4.5rem',
-            width: '22rem',
-            maxWidth: '90vw',
+            position: isMobile ? 'static' : 'absolute',
+            left: isMobile ? undefined : '1rem',
+            top: isMobile ? undefined : '2.5rem',
+            width: isMobile ? '100%' : '36rem',
+            maxWidth: isMobile ? '100vw' : '98vw',
             height: 'auto',
-            paddingLeft: '0.5rem',
-            paddingRight: '0.5rem',
+            paddingLeft: isMobile ? 0 : '0.5rem',
+            paddingRight: isMobile ? 0 : '0.5rem',
+            marginBottom: isMobile ? '1.5rem' : 0,
           }}
         >
           <div style={{position: 'relative', width: '100%'}}>
@@ -90,9 +144,8 @@ const HeroSection = () => {
               style={{ pointerEvents: 'none', width: '100%', height: '100%' }}
             >
               {(() => {
-                // El padding horizontal debe coincidir con el del tape
-                const horizontalPadding = 12; // px, igual a 0.7em aprox
-                const [fitRef, fontSize] = useFitText({ minFontSize: 10, maxFontSize: 22, padding: horizontalPadding });
+                const horizontalPadding = isMobile ? 8 : 24;
+                const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 10 : 14, maxFontSize: isMobile ? 18 : 28, padding: horizontalPadding });
                 return (
                   <span
                     ref={fitRef}
@@ -122,42 +175,53 @@ const HeroSection = () => {
 
         {/* Second tape, bigger and closer */}
         <div
-          className="absolute z-10 select-none flex items-center"
+          className="z-10 select-none flex items-center"
           style={{
-            left: '2.5rem',
-            top: '7.2rem',
-            width: '22rem',
-            maxWidth: '90vw',
+            position: isMobile ? 'static' : 'absolute',
+            left: isMobile ? undefined : '1rem',
+            top: isMobile ? undefined : '7.5rem',
+            width: isMobile ? '100%' : '22rem',
+            maxWidth: isMobile ? '100vw' : '80vw',
             height: 'auto',
-            transform: 'rotate(-2deg)',
-            paddingLeft: '0.5rem',
-            paddingRight: '0.5rem',
+            transform: isMobile ? undefined : 'rotate(-2deg)',
+            paddingLeft: isMobile ? 0 : '0.5rem',
+            paddingRight: isMobile ? 0 : '0.5rem',
+            marginBottom: isMobile ? '1.5rem' : 0,
           }}
         >
           <div style={{position: 'relative', width: '100%'}}>
             <img src={tape} alt="Clica aquí per apuntar-te" className="w-full h-auto" style={{opacity: 0.9}} />
-            <a
-              href="https://forms.gle/kmRUNsSKacXLsDG96"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute top-1/2 left-1/2 flex items-center justify-center font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
-              style={{
-                transform: 'translate(-52%, -50%)',
-                width: '84%',
-                lineHeight: 1.1,
-                whiteSpace: 'nowrap',
-                fontSize: 'clamp(0.7rem, 2vw, 1.05rem)',
-                letterSpacing: '0.04em',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                background: 'transparent',
-                padding: '0 0.7em',
-                textDecoration: 'underline',
-                pointerEvents: 'auto',
-              }}
-            >
-              {t('hero.signupHere')}
-            </a>
+            {(() => {
+              const horizontalPadding = isMobile ? 8 : 16;
+              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 8 : 10, maxFontSize: isMobile ? 14 : 18, padding: horizontalPadding });
+              return (
+                <a
+                  ref={fitRef}
+                  href="https://forms.gle/kmRUNsSKacXLsDG96"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-1/2 left-1/2 flex items-center justify-center font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
+                  style={{
+                    transform: 'translate(-52%, -50%)',
+                    width: '84%',
+                    lineHeight: 1.1,
+                    fontSize,
+                    letterSpacing: '0.04em',
+                    background: 'transparent',
+                    padding: `0 ${horizontalPadding}px`,
+                    textDecoration: 'underline',
+                    pointerEvents: 'auto',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'clip',
+                    boxSizing: 'border-box',
+                    maxWidth: '100%',
+                  }}
+                >
+                  {t('hero.signupHere')}
+                </a>
+              );
+            })()}
           </div>
         </div>
       </div>
@@ -165,17 +229,34 @@ const HeroSection = () => {
       {/* Right: Video side */}
       <div className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative flex flex-col gap-6 items-center justify-center">
         {/* Primer video: local, muted, autoplay, sin controles ni botón de sonido, ocupa todo el alto */}
-        <video
-          className="w-full h-full object-cover"
-          src="/video1llavor.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster={heroPosterPath}
-          style={{ background: 'black' }}
-        />
+        <div className="relative w-full h-full">
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover"
+            src="/video1llavor.mp4"
+            autoPlay={isMobile ? false : true}
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={heroPosterPath}
+            style={{ background: 'black' }}
+          />
+          {/* Mobile: Play overlay if needed */}
+          {isMobile && showPlay && (
+            <button
+              onClick={handlePlay}
+              className="absolute inset-0 flex items-center justify-center bg-black/40 z-20"
+              style={{ border: 'none', outline: 'none' }}
+              aria-label={t('common.playVideo')}
+            >
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="32" fill="#fff" fillOpacity="0.85" />
+                <polygon points="26,20 48,32 26,44" fill="#222" />
+              </svg>
+            </button>
+          )}
+        </div>
         {/* Mobile: Arrow at bottom of video */}
         {isMobile && (
           <ScrollDownArrow

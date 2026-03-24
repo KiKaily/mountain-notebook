@@ -51,17 +51,17 @@ const TeamMemberPage = () => {
 
         <div className="flex flex-col md:flex-row items-start gap-12">
           <div className="flex-shrink-0">
-            <div className="w-56 aspect-[3/4] bg-cover bg-center border border-border rounded"
-              style={{
-                backgroundImage: `url(${member.hoverAvatar})`,
-              }}
-            />
+              <div className="w-56 aspect-[3/4] bg-cover bg-center border border-border"
+                style={{
+                  backgroundImage: `url(${member.avatar})`,
+                }}
+              />
           </div>
 
           <div className="flex-1 space-y-8">
             <div>
               <h1 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
-                {member.name}
+                  {member.name}
               </h1>
               <p className="text-sm font-sans text-foreground opacity-50 uppercase tracking-widest mt-2">
                 {t(member.roleKey)}

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { normalizeLanguage, translateHash, translatePath } from "@/lib/routes";
 
@@ -25,12 +25,27 @@ const LanguageSwitcher = () => {
     setIsOpen(false);
   };
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 text-xl font-sans text-foreground opacity-80 hover:opacity-100 transition-opacity px-4 py-2 bg-background"
-        style={{ minWidth: '80px', minHeight: '48px' }}
+        className="flex items-center text-xl font-sans text-foreground opacity-80 hover:opacity-100 transition-opacity"
+        style={{ background: 'none', border: 'none', boxShadow: 'none', padding: 0, minWidth: 0, minHeight: 0 }}
         aria-label={t('language.switch')}
       >
         <span className="uppercase tracking-widest text-xl">{currentLanguage.code}</span>

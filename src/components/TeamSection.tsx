@@ -52,41 +52,73 @@ const TeamSection = () => {
             {/* Core Team */}
             <div>
               <h3 className="text-lg font-serif text-foreground mb-6">{t('team.coreTitle')}</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {teamMembers.filter(m => m.category === 'core').map((member) => (
-                  <div key={member.id} className="flex space-x-6">
-                    {/* member avatar image */}
-                    <div
-                      className="w-32 aspect-[3/4] bg-cover bg-center border border-border flex-shrink-0"
-                      style={{
-                        backgroundImage: `url(${member.avatar})`,
-                      }}
-                      onMouseEnter={(e) => e.currentTarget.style.backgroundImage = `url(${member.hoverAvatar})`}
-                      onMouseLeave={(e) => e.currentTarget.style.backgroundImage = `url(${member.avatar})`}
-                    />
-
-                    <div className="flex-1">
-                      <h3 className="text-lg font-serif text-foreground leading-tight">
-                        {member.name}
-                      </h3>
-                      <p className="text-sm font-sans text-foreground opacity-60 uppercase tracking-widest mt-1">
-                        {t(member.roleKey)}
-                      </p>
-                      <p className="text-sm font-sans leading-relaxed text-foreground opacity-70 mt-3">
-                        {t(member.bioKey)}
-                      </p>
-                      <div className="mt-3">
-                        <NavLink
-                          to={getTeamMemberPath(i18n.language, member)}
-                          onClick={prepareBackToTeamUrl}
-                          className="text-sm font-sans text-primary underline hover:opacity-80"
-                        >
-                          {t('team.viewMore')}
-                        </NavLink>
+              <div className="flex flex-col gap-12">
+                {/* Tamara */}
+                {(() => {
+                  const tamara = teamMembers.find(m => m.name.includes('Tamara'));
+                  if (!tamara) return null;
+                  return (
+                    <div key={tamara.id} className={isMobile ? "flex flex-col items-start gap-4 py-8" : "flex flex-row items-start gap-8 md:gap-16 py-8 md:py-12"}>
+                      <div
+                        className={isMobile ? "w-40 aspect-[3/4] bg-cover bg-center border border-border flex-shrink-0 shadow-md" : "w-full max-w-[320px] md:w-56 aspect-[3/4] bg-cover bg-center border border-border flex-shrink-0 shadow-md"}
+                        style={{
+                          backgroundImage: `url(${tamara.avatar})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.backgroundImage = `url(${tamara.hoverAvatar})`}
+                        onMouseLeave={(e) => e.currentTarget.style.backgroundImage = `url(${tamara.avatar})`}
+                      />
+                      <div className={isMobile ? "w-full mt-4" : "flex-1 w-full max-w-2xl overflow-x-auto"}>
+                        <h3 className="text-2xl md:text-3xl font-serif text-foreground leading-tight">{tamara.name}</h3>
+                        <p className="text-base md:text-lg font-sans text-foreground opacity-60 uppercase tracking-widest mt-2">{t(tamara.roleKey)}</p>
+                        <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-70 mt-4 break-words whitespace-pre-line">{t(tamara.bioKey)}</p>
+                        <div className="mt-4">
+                          <NavLink
+                            to={getTeamMemberPath(i18n.language, tamara)}
+                            onClick={prepareBackToTeamUrl}
+                            className="text-base md:text-lg font-sans text-primary underline hover:opacity-80"
+                          >
+                            {t('team.viewMore')}
+                          </NavLink>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })()}
+                {/* Noel */}
+                {(() => {
+                  const noel = teamMembers.find(m => m.name.includes('Noel'));
+                  if (!noel) return null;
+                  return (
+                    <div key={noel.id} className={isMobile ? "flex flex-col items-start gap-4 py-8" : "flex flex-row items-start gap-8 md:gap-16 py-8 md:py-12"}>
+                      <div
+                        className={isMobile ? "w-40 aspect-[3/4] bg-cover bg-center border border-border flex-shrink-0 shadow-md" : "w-full max-w-[320px] md:w-56 aspect-[3/4] bg-cover bg-center border border-border flex-shrink-0 shadow-md"}
+                        style={{
+                          backgroundImage: `url(${noel.avatar})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.backgroundImage = `url(${noel.hoverAvatar})`}
+                        onMouseLeave={(e) => e.currentTarget.style.backgroundImage = `url(${noel.avatar})`}
+                      />
+                      <div className={isMobile ? "w-full mt-4" : "flex-1 w-full max-w-2xl overflow-x-auto"}>
+                        <h3 className="text-2xl md:text-3xl font-serif text-foreground leading-tight">{noel.name}</h3>
+                        <p className="text-base md:text-lg font-sans text-foreground opacity-60 uppercase tracking-widest mt-2">{t(noel.roleKey)}</p>
+                        <p className="text-base md:text-lg font-sans leading-relaxed text-foreground opacity-70 mt-4 break-words whitespace-pre-line">{t(noel.bioKey)}</p>
+                        <div className="mt-4">
+                          <NavLink
+                            to={getTeamMemberPath(i18n.language, noel)}
+                            onClick={prepareBackToTeamUrl}
+                            className="text-base md:text-lg font-sans text-primary underline hover:opacity-80"
+                          >
+                            {t('team.viewMore')}
+                          </NavLink>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
 
