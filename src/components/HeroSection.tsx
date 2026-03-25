@@ -83,17 +83,41 @@ const HeroSection = () => {
         {/* Paper texture overlay */}
         {/* SVG overlay removed */}
 
-        <div className="absolute top-16 right-8 md:top-20 md:right-8 z-20 flex items-center">
-          <LanguageSwitcher />
-        </div>
 
-        <div className="max-w-md relative z-10 space-y-8 mt-32 md:mt-36">
-          <img
-            src={seedLogo}
-            alt="La Llavor"
-            className="w-36 md:w-48 h-auto opacity-90 mix-blend-multiply"
-            style={isMobile ? { marginTop: '-2.5rem' } : {}}
-          />
+        {/* Mobile: logo at top left with margin, language switcher at top right, all content lower */}
+        {isMobile ? (
+          <>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 30 }}>
+              <img
+                src={seedLogo}
+                alt="La Llavor"
+                className="w-36 h-auto opacity-90 mix-blend-multiply"
+                style={{ marginLeft: '1.25rem', marginTop: '2.5rem' }}
+              />
+              <div style={{ position: 'absolute', top: '2.5rem', right: '1.25rem' }}>
+                <LanguageSwitcher />
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="absolute top-16 right-8 md:top-20 md:right-8 z-20 flex items-center">
+            <LanguageSwitcher />
+          </div>
+        )}
+
+        <div
+          className="max-w-md relative z-10 space-y-8"
+          style={isMobile
+            ? { marginTop: '10.5rem', marginLeft: '1.25rem' }
+            : { marginTop: '3.5rem' }}
+        >
+          {!isMobile && (
+            <img
+              src={seedLogo}
+              alt="La Llavor"
+              className="w-36 md:w-48 h-auto opacity-90 mix-blend-multiply"
+            />
+          )}
           <h1
             className="text-xl md:text-2xl font-serif leading-relaxed tracking-wide text-foreground relative"
             style={{ minHeight: '2.5em', display: 'flex', alignItems: 'center', marginTop: isMobile ? '-1.5rem' : undefined }}
@@ -129,7 +153,8 @@ const HeroSection = () => {
           style={{
             position: isMobile ? 'static' : 'absolute',
             left: isMobile ? undefined : '1rem',
-            top: isMobile ? undefined : '2.5rem',
+            // Lower first tape further in mobile, increase gap from nav
+            top: isMobile ? '15.5rem' : '2.5rem',
             width: isMobile ? '100%' : '36rem',
             maxWidth: isMobile ? '100vw' : '98vw',
             height: 'auto',
@@ -181,9 +206,8 @@ const HeroSection = () => {
           style={{
             position: isMobile ? 'static' : 'absolute',
             left: isMobile ? undefined : '1rem',
-            // Lower tapes more on mobile, bring closer together
-            // Lower second tape more on desktop to avoid overlap, keep mobile as is
-            top: isMobile ? undefined : '8.5rem',
+            // Lower second tape further in mobile, increase gap between tapes
+            top: isMobile ? '19.5rem' : '8.5rem',
             width: isMobile ? '100%' : '22rem',
             maxWidth: isMobile ? '100vw' : '80vw',
             height: 'auto',
@@ -232,9 +256,10 @@ const HeroSection = () => {
       </div>
 
       {/* Right: Video side */}
-          className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative flex flex-col gap-6 items-center justify-center">
-        {/* Hide video on mobile, show only on desktop */}
-        {!isMobile && (
+      {/* Right: Video side (hidden on mobile) */}
+      {!isMobile && (
+        <div className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative flex flex-col gap-6 items-center justify-center">
+          {/* Show only on desktop */}
           <div className="relative w-full h-full">
             <video
               ref={videoRef}
@@ -249,8 +274,8 @@ const HeroSection = () => {
               style={{ background: 'black' }}
             />
           </div>
-        )}
-      </div>
+        </div>
+      )}
       {/* Painter tape note — moved inside the left text area so it scrolls with content. */}
       {/* Arrow at bottom of section (desktop & mobile, except last section) */}
       {/* Only show bottom arrow on desktop, not mobile */}
