@@ -92,7 +92,7 @@ const HeroSection = () => {
                 src={seedLogo}
                 alt="La Llavor"
                 className="w-36 h-auto opacity-90 mix-blend-multiply"
-                style={{ marginLeft: '1.25rem', marginTop: '2.5rem' }}
+                style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '2.5rem' }}
               />
               <div style={{ position: 'absolute', top: '2.5rem', right: '1.25rem' }}>
                 <LanguageSwitcher />
@@ -108,14 +108,15 @@ const HeroSection = () => {
         <div
           className="max-w-md relative z-10 space-y-8"
           style={isMobile
-            ? { marginTop: '10.5rem', marginLeft: '1.25rem' }
-            : { marginTop: '3.5rem' }}
+            ? { marginTop: '11.5rem', marginLeft: '0.25rem' }
+            : { marginTop: '6.5rem' }}
         >
           {!isMobile && (
             <img
               src={seedLogo}
               alt="La Llavor"
               className="w-36 md:w-48 h-auto opacity-90 mix-blend-multiply"
+              style={{ width: '11.4rem', marginBottom: '-0.75rem' }}
             />
           )}
           <h1
@@ -153,14 +154,14 @@ const HeroSection = () => {
           style={{
             position: isMobile ? 'static' : 'absolute',
             left: isMobile ? undefined : '1rem',
-            // Lower first tape further in mobile, increase gap from nav
-            top: isMobile ? '15.5rem' : '2.5rem',
+            top: isMobile ? undefined : '2.5rem',
             width: isMobile ? '100%' : '36rem',
             maxWidth: isMobile ? '100vw' : '98vw',
             height: 'auto',
             paddingLeft: isMobile ? 0 : '0.5rem',
             paddingRight: isMobile ? 0 : '0.5rem',
-            marginBottom: isMobile ? '1.5rem' : 0,
+            marginTop: isMobile ? '2.75rem' : 0,
+            marginBottom: isMobile ? '0rem' : 0,
           }}
         >
           <div style={{position: 'relative', width: '100%'}}>
@@ -206,14 +207,14 @@ const HeroSection = () => {
           style={{
             position: isMobile ? 'static' : 'absolute',
             left: isMobile ? undefined : '1rem',
-            // Lower second tape further in mobile, increase gap between tapes
-            top: isMobile ? '19.5rem' : '8.5rem',
+            top: isMobile ? undefined : '8.5rem',
             width: isMobile ? '100%' : '22rem',
             maxWidth: isMobile ? '100vw' : '80vw',
             height: 'auto',
             transform: isMobile ? undefined : 'rotate(-2deg)',
             paddingLeft: isMobile ? 0 : '0.5rem',
             paddingRight: isMobile ? 0 : '0.5rem',
+            marginTop: isMobile ? '-0.15rem' : 0,
             marginBottom: isMobile ? '0.5rem' : 0,
           }}
         >
@@ -222,7 +223,7 @@ const HeroSection = () => {
             {(() => {
               // Make mobile tape text smaller
               const horizontalPadding = isMobile ? 6 : 16;
-              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 7 : 10, maxFontSize: isMobile ? 12 : 18, padding: horizontalPadding });
+              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 7 : 9, maxFontSize: isMobile ? 12 : 16, padding: horizontalPadding });
               return (
                 <a
                   ref={fitRef}

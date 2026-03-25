@@ -53,7 +53,7 @@ const TeamMemberPage = () => {
           <div className="flex-shrink-0">
               <div className="w-56 aspect-[3/4] bg-cover bg-center border border-border"
                 style={{
-                  backgroundImage: `url(${member.avatar})`,
+                  backgroundImage: `url(${member.hoverAvatar})`,
                 }}
               />
           </div>

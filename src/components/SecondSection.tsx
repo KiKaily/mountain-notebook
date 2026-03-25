@@ -31,7 +31,7 @@ const SecondSection = () => {
         `}</style>
         <div className="insta-embed-no-ui w-full h-full">
           <iframe
-            src="https://www.instagram.com/p/DWR8iKpDDps/embed"
+            src="https://www.instagram.com/p/DWUjGuKjF59/embed"
             allow="autoplay; encrypted-media"
             allowFullScreen
             title="Instagram Reel"

@@ -130,7 +130,7 @@ const TeamSection = () => {
                   <div key={member.id} className="flex flex-col items-center space-y-3">
                     {/* member avatar image */}
                     <div
-                      className="w-24 aspect-[3/4] bg-cover bg-center border border-border"
+                      className="w-28 md:w-28 aspect-[3/4] bg-cover bg-center border border-border"
                       style={{
                         backgroundImage: `url(${member.avatar})`,
                       }}

@@ -194,9 +194,17 @@ const ContactSection = () => {
 
       {/* footer legal */}
       <footer className="absolute bottom-4 w-full text-center text-xs font-sans text-foreground opacity-60">
-        <p>
-          <a href="/privacy" className="underline">{t('footer.links.privacy')}</a> &middot; <a href="/cookies" className="underline">{t('footer.links.cookies')}</a> &middot; <a href="/legal" className="underline">{t('footer.links.legal')}</a>
-        </p>
+        {isMobile ? (
+          <div className="flex flex-col items-center gap-1">
+            <a href="/privacy" className="underline">{t('footer.links.privacy')}</a>
+            <a href="/cookies" className="underline">{t('footer.links.cookies')}</a>
+            <a href="/legal" className="underline">{t('footer.links.legal')}</a>
+          </div>
+        ) : (
+          <p>
+            <a href="/privacy" className="underline">{t('footer.links.privacy')}</a> &middot; <a href="/cookies" className="underline">{t('footer.links.cookies')}</a> &middot; <a href="/legal" className="underline">{t('footer.links.legal')}</a>
+          </p>
+        )}
       </footer>
       {/* No arrow in last section */}
     </section>
