@@ -1,5 +1,5 @@
 // import mountainVideo from "@/assets/la-llavor-video.mp4";
-import seedLogo from "@/assets/la_llavor_logo.png";
+import seedLogo from "@/assets/lallavor_logo.png";
 import tape from "@/assets/tape.png";
 
 import TypewriterText from "./TypewriterText";
@@ -91,10 +91,10 @@ const HeroSection = () => {
           <img
             src={seedLogo}
             alt="La Llavor"
-            className="w-24 md:w-32 h-auto opacity-90 mix-blend-multiply"
+            className="w-36 md:w-48 h-auto opacity-90 mix-blend-multiply"
           />
           <h1
-            className="text-2xl md:text-3xl font-serif leading-relaxed tracking-wide text-foreground relative"
+            className="text-xl md:text-2xl font-serif leading-relaxed tracking-wide text-foreground relative"
             style={{ minHeight: '2.5em', display: 'flex', alignItems: 'center' }}
           >
             <TypewriterText text={t('hero.title2')} delay={50} startDelay={500} />
