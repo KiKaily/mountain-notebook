@@ -92,10 +92,11 @@ const HeroSection = () => {
             src={seedLogo}
             alt="La Llavor"
             className="w-36 md:w-48 h-auto opacity-90 mix-blend-multiply"
+            style={isMobile ? { marginTop: '-2.5rem' } : {}}
           />
           <h1
             className="text-xl md:text-2xl font-serif leading-relaxed tracking-wide text-foreground relative"
-            style={{ minHeight: '2.5em', display: 'flex', alignItems: 'center' }}
+            style={{ minHeight: '2.5em', display: 'flex', alignItems: 'center', marginTop: isMobile ? '-1.5rem' : undefined }}
           >
             <TypewriterText text={t('hero.title2')} delay={50} startDelay={500} />
             <span aria-hidden="true" className="invisible absolute left-0 top-0 w-full">
@@ -105,7 +106,7 @@ const HeroSection = () => {
 
           <div className="space-y-6 mt-8 flex flex-col items-start relative" style={{ height: "6rem" }}>
             {/* Scattered links with typed labels */}
-            <a href={getSectionHash("second", i18n.language)} className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{ fontWeight: 600 }}>
+            <a href={getSectionHash("second", i18n.language)} className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{ fontWeight: 600, marginTop: isMobile ? '-1.5rem' : undefined }}>
               <TypewriterText text={t('hero.menu.birth')} delay={35} startDelay={1500} />
             </a>
             <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline min-w-[13rem]" style={{ fontWeight: 600 }}>
@@ -144,8 +145,9 @@ const HeroSection = () => {
               style={{ pointerEvents: 'none', width: '100%', height: '100%' }}
             >
               {(() => {
+                // Make desktop text a bit smaller
                 const horizontalPadding = isMobile ? 8 : 24;
-                const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 10 : 14, maxFontSize: isMobile ? 18 : 28, padding: horizontalPadding });
+                const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 10 : 13, maxFontSize: isMobile ? 18 : 24, padding: horizontalPadding });
                 return (
                   <span
                     ref={fitRef}
@@ -179,21 +181,24 @@ const HeroSection = () => {
           style={{
             position: isMobile ? 'static' : 'absolute',
             left: isMobile ? undefined : '1rem',
-            top: isMobile ? undefined : '7.5rem',
+            // Lower tapes more on mobile, bring closer together
+            // Lower second tape more on desktop to avoid overlap, keep mobile as is
+            top: isMobile ? undefined : '8.5rem',
             width: isMobile ? '100%' : '22rem',
             maxWidth: isMobile ? '100vw' : '80vw',
             height: 'auto',
             transform: isMobile ? undefined : 'rotate(-2deg)',
             paddingLeft: isMobile ? 0 : '0.5rem',
             paddingRight: isMobile ? 0 : '0.5rem',
-            marginBottom: isMobile ? '1.5rem' : 0,
+            marginBottom: isMobile ? '0.5rem' : 0,
           }}
         >
           <div style={{position: 'relative', width: '100%'}}>
             <img src={tape} alt="Clica aquí per apuntar-te" className="w-full h-auto" style={{opacity: 0.9}} />
             {(() => {
-              const horizontalPadding = isMobile ? 8 : 16;
-              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 8 : 10, maxFontSize: isMobile ? 14 : 18, padding: horizontalPadding });
+              // Make mobile tape text smaller
+              const horizontalPadding = isMobile ? 6 : 16;
+              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 7 : 10, maxFontSize: isMobile ? 12 : 18, padding: horizontalPadding });
               return (
                 <a
                   ref={fitRef}
@@ -227,45 +232,23 @@ const HeroSection = () => {
       </div>
 
       {/* Right: Video side */}
-      <div className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative flex flex-col gap-6 items-center justify-center">
-        {/* Primer video: local, muted, autoplay, sin controles ni botón de sonido, ocupa todo el alto */}
-        <div className="relative w-full h-full">
-          <video
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            src="/video1llavor.mp4"
-            autoPlay={isMobile ? false : true}
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster={heroPosterPath}
-            style={{ background: 'black' }}
-          />
-          {/* Mobile: Play overlay if needed */}
-          {isMobile && showPlay && (
-            <button
-              onClick={handlePlay}
-              className="absolute inset-0 flex items-center justify-center bg-black/40 z-20"
-              style={{ border: 'none', outline: 'none' }}
-              aria-label={t('common.playVideo')}
-            >
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="32" fill="#fff" fillOpacity="0.85" />
-                <polygon points="26,20 48,32 26,44" fill="#222" />
-              </svg>
-            </button>
-          )}
-        </div>
-        {/* Mobile: Arrow at bottom of video */}
-        {isMobile && (
-          <ScrollDownArrow
-            onClick={scrollToNext}
-            className="bottom-24" // move up
-            style={{ zIndex: 40 }}
-            label={t('hero.scrollDown')}
-            big // custom prop for big arrow
-          />
+          className="order-1 md:order-2 md:flex-[0_0_40%] h-screen md:h-full relative flex flex-col gap-6 items-center justify-center">
+        {/* Hide video on mobile, show only on desktop */}
+        {!isMobile && (
+          <div className="relative w-full h-full">
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              src="/video1llavor.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              poster={heroPosterPath}
+              style={{ background: 'black' }}
+            />
+          </div>
         )}
       </div>
       {/* Painter tape note — moved inside the left text area so it scrolls with content. */}
