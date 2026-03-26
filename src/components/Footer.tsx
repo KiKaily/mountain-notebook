@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const whatsappHref = "https://wa.me/34666009107";
 
   return (
     <footer className="min-h-screen md:h-screen w-full md:snap-start flex flex-col justify-end bg-card relative">
@@ -66,7 +67,9 @@ const Footer = () => {
               {t('footer.contact.phone')}
             </p>
             <p className="text-sm font-serif text-foreground opacity-80">
-              +34 666 00 91 07
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-90">
+                +34 666 00 91 07
+              </a>
             </p>
           </div>
         </div>

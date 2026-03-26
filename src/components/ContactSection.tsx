@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 const ContactSection = () => {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
+  const whatsappHref = "https://wa.me/34666009107";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -177,7 +178,7 @@ const ContactSection = () => {
               {t('contact.info.phone')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              <a href="tel:+34666009107" className="underline hover:opacity-90">+34 666 00 91 07</a>
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-90">+34 666 00 91 07</a>
             </p>
           </div>
 
