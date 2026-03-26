@@ -22,6 +22,7 @@ const TeamMemberPage = () => {
     2: "/NoelCV.pdf",
     3: "/JoseCV.pdf",
   };
+  const isJose = member?.id === 3;
 
   const handleBack = () => {
     navigate(`/${getSectionHash("team", i18n.language)}`, { replace: true });
@@ -91,10 +92,10 @@ const TeamMemberPage = () => {
             <div className="w-16 h-[1px] bg-foreground opacity-20" />
 
             <p className="text-sm font-sans leading-relaxed text-foreground opacity-60 italic">
-              {t("team.profile.contactNote", { name: member.name })}
+              {isJose ? t("team.profile.joseContactNote") : t("team.profile.contactNote", { name: member.name })}
             </p>
 
-            {cvLinks[member.id] && (
+            {!isJose && cvLinks[member.id] && (
               <a
                 href={cvLinks[member.id]}
                 target="_blank"

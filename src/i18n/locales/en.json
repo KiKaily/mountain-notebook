@@ -54,6 +54,7 @@
     "profile": {
       "presentation": "Introduction",
       "contactNote": "If you would like to know more about {{name}}'s way of accompanying and our pedagogy, please feel free to contact us.",
+      "joseContactNote": "If you would like to know more about José's accompaniment and our pedagogy, please feel free to contact us.",
       "cvLink": "To view the full CV, click here"
     },
     "members": {
@@ -67,7 +68,7 @@
       },
       "jose": {
         "role": "Woodwork and technology workshop facilitator",
-        "bio": "Volunteer guide in living education projects and emotional educator in non-formal education."
+        "bio": "Guide in living education projects and emotional educator in non-formal education.\n\nI really enjoy sharing experiences with people of all ages and being able to accompany both individual and group processes. All of this, combined with a strong desire to learn, research, and experiment, also helps me move forward in my own life process."
       },
       "amanda": {
         "role": "Sewing and arts workshop facilitator",

@@ -149,7 +149,8 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "Presentació",
         paragraphs: [
-          "Acompanyant voluntari en projectes d'educació viva i educador emocional en el lleure. Format en diferents pedagogies educatives i en enginyeria. El seu camí vital forma part del seu procés d'aprenentatge.",
+          "Acompanyant en projectes d'educació viva i educador emocional en el lleure.",
+          "M’agrada molt compartir experiències amb persones de totes les edats i poder acompanyar processos tant individuals com de grup. Tot això, combinat amb unes ganes molt grans d’aprendre, d’investigar i d’experimentar, per també poder avançar en el meu procés de vida.",
         ],
       },
       {
@@ -176,8 +177,8 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
           "Entre 2012 i 2015 vaig formar part de la coordinació a l'Oficina d'Educació de la Cooperativa Integral Catalana a Aurea Social, on vaig fer assessorament a famílies i grups de criança, creació de xarxa de persones i projectes d'educació alternativa i posada en marxa de les convivències comunitàries per a adolescents.",
           "Cofundador i membre des del 2013 fins al 2020 d'un equip interdisciplinari de professionals de l'educació a l'associació Espirals d'Aprenentatge. En aquesta entitat vam desenvolupar una metodologia d'aprenentatge anomenada Condicionament Zero, que vam portar a la pràctica dins l'escola formal, en el lleure, en formacions i residencials amb professorat, i en processos d'acompanyament a claustres i direccions.",
           "Del 2015 fins al 2020 vaig treballar com a educador emocional a l'escola Granja de Palautordera, acompanyant grups escolars des d'infantil fins a universitaris, fent formació a professorat i formant part del projecte Masia 360 al FCB.",
-          "Entre 2020 i 2025 vaig ser educador referent i coordinador de primària del projecte d'educació viva del Picot de Colors.",
-          "Actualment formo part de l'equip de La Llavor, amb ganes de continuar creixent, aprenent i fent aquest camí que va de la mà del meu procés personal i de vida.",
+          "Entre 2020 i 2024 vaig formar part de l'equip pedagògic al Projecte d'educació viva del Picot de Colors. En aquest projecte vaig estar com a educador referent de primària i un any com a coordinador d'aquesta etapa.",
+          "Actualment col.laboro amb l'equip pedagògic de la Llavor, acompanyant el taller de fusteria/tecnologia que s'ofereix a l'etapa d'infantil i primària. Amb ganes de poder continuar compartint aquests espais amb els infants i formar part del seu camí d'aprenentage.",
         ],
       },
     ],
@@ -185,7 +186,8 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "Presentación",
         paragraphs: [
-          "Acompañante en proyectos de educación viva y educador emocional en el tiempo libre. Formado en distintas pedagogías educativas y en ingeniería. Su camino vital forma parte de su proceso de aprendizaje.",
+          "Acompañante en proyectos de educación viva y educador emocional en el tiempo libre.",
+          "Me gusta mucho compartir experiencias con personas de todas las edades y poder acompañar procesos tanto individuales como de grupo. Todo ello, combinado con unas ganas muy grandes de aprender, investigar y experimentar, para poder avanzar también en mi proceso de vida.",
         ],
       },
       {
@@ -212,8 +214,8 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
           "Entre 2012 y 2015 formé parte de la coordinación en la Oficina de Educación de la Cooperativa Integral Catalana en Aurea Social, donde asesoré a familias y grupos de crianza, creé red entre personas y proyectos de educación alternativa y puse en marcha las convivencias comunitarias para adolescentes.",
           "Fui cofundador y miembro desde 2013 hasta 2020 de un equipo interdisciplinar de profesionales de la educación en la asociación Espirals d'Aprenentatge. En esta entidad desarrollamos una metodología de aprendizaje llamada Condicionamiento Cero, que llevamos a la práctica dentro de la escuela formal, en el tiempo libre, en formaciones y residenciales con profesorado, y en procesos de acompañamiento a claustros y direcciones.",
           "De 2015 a 2020 trabajé como educador emocional en la escuela Granja de Palautordera, acompañando grupos escolares desde infantil hasta universitarios, formando a profesorado y formando parte del proyecto Masia 360 en el FCB.",
-          "Entre 2020 y 2025 fui educador referente y coordinador de primaria del proyecto de educación viva del Picot de Colors.",
-          "Actualmente formo parte del equipo de La Llavor, con ganas de seguir creciendo, aprendiendo y recorriendo este camino que va de la mano de mi proceso personal y vital.",
+          "Entre 2020 y 2024 formé parte del equipo pedagógico del proyecto de educación viva Picot de Colors. En este proyecto estuve como educador referente de primaria y durante un año como coordinador de esta etapa.",
+          "Actualmente colaboro con el equipo pedagógico de La Llavor, acompañando el taller de carpintería/tecnología que se ofrece en la etapa de infantil y primaria. Con ganas de seguir compartiendo estos espacios con los niños y niñas y formar parte de su camino de aprendizaje.",
         ],
       },
     ],
@@ -221,7 +223,8 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "Introduction",
         paragraphs: [
-          "Volunteer guide in living education projects and emotional educator in non-formal education. Trained in different educational approaches and in engineering. His life path is part of his learning process.",
+          "Guide in living education projects and emotional educator in non-formal education.",
+          "I really enjoy sharing experiences with people of all ages and being able to accompany both individual and group processes. All of this, combined with a strong desire to learn, research, and experiment, also helps me move forward in my own life process.",
         ],
       },
       {
@@ -248,8 +251,8 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
           "Between 2012 and 2015 I was part of the coordination team at the Education Office of the Cooperativa Integral Catalana at Aurea Social, where I advised families and parenting groups, helped build a network of people and alternative education projects, and launched community gatherings for teenagers.",
           "I was co-founder and member from 2013 to 2020 of an interdisciplinary team of education professionals in the association Espirals d'Aprenentatge. There we developed a learning methodology called Zero Conditioning, which we put into practice in formal schools, in non-formal education, in teacher training and residential programmes, and in accompaniment processes for school staffs and leadership teams.",
           "From 2015 until 2020 I worked as an emotional educator at Granja de Palautordera school, accompanying school groups from early childhood to university level, training teachers and taking part in the Masia 360 project at FCB.",
-          "Between 2020 and 2025 I worked as a reference educator and primary coordinator in the living education project Picot de Colors.",
-          "I am currently part of the La Llavor team, eager to keep growing, learning, and walking this path that goes hand in hand with my personal and life process.",
+          "Between 2020 and 2024 I was part of the pedagogical team at the living education project Picot de Colors. In this project I worked as a primary reference educator and for one year as coordinator of that stage.",
+          "I currently collaborate with the pedagogical team at La Llavor, accompanying the woodworking/technology workshop offered in the preschool and primary stages. I look forward to continuing to share these spaces with the children and to being part of their learning journey.",
         ],
       },
     ],

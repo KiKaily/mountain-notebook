@@ -54,6 +54,7 @@
     "profile": {
       "presentation": "Presentació",
       "contactNote": "Si desitges conèixer més sobre l'acompanyament de {{name}} i la nostra pedagogia, no dubtis a contactar-nos.",
+      "joseContactNote": "Si desitges conèixer més sobre l'acompanyament de José i la nostra pedagogia, no dubtis a contactar-nos.",
       "cvLink": "Per veure el CV complet, clica aquí"
     },
     "members": {
@@ -67,7 +68,7 @@
       },
       "jose": {
         "role": "Tallerista de fusteria i tecnologia",
-        "bio": "Acompanyant voluntari en projectes d'educació viva i educador emocional en el lleure."
+        "bio": "Acompanyant en projectes d'educació viva i educador emocional en el lleure.\n\nM’agrada molt compartir experiències amb persones de totes les edats i poder acompanyar processos tant individuals com de grup. Tot això, combinat amb unes ganes molt grans d’aprendre, d’investigar i d’experimentar, per també poder avançar en el meu procés de vida."
       },
       "amanda": {
         "role": "Tallerista de costura i arts",

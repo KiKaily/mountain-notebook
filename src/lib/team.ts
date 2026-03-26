@@ -41,7 +41,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 3,
-    name: "Jose",
+    name: "José Andrés Mingorance",
     roleKey: "team.members.jose.role",
     bioKey: "team.members.jose.bio",
     avatar: avatarJose1,
@@ -50,7 +50,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 4,
-    name: "Amanda",
+    name: "Amanda Brusés Pinart",
     roleKey: "team.members.amanda.role",
     bioKey: "team.members.amanda.bio",
     avatar: avatarAmanda1,
@@ -59,7 +59,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 5,
-    name: "Sarai",
+    name: "Sarai Lorite Rodríguez",
     roleKey: "team.members.sarai.role",
     bioKey: "team.members.sarai.bio",
     avatar: avatarSarai1,

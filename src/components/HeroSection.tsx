@@ -121,9 +121,22 @@ const HeroSection = () => {
           )}
           <h1
             className="text-xl md:text-2xl font-serif leading-relaxed tracking-wide text-foreground relative"
-            style={{ minHeight: '2.5em', display: 'flex', alignItems: 'center', marginTop: isMobile ? '-1.5rem' : undefined }}
+            style={{
+              minHeight: '2.5em',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginTop: isMobile ? '-2.3rem' : undefined,
+              fontSize: isMobile ? 'clamp(0.99rem, 4.8vw, 1.2rem)' : undefined,
+              letterSpacing: isMobile ? '0.015em' : undefined,
+              whiteSpace: isMobile ? 'nowrap' : undefined,
+              width: isMobile ? 'calc(100vw - 4rem)' : '100%',
+              left: isMobile ? '50%' : undefined,
+              transform: isMobile ? 'translateX(-50%)' : undefined,
+              textAlign: 'center',
+            }}
           >
-            <TypewriterText text={t('hero.title2')} delay={50} startDelay={500} />
+            <TypewriterText text={t('hero.title2')} delay={50} startDelay={500} className={isMobile ? 'whitespace-nowrap' : ''} />
             <span aria-hidden="true" className="invisible absolute left-0 top-0 w-full">
               {t('hero.title2')}
             </span>
@@ -134,7 +147,16 @@ const HeroSection = () => {
             <a href={getSectionHash("second", i18n.language)} className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{ fontWeight: 600, marginTop: isMobile ? '-1.5rem' : undefined }}>
               <TypewriterText text={t('hero.menu.birth')} delay={35} startDelay={1500} />
             </a>
-            <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer" className="font-serif text-primary text-lg absolute left-32 top-2 rotate-[4deg] hover:underline min-w-[13rem]" style={{ fontWeight: 600 }}>
+            <a
+              href="/projecte_pedagogic_la_llavor.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-serif text-primary text-lg absolute top-2 rotate-[4deg] hover:underline min-w-[13rem] whitespace-nowrap md:left-32"
+              style={{
+                fontWeight: 600,
+                left: isMobile ? '6.4rem' : undefined,
+              }}
+            >
               <TypewriterText text={t('hero.menu.pedagogicalProject')} delay={35} startDelay={1500} />
             </a>
             <a href={getSectionHash("team", i18n.language)} className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{ fontWeight: 600 }}>
@@ -173,7 +195,7 @@ const HeroSection = () => {
               {(() => {
                 // Make desktop text a bit smaller
                 const horizontalPadding = isMobile ? 8 : 24;
-                const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 10 : 13, maxFontSize: isMobile ? 18 : 24, padding: horizontalPadding });
+                const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 8 : 13, maxFontSize: isMobile ? 16 : 24, padding: horizontalPadding });
                 return (
                   <span
                     ref={fitRef}

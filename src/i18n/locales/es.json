@@ -54,6 +54,7 @@
     "profile": {
       "presentation": "Presentación",
       "contactNote": "Si deseas conocer más sobre el acompañamiento de {{name}} y nuestra pedagogía, no dudes en contactarnos.",
+      "joseContactNote": "Si deseas conocer más sobre el acompañamiento de José y nuestra pedagogía, no dudes en contactarnos.",
       "cvLink": "Para ver el CV completo, haz clic aquí"
     },
     "members": {
@@ -67,7 +68,7 @@
       },
       "jose": {
         "role": "Tallerista de carpintería y tecnología",
-        "bio": "Acompañante voluntario en proyectos de educación viva y educador emocional en el tiempo libre."
+        "bio": "Acompañante en proyectos de educación viva y educador emocional en el tiempo libre.\n\nMe gusta mucho compartir experiencias con personas de todas las edades y poder acompañar procesos tanto individuales como de grupo. Todo ello, combinado con unas ganas muy grandes de aprender, investigar y experimentar, para poder avanzar también en mi proceso de vida."
       },
       "amanda": {
         "role": "Tallerista de costura y artes",

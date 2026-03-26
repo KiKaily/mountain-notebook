@@ -123,7 +123,7 @@ const TeamSection = () => {
             </div>
 
             {/* Helpers */}
-            <div>
+            <div id="team-helpers" className="md:snap-start md:snap-always scroll-mt-24 pt-4">
               <h3 className="text-lg font-serif text-foreground mb-6">{t('team.helpersTitle')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {teamMembers.filter(m => m.category === 'helper').map((member) => (
