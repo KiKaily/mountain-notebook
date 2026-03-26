@@ -48,7 +48,7 @@ const SecondReadMore = () => {
           {/* Insert PDF button after La Selva paragraph (readMoreP3) */}
           <div className="mt-4">
             <a
-              href="/projecte_pedagogic_la_llavor.pdf"
+              href="/projecte-pedagogic.html"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-sm font-sans text-primary underline hover:opacity-80 mt-4"

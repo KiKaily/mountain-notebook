@@ -26,10 +26,10 @@ const TeamSection = () => {
   };
 
   return (
-    <section id="team" className="min-h-screen w-full md:snap-start flex flex-col bg-card relative overflow-hidden">
+    <section id="team" className="min-h-screen w-full flex flex-col bg-card relative overflow-hidden">
       {/* SVG overlay removed */}
 
-      <div className="px-8 md:px-16 py-20 relative z-10">
+      <div className="px-8 md:px-16 py-20 relative z-10 md:snap-start md:snap-always">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <div className="w-24 h-[1px] bg-foreground opacity-30 mb-8" />

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projecte pedagògic | La Llavor</title>
+    <meta name="description" content="Projecte pedagògic de La Llavor." />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="shortcut icon" href="/favicon.webp" />
+    <link rel="apple-touch-icon" href="/favicon.webp" />
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: #f3eee2;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: Georgia, serif;
+      }
+
+      .viewer {
+        flex: 1;
+        border: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      .fallback {
+        padding: 1rem 1.25rem;
+        text-align: center;
+        color: #2d2d2d;
+      }
+
+      .fallback a {
+        color: #8a5a32;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe class="viewer" src="/projecte_pedagogic_la_llavor.pdf" title="Projecte pedagògic de La Llavor">
+    </iframe>
+    <div class="fallback">
+      Si el document no es mostra correctament, pots obrir el PDF directament
+      <a href="/projecte_pedagogic_la_llavor.pdf" target="_blank" rel="noopener noreferrer">aquí</a>.
+    </div>
+  </body>
+</html>

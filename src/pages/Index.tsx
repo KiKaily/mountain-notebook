@@ -22,7 +22,7 @@ const Index = () => {
   }, [hash]);
 
   return (
-    <main className="h-screen overflow-y-scroll md:snap-y md:snap-mandatory">
+    <main className="h-screen overflow-y-scroll md:snap-y md:snap-proximity">
       <HeroSection />
       <SecondSection />
       <TeamSection />

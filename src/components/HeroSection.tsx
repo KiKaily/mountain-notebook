@@ -148,7 +148,7 @@ const HeroSection = () => {
               <TypewriterText text={t('hero.menu.birth')} delay={35} startDelay={1500} />
             </a>
             <a
-              href="/projecte_pedagogic_la_llavor.pdf"
+              href="/projecte-pedagogic.html"
               target="_blank"
               rel="noopener noreferrer"
               className="font-serif text-primary text-lg absolute top-2 rotate-[4deg] hover:underline min-w-[13rem] whitespace-nowrap md:left-32"
