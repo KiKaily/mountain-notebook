@@ -2,6 +2,7 @@ import { useState } from "react";
 import ScrollDownArrow from "./ScrollDownArrow";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTranslation } from "react-i18next";
+import { trackEvent } from "@/lib/analytics";
 
 const ContactSection = () => {
   const { t } = useTranslation();
@@ -39,15 +40,18 @@ const ContactSection = () => {
         });
 
         if (response.ok) {
+          trackEvent("contact_form_submit", { method: "formspree" });
           setSuccess(true);
           setFormData({ name: "", email: "", message: "" });
         } else {
           // fallback to mailto if the endpoint fails
+          trackEvent("contact_form_fallback_mailto", { reason: "formspree_error" });
           const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
           const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
           window.location.href = `mailto:info@projectelallavor.com?subject=${subject}&body=${body}`;
         }
       } catch (err) {
+        trackEvent("contact_form_fallback_mailto", { reason: "network_error" });
         const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
         const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
         window.location.href = `mailto:info@projectelallavor.com?subject=${subject}&body=${body}`;
@@ -57,6 +61,7 @@ const ContactSection = () => {
       }
     } else {
       // No endpoint configured — fallback to mailto behavior
+      trackEvent("contact_form_submit", { method: "mailto" });
       const subject = encodeURIComponent(`Contact from ${formData.name || "Website"}`);
       const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
       window.location.href = `mailto:info@projectelallavor.com?subject=${subject}&body=${body}`;
@@ -160,7 +165,9 @@ const ContactSection = () => {
               {t('contact.info.email')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              <a href="mailto:info@projectelallavor.com" className="underline hover:opacity-90">info@projectelallavor.com</a>
+              <a href="mailto:info@projectelallavor.com" className="underline hover:opacity-90" onClick={() => trackEvent("contact_email_click")}>
+                info@projectelallavor.com
+              </a>
             </p>
           </div>
 
@@ -169,7 +176,15 @@ const ContactSection = () => {
               {t('contact.info.location')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              <a href="https://maps.app.goo.gl/ExweY2uko9SgWDyt7" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-90">Sant Esteve de Palautordera, Montseny</a>
+              <a
+                href="https://maps.app.goo.gl/ExweY2uko9SgWDyt7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:opacity-90"
+                onClick={() => trackEvent("contact_map_click")}
+              >
+                Sant Esteve de Palautordera, Montseny
+              </a>
             </p>
           </div>
 
@@ -178,7 +193,15 @@ const ContactSection = () => {
               {t('contact.info.phone')}
             </p>
             <p className="text-base md:text-lg font-serif text-foreground opacity-90 mt-2">
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-90">+34 666 00 91 07</a>
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:opacity-90"
+                onClick={() => trackEvent("contact_whatsapp_click")}
+              >
+                +34 666 00 91 07
+              </a>
             </p>
           </div>
 

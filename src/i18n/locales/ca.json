@@ -194,6 +194,12 @@
   "cookies": {
     "title": "Política de Galetes",
     "back": "Tornar a l'inici",
+    "banner": {
+      "description": "Utilitzem galetes essencials per al funcionament del lloc i, si ho acceptes, galetes d'anàlisi de Google Analytics per entendre com s'utilitza el web.",
+      "accept": "Acceptar analítica",
+      "reject": "Només essencials",
+      "more": "Més informació"
+    },
     "sections": {
       "what": "Què són les Galetes?",
       "types": "Tipus de Galetes que Utilitzem",

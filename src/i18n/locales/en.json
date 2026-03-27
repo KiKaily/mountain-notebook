@@ -194,6 +194,12 @@
   "cookies": {
     "title": "Cookie Policy",
     "back": "Back to Home",
+    "banner": {
+      "description": "We use essential cookies for the site to work and, if you accept them, Google Analytics cookies to understand how the website is used.",
+      "accept": "Accept analytics",
+      "reject": "Essential only",
+      "more": "Learn more"
+    },
     "sections": {
       "what": "What are Cookies?",
       "types": "Types of Cookies We Use",

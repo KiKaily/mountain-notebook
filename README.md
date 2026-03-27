@@ -64,6 +64,17 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
+## Environment variables
+
+Create a local `.env` file with the variables you need:
+
+```sh
+VITE_FORMSPREE_ENDPOINT=
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+`VITE_GA_MEASUREMENT_ID` enables Google Analytics 4. The app only loads Analytics after the visitor accepts analytics cookies in the banner.
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!

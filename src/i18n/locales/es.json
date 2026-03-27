@@ -150,6 +150,12 @@
   "cookies": {
     "title": "Política de Cookies",
     "back": "Volver al inicio",
+    "banner": {
+      "description": "Utilizamos cookies esenciales para que el sitio funcione y, si las aceptas, cookies de Google Analytics para entender cómo se usa la web.",
+      "accept": "Aceptar analítica",
+      "reject": "Solo esenciales",
+      "more": "Más información"
+    },
     "sections": {
       "what": "¿Qué son las Cookies?",
       "types": "Tipos de Cookies que Utilizamos",

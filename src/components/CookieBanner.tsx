@@ -1,40 +1,52 @@
 import { useEffect, useState } from "react";
-
-const COOKIE_KEY = "llavor_cookies_accepted";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { getAnalyticsConsent, setAnalyticsConsent } from "@/lib/analytics";
 
 const CookieBanner = () => {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(COOKIE_KEY);
-      if (!stored) {
-        setVisible(true);
-      }
+      setVisible(getAnalyticsConsent() === null);
     } catch (e) {
       // localStorage might be unavailable in SSR; ignore.
       setVisible(false);
     }
   }, []);
 
-  const accept = () => {
-    localStorage.setItem(COOKIE_KEY, "1");
+  const handleChoice = (analytics: boolean) => {
+    setAnalyticsConsent(analytics);
     setVisible(false);
   };
 
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 bg-card bg-opacity-95 text-foreground p-4 flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 z-50">
-      <p className="text-xs font-sans">
-        Aquest lloc utilitza galetes per millorar la vostra experiència. Si continueu navegant, accepteu l'ús de galetes.
-      </p>
-      <button
-        onClick={accept}
-        className="mt-2 md:mt-0 px-4 py-2 bg-primary text-primary-foreground text-xs font-serif tracking-wide hover:opacity-90 transition-opacity rounded"
-      >
-        D'acord
-      </button>
+    <div className="fixed bottom-0 inset-x-0 z-50 border-t border-border/60 bg-card/95 p-4 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <p className="max-w-3xl text-xs font-sans leading-relaxed text-foreground">
+          {t("cookies.banner.description")}{" "}
+          <Link to="/cookies" className="underline underline-offset-2">
+            {t("cookies.banner.more")}
+          </Link>
+        </p>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <button
+            onClick={() => handleChoice(false)}
+            className="rounded border border-border px-4 py-2 text-xs font-sans tracking-wide text-foreground transition-opacity hover:opacity-80"
+          >
+            {t("cookies.banner.reject")}
+          </button>
+          <button
+            onClick={() => handleChoice(true)}
+            className="rounded bg-primary px-4 py-2 text-xs font-serif tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            {t("cookies.banner.accept")}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
