@@ -79,7 +79,7 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen md:h-screen w-full md:snap-start flex flex-col md:flex-row overflow-hidden relative">
       {/* Left: Paper/text side */}
-      <div className="order-2 md:order-1 flex-1 flex flex-col justify-center items-start px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
+      <div className="order-2 md:order-1 flex-1 flex flex-col justify-center items-center px-8 md:px-16 py-12 bg-card relative min-h-screen md:min-h-0">
         {/* Paper texture overlay */}
         {/* SVG overlay removed */}
 
@@ -106,9 +106,9 @@ const HeroSection = () => {
         )}
 
         <div
-          className="max-w-md relative z-10 space-y-8"
+          className="relative z-10 flex w-full max-w-2xl flex-col items-center space-y-8 text-center"
           style={isMobile
-            ? { marginTop: '11.5rem', marginLeft: '0.25rem' }
+            ? { marginTop: '11.5rem' }
             : { marginTop: '6.5rem' }}
         >
           {!isMobile && (
@@ -131,8 +131,6 @@ const HeroSection = () => {
               letterSpacing: isMobile ? '0.015em' : undefined,
               whiteSpace: isMobile ? 'nowrap' : undefined,
               width: isMobile ? 'calc(100vw - 4rem)' : '100%',
-              left: isMobile ? '50%' : undefined,
-              transform: isMobile ? 'translateX(-50%)' : undefined,
               textAlign: 'center',
             }}
           >
@@ -142,27 +140,26 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          <div className="space-y-6 mt-8 flex flex-col items-start relative" style={{ height: "6rem" }}>
-            {/* Scattered links with typed labels */}
-            <a href={getSectionHash("second", i18n.language)} className="font-serif text-primary text-lg absolute left-0 top-0 rotate-[-7deg] hover:underline" style={{ fontWeight: 600, marginTop: isMobile ? '-1.5rem' : undefined }}>
+          <div
+            className="mt-6 flex w-full max-w-xl flex-wrap items-center justify-center gap-x-8 gap-y-4"
+            style={{ marginTop: isMobile ? '0.25rem' : '0.75rem' }}
+          >
+            <a href={getSectionHash("second", i18n.language)} className="inline-block font-serif text-primary text-lg rotate-[-7deg] hover:underline" style={{ fontWeight: 600 }}>
               <TypewriterText text={t('hero.menu.birth')} delay={35} startDelay={1500} />
             </a>
             <a
               href="/projecte-pedagogic.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-serif text-primary text-lg absolute top-2 rotate-[4deg] hover:underline min-w-[13rem] whitespace-nowrap md:left-32"
-              style={{
-                fontWeight: 600,
-                left: isMobile ? '6.4rem' : undefined,
-              }}
+              className="inline-block min-w-[13rem] whitespace-nowrap font-serif text-primary text-lg rotate-[4deg] hover:underline"
+              style={{ fontWeight: 600 }}
             >
               <TypewriterText text={t('hero.menu.pedagogicalProject')} delay={35} startDelay={1500} />
             </a>
-            <a href={getSectionHash("team", i18n.language)} className="font-serif text-primary text-lg absolute left-16 top-10 rotate-[-2deg] hover:underline" style={{ fontWeight: 600 }}>
+            <a href={getSectionHash("team", i18n.language)} className="inline-block font-serif text-primary text-lg rotate-[-2deg] hover:underline" style={{ fontWeight: 600 }}>
               <TypewriterText text={t('hero.menu.team')} delay={35} startDelay={1500} />
             </a>
-            <a href={getSectionHash("contact", i18n.language)} className="font-serif text-primary text-lg absolute left-44 md:left-64 top-12 rotate-[6deg] hover:underline" style={{ fontWeight: 600 }}>
+            <a href={getSectionHash("contact", i18n.language)} className="inline-block font-serif text-primary text-lg rotate-[6deg] hover:underline" style={{ fontWeight: 600 }}>
               <TypewriterText text={t('hero.menu.contact')} delay={35} startDelay={1500} />
             </a>
           </div>
