@@ -76,6 +76,7 @@ export const initializeAnalytics = () => {
   window.gtag?.("js", new Date());
   window.gtag?.("config", MEASUREMENT_ID, {
     anonymize_ip: true,
+    send_page_view: false,
   });
 
   analyticsInitialized = true;

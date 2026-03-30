@@ -15,7 +15,6 @@ const AnalyticsTracker = () => {
   useEffect(() => {
     if (analyticsEnabled) {
       initializeAnalytics();
-      lastTrackedPath.current = `${location.pathname}${location.search}${location.hash}`;
     }
 
     const handleConsentChange = () => {
@@ -24,7 +23,6 @@ const AnalyticsTracker = () => {
 
       if (nextEnabled) {
         initializeAnalytics();
-        lastTrackedPath.current = `${location.pathname}${location.search}${location.hash}`;
       } else {
         lastTrackedPath.current = null;
       }
