@@ -11,6 +11,7 @@ const TypewriterText = ({ text, delay = 40, startDelay = 0, className = "" }: Ty
   const [displayed, setDisplayed] = useState("");
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
+  const isTyping = started && displayed.length > 0 && displayed.length < text.length;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,10 +48,21 @@ const TypewriterText = ({ text, delay = 40, startDelay = 0, className = "" }: Ty
   }, [started, text, delay, startDelay]);
 
   return (
-    <span ref={ref} className={`font-serif ${className}`}>
-      {displayed}
-      {started && displayed.length > 0 && displayed.length < text.length && (
-        <span className="animate-pulse">|</span>
+    <span ref={ref} className={`relative inline-grid font-serif ${className}`}>
+      <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-pre">
+        {text}
+        <span>|</span>
+      </span>
+      <span className="col-start-1 row-start-1 whitespace-pre">
+        {displayed}
+        {isTyping && (
+          <span className="animate-pulse">|</span>
+        )}
+      </span>
+      {!started && (
+        <span aria-hidden="true" className="col-start-1 row-start-1 whitespace-pre opacity-0">
+          {text}
+        </span>
       )}
     </span>
   );
