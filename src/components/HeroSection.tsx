@@ -192,7 +192,9 @@ const HeroSection = () => {
               {(() => {
                 // Make desktop text a bit smaller
                 const horizontalPadding = isMobile ? 8 : 24;
-                const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 8 : 13, maxFontSize: isMobile ? 16 : 24, padding: horizontalPadding });
+                // Reduce font size by 10%
+                const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 8 : 13, maxFontSize: isMobile ? 16 : 24, padding: horizontalPadding });
+                const fontSize = fontSizeRaw * 0.9;
                 return (
                   <span
                     ref={fitRef}
@@ -225,30 +227,28 @@ const HeroSection = () => {
           className="z-10 select-none flex items-center"
           style={{
             position: isMobile ? 'static' : 'absolute',
-            left: isMobile ? undefined : '1rem',
-            top: isMobile ? undefined : '8.5rem',
-            width: isMobile ? '100%' : '22rem',
-            maxWidth: isMobile ? '100vw' : '80vw',
+            left: isMobile ? undefined : '0.7rem',
+            top: isMobile ? undefined : '7.5rem',
+            width: isMobile ? '100%' : '28.5rem', // 22rem * 1.3
+            maxWidth: isMobile ? '100vw' : '104vw', // 80vw * 1.3
             height: 'auto',
             transform: isMobile ? undefined : 'rotate(-2deg)',
-            paddingLeft: isMobile ? 0 : '0.5rem',
-            paddingRight: isMobile ? 0 : '0.5rem',
-            marginTop: isMobile ? '-0.15rem' : 0,
-            marginBottom: isMobile ? '0.5rem' : 0,
+            paddingLeft: isMobile ? 0 : '0.65rem',
+            paddingRight: isMobile ? 0 : '0.65rem',
+            marginTop: isMobile ? '-0.2rem' : 0,
+            marginBottom: isMobile ? '0.65rem' : 0,
           }}
         >
           <div style={{position: 'relative', width: '100%'}}>
-            <img src={tape} alt="Clica aquí per apuntar-te" className="w-full h-auto" style={{opacity: 0.9}} />
+            <img src={tape} alt="Cinta contacte" className="w-full h-auto" style={{opacity: 0.9}} />
             {(() => {
-              // Make mobile tape text smaller
-              const horizontalPadding = isMobile ? 6 : 16;
-              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 7 : 9, maxFontSize: isMobile ? 12 : 16, padding: horizontalPadding });
+              // Make tape text bigger (30% increase)
+              const horizontalPadding = isMobile ? 8 : 21; // 6*1.3, 16*1.3
+              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 9 : 12, maxFontSize: isMobile ? 16 : 21, padding: horizontalPadding });
               return (
                 <a
                   ref={fitRef}
-                  href="https://forms.gle/kmRUNsSKacXLsDG96"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="absolute top-1/2 left-1/2 flex items-center justify-center font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                   style={{
                     transform: 'translate(-52%, -50%)',
