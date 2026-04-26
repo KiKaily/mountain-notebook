@@ -139,10 +139,13 @@ const HeroSection = () => {
               {t('hero.title2')}
             </span>
           </h1>
+          <div className="mt-0.5 text-sm md:text-base font-serif text-foreground/80 max-w-xl leading-snug text-center">
+            <TypewriterText text={t('hero.subtitle')} delay={30} startDelay={900} />
+          </div>
 
           <div
-            className="mt-6 flex w-full max-w-xl flex-wrap items-center justify-center gap-x-8 gap-y-4"
-            style={{ marginTop: isMobile ? '0.25rem' : '0.75rem' }}
+            className="mt-3 flex w-full max-w-xl flex-wrap items-center justify-center gap-x-8 gap-y-4"
+            style={{ marginTop: isMobile ? '0.75rem' : '1.25rem' }}
           >
             <a href={getSectionHash("second", i18n.language)} className="inline-block font-serif text-primary text-lg rotate-[-7deg] hover:underline" style={{ fontWeight: 600 }}>
               <TypewriterText text={t('hero.menu.birth')} delay={35} startDelay={1500} />
