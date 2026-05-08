@@ -189,21 +189,21 @@ const HeroSection = () => {
           <div style={{position: 'relative', width: '100%'}}>
             <img src={tape} alt="Portes obertes 18 d'abril" className="w-full h-auto" style={{opacity: 0.9}} />
             <div
-              className="absolute inset-0 flex items-center justify-center"
+              className="absolute inset-0 flex items-center justify-start"
               style={{ pointerEvents: 'none', width: '100%', height: '100%' }}
             >
               {(() => {
-                // Make desktop text a bit smaller
-                const horizontalPadding = isMobile ? 8 : 24;
-                // Reduce font size by 10%
-                const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 8 : 13, maxFontSize: isMobile ? 16 : 24, padding: horizontalPadding });
-                const fontSize = fontSizeRaw * 0.9;
+                const horizontalPadding = isMobile ? 10 : 22;
+                const textWidth = isMobile ? '83%' : '82%';
+                const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 8 : 12, maxFontSize: isMobile ? 16 : 22, padding: horizontalPadding });
+                const fontSize = fontSizeRaw * 0.88;
                 return (
                   <span
                     ref={fitRef}
                     className="font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                     style={{
-                      width: '84%',
+                      width: textWidth,
+                      marginLeft: isMobile ? '7%' : '8%',
                       lineHeight: 1.1,
                       fontSize,
                       letterSpacing: '0.04em',
@@ -245,17 +245,19 @@ const HeroSection = () => {
           <div style={{position: 'relative', width: '100%'}}>
             <img src={tape} alt="Cinta contacte" className="w-full h-auto" style={{opacity: 0.9}} />
             {(() => {
-              // Make tape text bigger (30% increase)
-              const horizontalPadding = isMobile ? 8 : 21; // 6*1.3, 16*1.3
-              const [fitRef, fontSize] = useFitText({ minFontSize: isMobile ? 9 : 12, maxFontSize: isMobile ? 16 : 21, padding: horizontalPadding });
+              const horizontalPadding = isMobile ? 10 : 20;
+              const textWidth = isMobile ? '83%' : '82%';
+              const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 9 : 13, maxFontSize: isMobile ? 18 : 22, padding: horizontalPadding });
+              const fontSize = fontSizeRaw * 0.88;
               return (
                 <a
                   ref={fitRef}
                   href="#contact"
-                  className="absolute top-1/2 left-1/2 flex items-center justify-center font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
+                  className="absolute top-1/2 font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                   style={{
-                    transform: 'translate(-52%, -50%)',
-                    width: '84%',
+                    left: isMobile ? '7%' : '8%',
+                    transform: 'translate(0, -50%)',
+                    width: textWidth,
                     lineHeight: 1.1,
                     fontSize,
                     letterSpacing: '0.04em',

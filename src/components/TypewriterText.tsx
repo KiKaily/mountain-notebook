@@ -49,18 +49,18 @@ const TypewriterText = ({ text, delay = 40, startDelay = 0, className = "" }: Ty
 
   return (
     <span ref={ref} className={`relative inline-grid font-serif ${className}`}>
-      <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-pre">
+      <span aria-hidden="true" className="invisible col-start-1 row-start-1 whitespace-pre-wrap break-words">
         {text}
         <span>|</span>
       </span>
-      <span className="col-start-1 row-start-1 whitespace-pre">
+      <span className="col-start-1 row-start-1 whitespace-pre-wrap break-words">
         {displayed}
         {isTyping && (
           <span className="animate-pulse">|</span>
         )}
       </span>
       {!started && (
-        <span aria-hidden="true" className="col-start-1 row-start-1 whitespace-pre opacity-0">
+        <span aria-hidden="true" className="col-start-1 row-start-1 whitespace-pre-wrap break-words opacity-0">
           {text}
         </span>
       )}
