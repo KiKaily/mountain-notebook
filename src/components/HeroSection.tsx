@@ -282,7 +282,13 @@ const HeroSection = () => {
                       linkText = 'here';
                     }
                     const escapedLinkText = linkText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                    const textBeforeLink = fullText.replace(new RegExp(`\\s*${escapedLinkText}\\.?$`), '');
+                    let textBeforeLink = fullText.replace(new RegExp(`([,;:])?\\.?\\s*${escapedLinkText}\\.?$`), '$1');
+                    textBeforeLink = textBeforeLink.replace(/\\s*$/, '');
+                    if (/[,;:]$/.test(textBeforeLink)) {
+                      textBeforeLink = textBeforeLink + ' ';
+                    } else if (textBeforeLink && !/\\s$/.test(textBeforeLink)) {
+                      textBeforeLink = textBeforeLink + ' ';
+                    }
                     return (
                       <>
                         <span>{textBeforeLink}</span>
@@ -360,7 +366,13 @@ const HeroSection = () => {
                       linkText = 'here';
                     }
                     const escapedLinkText = linkText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                    const textBeforeLink = fullText.replace(new RegExp(`\\s*${escapedLinkText}\\.?$`), '');
+                    let textBeforeLink = fullText.replace(new RegExp(`([,;:])?\\.?\\s*${escapedLinkText}\\.?$`), '$1');
+                    textBeforeLink = textBeforeLink.replace(/\\s*$/, '');
+                    if (/[,;:]$/.test(textBeforeLink)) {
+                      textBeforeLink = textBeforeLink + ' ';
+                    } else if (textBeforeLink && !/\\s$/.test(textBeforeLink)) {
+                      textBeforeLink = textBeforeLink + ' ';
+                    }
                     return (
                       <>
                         <span>{textBeforeLink}</span>
