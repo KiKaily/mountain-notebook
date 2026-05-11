@@ -108,8 +108,8 @@ const HeroSection = () => {
         <div
           className="relative z-10 flex w-full max-w-2xl flex-col items-center space-y-8 text-center"
           style={isMobile
-            ? { marginTop: '11.5rem' }
-            : { marginTop: '6.5rem' }}
+            ? { marginTop: '13.5rem' }
+            : { marginTop: '8.5rem' }}
         >
           {!isMobile && (
             <img
@@ -177,8 +177,8 @@ const HeroSection = () => {
             position: isMobile ? 'static' : 'absolute',
             left: isMobile ? undefined : '1rem',
             top: isMobile ? undefined : '2.5rem',
-            width: isMobile ? '100%' : '36rem',
-            maxWidth: isMobile ? '100vw' : '98vw',
+            width: isMobile ? '100%' : '27rem',
+            maxWidth: isMobile ? '100vw' : '73.5vw',
             height: 'auto',
             paddingLeft: isMobile ? 0 : '0.5rem',
             paddingRight: isMobile ? 0 : '0.5rem',
@@ -195,7 +195,7 @@ const HeroSection = () => {
               {(() => {
                 const horizontalPadding = isMobile ? 10 : 22;
                 const textWidth = isMobile ? '83%' : '82%';
-                const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 8 : 12, maxFontSize: isMobile ? 16 : 22, padding: horizontalPadding });
+                const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 6 : 9, maxFontSize: isMobile ? 12 : 16.5, padding: horizontalPadding });
                 const fontSize = fontSizeRaw * 0.88;
                 return (
                   <span
@@ -231,7 +231,7 @@ const HeroSection = () => {
           style={{
             position: isMobile ? 'static' : 'absolute',
             left: isMobile ? undefined : '0.7rem',
-            top: isMobile ? undefined : '7.5rem',
+            top: isMobile ? undefined : '6rem',
             width: isMobile ? '100%' : '28.5rem', // 22rem * 1.3
             maxWidth: isMobile ? '100vw' : '104vw', // 80vw * 1.3
             height: 'auto',
@@ -250,9 +250,8 @@ const HeroSection = () => {
               const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 9 : 13, maxFontSize: isMobile ? 18 : 22, padding: horizontalPadding });
               const fontSize = fontSizeRaw * 0.88;
               return (
-                <a
+                <div
                   ref={fitRef}
-                  href="#contact"
                   className="absolute top-1/2 font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                   style={{
                     left: isMobile ? '7%' : '8%',
@@ -263,7 +262,7 @@ const HeroSection = () => {
                     letterSpacing: '0.04em',
                     background: 'transparent',
                     padding: `0 ${horizontalPadding}px`,
-                    textDecoration: 'underline',
+                    textDecoration: 'none',
                     pointerEvents: 'auto',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
@@ -272,12 +271,120 @@ const HeroSection = () => {
                     maxWidth: '100%',
                   }}
                 >
-                  {t('hero.signupHere')}
-                </a>
+                  {(() => {
+                    const fullText = t('hero.signupHere');
+                    let linkText;
+                    if (i18n.language === 'ca') {
+                      linkText = 'contacte aquí';
+                    } else if (i18n.language === 'es') {
+                      linkText = 'contacta aquí';
+                    } else {
+                      linkText = 'here';
+                    }
+                    const escapedLinkText = linkText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const textBeforeLink = fullText.replace(new RegExp(`\\s*${escapedLinkText}\\.?$`), '');
+                    return (
+                      <>
+                        <span>{textBeforeLink}</span>
+                        <a
+                          href="#contact"
+                          className="underline hover:text-primary transition-colors"
+                          style={{
+                            textDecoration: 'underline',
+                            color: '#2d2d2d',
+                          }}
+                        >
+                          {linkText}
+                        </a>
+                      </>
+                    );
+                  })()}
+                </div>
               );
             })()}
           </div>
         </div>
+
+        {/* Third tape - Activity signup */}
+        <div
+          className="z-10 select-none flex items-center"
+          style={{
+            position: isMobile ? 'static' : 'absolute',
+            left: isMobile ? undefined : '1.2rem',
+            top: isMobile ? undefined : '9rem',
+            width: isMobile ? '100%' : '26rem',
+            maxWidth: isMobile ? '100vw' : '95vw',
+            height: 'auto',
+            transform: isMobile ? undefined : 'rotate(1deg)',
+            paddingLeft: isMobile ? 0 : '0.5rem',
+            paddingRight: isMobile ? 0 : '0.5rem',
+            marginTop: isMobile ? '0.5rem' : 0,
+            marginBottom: isMobile ? '1rem' : 0,
+          }}
+        >
+          <div style={{position: 'relative', width: '100%'}}>
+            <img src={tape} alt="Cinta activitats" className="w-full h-auto" style={{opacity: 0.9}} />
+            {(() => {
+              const horizontalPadding = isMobile ? 10 : 18;
+              const textWidth = isMobile ? '83%' : '82%';
+              const [fitRef, fontSizeRaw] = useFitText({ minFontSize: isMobile ? 8 : 12, maxFontSize: isMobile ? 16 : 20, padding: horizontalPadding });
+              const fontSize = fontSizeRaw * 0.88;
+              return (
+                <div
+                  ref={fitRef}
+                  className="absolute top-1/2 font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
+                  style={{
+                    left: isMobile ? '7%' : '8%',
+                    transform: 'translate(0, -50%)',
+                    width: textWidth,
+                    lineHeight: 1.1,
+                    fontSize,
+                    letterSpacing: '0.04em',
+                    background: 'transparent',
+                    padding: `0 ${horizontalPadding}px`,
+                    textDecoration: 'none',
+                    pointerEvents: 'auto',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'clip',
+                    boxSizing: 'border-box',
+                    maxWidth: '100%',
+                  }}
+                >
+                  {(() => {
+                    const fullText = t('hero.activitySignup');
+                    let linkText;
+                    if (i18n.language === 'ca' || i18n.language === 'es') {
+                      linkText = 'clica aquí';
+                    } else {
+                      linkText = 'here';
+                    }
+                    const escapedLinkText = linkText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const textBeforeLink = fullText.replace(new RegExp(`\\s*${escapedLinkText}\\.?$`), '');
+                    return (
+                      <>
+                        <span>{textBeforeLink}</span>
+                        <a
+                          href="https://forms.gle/XriMMtsZzKEjLFF3A"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:text-primary transition-colors"
+                          style={{
+                            textDecoration: 'underline',
+                            color: '#2d2d2d',
+                          }}
+                        >
+                          {linkText}
+                        </a>
+                      </>
+                    );
+                  })()}
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+
       </div>
 
       {/* Right: Video side */}
