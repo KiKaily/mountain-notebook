@@ -361,7 +361,7 @@ const HeroSection = () => {
                     const fullText = t('hero.activitySignup');
                     let linkText;
                     if (i18n.language === 'ca' || i18n.language === 'es') {
-                      linkText = 'clica aquí';
+                      linkText = 'aquí';
                     } else {
                       linkText = 'here';
                     }
