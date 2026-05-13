@@ -9,7 +9,7 @@
   "hero": {
         "openDay": "Plazas disponibles y matrícula abierta.",
         "signupHere": "Para puertas abiertas o visita, contacta aquí",
-        "activitySignup": "Para apuntarte a alguna actividad, clica aquí",
+        "activitySignup": "Para apuntarte a próximos eventos, clica aquí",
       "unmute": "Activar sonido",
     "title1": "La Llavor.",
     "title2": "Educación Viva en el Montseny.",
@@ -66,7 +66,7 @@
       },
       "noel": {
         "role": "Acompañante referente",
-        "bio": "Acompañante infantil, terapeuta de integración psico-corporal y psicomotricista preventivo Aucouturier."
+        "bio": "Acompañante infantil con más de 15 años de experiencia, terapeuta de integración psico-corporal y psicomotricista preventivo Aucouturier."
       },
       "jose": {
         "role": "Tallerista de carpintería y tecnología",

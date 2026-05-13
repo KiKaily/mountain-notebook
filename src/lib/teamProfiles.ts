@@ -14,7 +14,7 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "Presentació",
         paragraphs: [
-          "Acompanyant infantil, terapeuta d'integració psico-corporal i psicomotricista preventiu Aucouturier.",
+          "Acompanyant infantil amb més de 15 anys d'experiéncia, terapeuta d'integració psico-corporal i psicomotricista preventiu Aucouturier.",
         ],
       },
       {
@@ -116,7 +116,7 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
       {
         title: "Introduction",
         paragraphs: [
-          "Child guide, psycho-corporal integration therapist, and Aucouturier preventive psychomotricist.",
+          "Child guide with more than 15 years of experience, psycho-corporal integration therapist, and Aucouturier preventive psychomotricist.",
         ],
       },
       {
@@ -140,6 +140,37 @@ const teamProfiles: Partial<Record<number, LocalizedProfile>> = {
           "From 2011 I worked for 14 years at Congrés-Indians school, during the midday period and alongside the teaching team during school hours. I was also Verónica Antón's psychomotor therapy assistant at Senda between 2014 and 2015.",
           "In 2018 I co-founded Kun Koro, and in 2024 I launched Rcrear with Cristina, a creative studio for graphic design and honest communication.",
           "In 2026 I arrived at La Llavor, a gift from life and from Tamara, whom I knew from Congrés-Indians and who believed in me.",
+        ],
+      },
+    ],
+    es: [
+      {
+        title: "Introducción",
+        paragraphs: [
+          "Acompañante infantil con más de 15 años de experiencia, terapeuta de integración psico-corporal y psicomotricista preventivo Aucouturier.",
+        ],
+      },
+      {
+        title: "Acompañando en La Llavor",
+        paragraphs: [
+          "Noel acompaña a las criaturas desde su experiencia y saber, creando vínculos seguros para la relación, la exploración y el crecimiento de cada niño. Cada momento es una oportunidad para aprender de lo que el grupo y la vida ofrecen.",
+        ],
+      },
+      {
+        title: "Especialidad",
+        paragraphs: [
+          "Acompañamiento relacional, en el juego libre y en procesos de proyectos personales y grupales, enriqueciendo y cuidando. Creatividad y aprendizaje práctico. Vídeo, digital, juegos de mesa, inglés, matemáticas aplicadas, cuerpo y movimiento.",
+        ],
+      },
+      {
+        title: "Trayectoria",
+        paragraphs: [
+          "Crecí en un entorno de educación viva en casa. Mi madre, Begoña González, junto con mi padrino Cristóbal Gutiérrez, fundaron La Caseta en Barcelona en 1996 y la escuela viva El Roure en 2001. Mi padre, Gustavo Cresencio, es maestro de tai chi, chi kung, artes marciales y crecimiento personal. Estudié en la escuela estatal, un año en El Roure, y a los 14 años me trasladé a Inglaterra para estudiar en Brockwood Park School, internado internacional fundado en 1969 por el filósofo y maestro espiritual Jiddu Krishnamurti.",
+          "Entre 2008 y 2010 me formé en cine, fotografía e interpretación en Filmosofía, en Granada. Mis principales formaciones incluyen psicoterapia en Integración Psico-Corporal en ETIP con Marc Costa y Agustín Prieto, psicomotricidad en Práctica Preventiva Aucouturier en AEC con Iolanda Vives, y educación viva con Jordi Mateu y Begoña González.",
+          "También me especialicé en comunicación consciente con Chema Irusta y Begoña González; acompañamiento emocional, agresividad y conflictos en Senda con Verónica Antón; y Seitai en Espaidó con Magda Berneda.",
+          "Desde 2011 trabajé 14 años en la escuela Congrés-Indians, en la franja del mediodía y apoyando al equipo docente dentro de la jornada lectiva. También fui asistente terapeuta psicomotriz de Verónica Antón en Senda entre 2014 y 2015.",
+          "En 2018 cofundé Kun Koro, y en 2024 lancé Rcrear con Cristina, un estudio creativo de diseño gráfico y comunicación honesta.",
+          "En 2026 llegué a La Llavor, un regalo de la vida y de Tamara, a quien conocía de Congrés-Indians y que apostó por mí.",
         ],
       },
     ],

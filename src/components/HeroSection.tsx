@@ -203,7 +203,7 @@ const HeroSection = () => {
                     className="font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                     style={{
                       width: textWidth,
-                      marginLeft: isMobile ? '7%' : '8%',
+                      marginLeft: isMobile ? '5%' : '5%',
                       lineHeight: 1.1,
                       fontSize,
                       letterSpacing: '0.04em',
@@ -254,7 +254,7 @@ const HeroSection = () => {
                   ref={fitRef}
                   className="absolute top-1/2 font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                   style={{
-                    left: isMobile ? '7%' : '8%',
+                    left: isMobile ? '5%' : '5%',
                     transform: 'translate(0, -50%)',
                     width: textWidth,
                     lineHeight: 1.1,
@@ -340,7 +340,7 @@ const HeroSection = () => {
                   ref={fitRef}
                   className="absolute top-1/2 font-serif text-[#2d2d2d] font-bold tracking-wide text-center"
                   style={{
-                    left: isMobile ? '7%' : '8%',
+                    left: isMobile ? '5%' : '5%',
                     transform: 'translate(0, -50%)',
                     width: textWidth,
                     lineHeight: 1.1,
